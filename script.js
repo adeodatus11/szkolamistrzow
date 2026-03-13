@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!element) return;
         const headerOffset = updateHeaderOffset();
         const elementPosition = element.getBoundingClientRect().top;
-        // Increased breathing room from 50 to 80 for better visibility on mobile and desktop
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 80;
+        // Increased breathing room to 120px to ensure titles are never covered by the sticky header
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 120;
 
         window.scrollTo({
             top: offsetPosition,
@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.location.hash) {
             const target = document.querySelector(window.location.hash);
             if (target) {
-                // Short timeout to ensure layout has stabilized
-                setTimeout(() => scrollToElement(target), 200);
+                // Wait for any layout shifts or animations to settle (increased to 400ms)
+                setTimeout(() => scrollToElement(target), 400);
             }
         }
     };
@@ -135,10 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 tradeHeader.classList.add('active');
                 if (card) {
                     card.classList.add('expanded');
-                    // Smooth scroll to card after it moves to top (with delay for order change and animation)
+                    // Wait for the CSS genie animation (700ms) to finish before scrolling
                     setTimeout(() => {
                         scrollToElement(card);
-                    }, 300); // 300ms delay for layout and genie animation stabilization
+                    }, 800); 
                 }
                 const answer = tradeHeader.nextElementSibling;
                 if(answer) {
