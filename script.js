@@ -114,4 +114,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // 5. Timeline Horizontal Scroll
+    const scrollContainer = document.getElementById('htl-scroll-container');
+    const prevBtn = document.getElementById('htl-prev');
+    const nextBtn = document.getElementById('htl-next');
+
+    if (scrollContainer && prevBtn && nextBtn) {
+        const scrollAmount = 300; // px
+
+        const updateScrollButtons = () => {
+            const isAtStart = scrollContainer.scrollLeft <= 0;
+            const isAtEnd = scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 1;
+            
+            prevBtn.classList.toggle('disabled', isAtStart);
+            nextBtn.classList.toggle('disabled', isAtEnd);
+        };
+
+        const smoothScroll = (amount) => {
+            scrollContainer.scrollBy({
+                left: amount,
+                behavior: 'smooth'
+            });
+        };
+
+        prevBtn.addEventListener('click', () => smoothScroll(-scrollAmount));
+        nextBtn.addEventListener('click', () => smoothScroll(scrollAmount));
+
+        // Initial check and update on scroll
+        scrollContainer.addEventListener('scroll', updateScrollButtons);
+        window.addEventListener('resize', updateScrollButtons);
+        
+        // Initial state
+        setTimeout(updateScrollButtons, 100);
+    }
 });

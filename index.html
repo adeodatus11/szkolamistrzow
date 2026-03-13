@@ -38,7 +38,7 @@
         <section id="promocja" class="hero-section">
             <div class="hero-content">
                 <h1>Zespół Szkół Zawodowych nr 5 we Wrocławiu</h1>
-                <p class="hero-subtitle" style="max-width:900px;">Szkoła Mistrzów to zespół szkół opartych na <strong>systemie dualnym</strong> – połączeniu nauki szkolnej z praktyką u pracodawcy.</p>
+                <p class="hero-subtitle" style="max-width:900px;">Szkoła Mistrzów to szkoła zawodowa oparta na <strong>systemie dualnym</strong> – połączeniu nauki szkolnej z praktyką u pracodawcy.</p>
                 
                 <div class="why-us" style="padding-top:2rem; padding-bottom: 3rem;">
                     <h2>Zasady systemu dualnego</h2>
@@ -116,94 +116,90 @@
                 .htl-step.htl-highlight .htl-label { font-weight: 700; color: #e65100; }
                 .htl-icon { font-size: 1.2rem; margin-bottom: 0.5rem; }
                 .htl-lead { font-size: 0.9rem; color: #666; text-align: center; margin-bottom: 0.5rem; }
+                
+                .htl-container { position: relative; margin-bottom: 3rem; display: flex; align-items: center; gap: 10px; }
+                .htl-scroll-btn {
+                    width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 1px solid #ddd;
+                    display: flex; align-items: center; justify-content: center; cursor: pointer;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 5; transition: all 0.2s; color: var(--primary-color);
+                    flex-shrink: 0;
+                }
+                .htl-scroll-btn:hover { background: var(--primary-color); color: #fff; transform: scale(1.1); }
+                .htl-scroll-btn:active { transform: scale(0.9); }
+                .htl-scroll-btn.disabled { opacity: 0; pointer-events: none; }
                 </style>
-                <p class="htl-lead">Przewiń poziomo, aby zobaczyć cały harmonogram →</p>
-                <div class="htl-wrap">
-                  <div class="htl" role="list">
-                    <a class="htl-step" href="rekrutacja.html#step-1" role="listitem">
-                      <div class="htl-icon">🖥️</div>
-                      <div class="htl-dot"></div>
-                      <div class="htl-date">18 maja – 22 czerwca</div>
-                      <div class="htl-label">Rejestracja w systemie</div>
-                    </a>
-                    <a class="htl-step" href="rekrutacja.html#step-2" role="listitem">
-                      <div class="htl-icon">🩺</div>
-                      <div class="htl-dot"></div>
-                      <div class="htl-date">18 maja – 16 lipca</div>
-                      <div class="htl-label">Skierowanie do med. pracy</div>
-                    </a>
-                    <a class="htl-step htl-highlight" href="rekrutacja.html#step-rekomendacja" role="listitem">
-                      <div class="htl-icon">💡</div>
-                      <div class="htl-dot"></div>
-                      <div class="htl-date">Koniec czerwca</div>
-                      <div class="htl-label">Przynieś oryginały dokumentów (świadectwo + zaświadczenie z egz. 8-kl.)</div>
-                    </a>
-                    <a class="htl-step" href="rekrutacja.html#step-5" role="listitem">
-                      <div class="htl-icon">📋</div>
-                      <div class="htl-dot"></div>
-                      <div class="htl-date">3–7 lipca</div>
-                      <div class="htl-label">Świadectwo i wyniki egzaminu</div>
-                    </a>
-                    <a class="htl-step" href="rekrutacja.html#step-6" role="listitem">
-                      <div class="htl-icon">📣</div>
-                      <div class="htl-dot"></div>
-                      <div class="htl-date">15 lipca</div>
-                      <div class="htl-label">Lista zakwalifikowanych</div>
-                    </a>
-                    <a class="htl-step" href="rekrutacja.html#step-7" role="listitem">
-                      <div class="htl-icon">✅</div>
-                      <div class="htl-dot"></div>
-                      <div class="htl-date">16–21 lipca</div>
-                      <div class="htl-label">Potwierdzenie woli przyjęcia</div>
-                    </a>
-                    <a class="htl-step" href="rekrutacja.html#step-8" role="listitem">
-                      <div class="htl-icon">🎉</div>
-                      <div class="htl-dot"></div>
-                      <div class="htl-date">22 lipca</div>
-                      <div class="htl-label">Lista przyjętych</div>
-                    </a>
-                    <a class="htl-step" href="rekrutacja.html#step-9" role="listitem">
-                      <div class="htl-icon">🤝</div>
-                      <div class="htl-dot"></div>
-                      <div class="htl-date">Do poł. sierpnia</div>
-                      <div class="htl-label">Umowa z pracodawcą</div>
-                    </a>
-                  </div>
+                <div style="text-align:center; margin-bottom: 2rem;">
+                    <p class="htl-lead">Kliknij w wybrany etap, aby poznać szczegóły rekrutacji</p>
+                </div>
+                
+                <div class="htl-container">
+                    <button class="htl-scroll-btn left" id="htl-prev" aria-label="Przewiń w lewo">❮</button>
+                    <div class="htl-wrap" id="htl-scroll-container">
+                      <div class="htl" role="list">
+                        <a class="htl-step" href="rekrutacja.html#step-1" role="listitem">
+                          <div class="htl-icon">🖥️</div>
+                          <div class="htl-dot"></div>
+                          <div class="htl-date">18 maja – 22 czerwca</div>
+                          <div class="htl-label">Rejestracja w systemie</div>
+                        </a>
+                        <a class="htl-step" href="rekrutacja.html#step-2" role="listitem">
+                          <div class="htl-icon">🩺</div>
+                          <div class="htl-dot"></div>
+                          <div class="htl-date">18 maja – 16 lipca</div>
+                          <div class="htl-label">Skierowanie do med. pracy</div>
+                        </a>
+                        <a class="htl-step htl-highlight" href="rekrutacja.html#step-rekomendacja" role="listitem">
+                          <div class="htl-icon">💡</div>
+                          <div class="htl-dot"></div>
+                          <div class="htl-date">Koniec czerwca</div>
+                          <div class="htl-label">Przynieś oryginały dokumentów (świadectwo + zaświadczenie z egz. 8-kl.)</div>
+                        </a>
+                        <a class="htl-step" href="rekrutacja.html#step-5" role="listitem">
+                          <div class="htl-icon">📋</div>
+                          <div class="htl-dot"></div>
+                          <div class="htl-date">3–7 lipca</div>
+                          <div class="htl-label">Świadectwo i wyniki egzaminu</div>
+                        </a>
+                        <a class="htl-step" href="rekrutacja.html#step-6" role="listitem">
+                          <div class="htl-icon">📣</div>
+                          <div class="htl-dot"></div>
+                          <div class="htl-date">15 lipca</div>
+                          <div class="htl-label">Lista zakwalifikowanych</div>
+                        </a>
+                        <a class="htl-step" href="rekrutacja.html#step-7" role="listitem">
+                          <div class="htl-icon">✅</div>
+                          <div class="htl-dot"></div>
+                          <div class="htl-date">16–21 lipca</div>
+                          <div class="htl-label">Potwierdzenie woli przyjęcia</div>
+                        </a>
+                        <a class="htl-step" href="rekrutacja.html#step-8" role="listitem">
+                          <div class="htl-icon">🎉</div>
+                          <div class="htl-dot"></div>
+                          <div class="htl-date">22 lipca</div>
+                          <div class="htl-label">Lista przyjętych</div>
+                        </a>
+                        <a class="htl-step" href="rekrutacja.html#step-9" role="listitem">
+                          <div class="htl-icon">🤝</div>
+                          <div class="htl-dot"></div>
+                          <div class="htl-date">Do poł. sierpnia</div>
+                          <div class="htl-label">Umowa z pracodawcą</div>
+                        </a>
+                      </div>
+                    </div>
+                    <button class="htl-scroll-btn right" id="htl-next" aria-label="Przewiń w prawo">❯</button>
                 </div>
                 <!-- Koniec poziomego timeline -->
 
 
                 <!-- Szybkie info + link do szczegółowego przewodnika -->
                 <div style="background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.07); padding:2rem 2.5rem; margin-bottom:1.5rem; border-left: 4px solid var(--primary-color);">
-                    <p style="margin:0 0 0.8rem; font-size:1.05rem; color:var(--text-color); line-height:1.6;">Kliknij w dowolny etap na osi czasu powyżej, aby przejść do szczegółowego opisu. Wszystkie kroki, terminy, wymagane dokumenty i wskazówki znajdziesz w naszym pełnym przewodniku.</p>
+                    <p style="margin:0 0 0.8rem; font-size:1.05rem; color:var(--text-color); line-height:1.6;">Wszystkie kroki, terminy, wymagane dokumenty i wskazówki znajdziesz w naszym pełnym przewodniku rekrutacyjnym. Zachęcamy do zapoznania się ze szczegółami, aby sprawnie przejść cały proces.</p>
                     <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
-                        <a href="rekrutacja.html" class="cta-button">📋 Pełny przewodnik rekrutacyjny →</a>
+                        <a href="rekrutacja.html" class="cta-button">📋 Otwórz pełny przewodnik rekrutacyjny →</a>
                         <a href="https://rekrutacje.edu.wroclaw.pl" target="_blank" class="cta-button secondary">🖥️ System rekrutacji</a>
                     </div>
                 </div>
 
-                <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap:1rem; margin-bottom:1.5rem;">
-                    <div style="background:#fff; border-radius:12px; padding:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.06); border-top:3px solid var(--primary-color);">
-                        <div style="font-size:1.5rem; margin-bottom:0.5rem;">📅</div>
-                        <strong style="color:var(--primary-color);">Rejestracja</strong>
-                        <p style="margin:0.3rem 0 0; font-size:0.9rem; color:#555;">18 maja – 22 czerwca 2026</p>
-                    </div>
-                    <div style="background:#fff; border-radius:12px; padding:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.06); border-top:3px solid var(--primary-color);">
-                        <div style="font-size:1.5rem; margin-bottom:0.5rem;">📋</div>
-                        <strong style="color:var(--primary-color);">Dokumenty do szkoły</strong>
-                        <p style="margin:0.3rem 0 0; font-size:0.9rem; color:#555;">3–7 lipca 2026</p>
-                    </div>
-                    <div style="background:#fff; border-radius:12px; padding:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.06); border-top:3px solid var(--primary-color);">
-                        <div style="font-size:1.5rem; margin-bottom:0.5rem;">🎉</div>
-                        <strong style="color:var(--primary-color);">Lista przyjętych</strong>
-                        <p style="margin:0.3rem 0 0; font-size:0.9rem; color:#555;">22 lipca 2026</p>
-                    </div>
-                    <div style="background:#fffde7; border-radius:12px; padding:1.2rem; box-shadow:0 2px 10px rgba(0,0,0,0.06); border-top:3px solid #ff8f00;">
-                        <div style="font-size:1.5rem; margin-bottom:0.5rem;">💡</div>
-                        <strong style="color:#e65100;">Rekomendacja szkoły</strong>
-                        <p style="margin:0.3rem 0 0; font-size:0.9rem; color:#555;">Przynieś oryginały jak najwcześniej – koniec czerwca!</p>
-                    </div>
-                </div>
                  </div>
 
             </div>
