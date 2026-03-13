@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!element) return;
         const headerOffset = updateHeaderOffset();
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 50; // 50px extra breathing room for perfect visibility
+        // Increased breathing room from 50 to 80 for better visibility on mobile and desktop
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 80;
 
         window.scrollTo({
             top: offsetPosition,
@@ -48,14 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Scroll to hash on page load (bug fix for recruitment timeline)
-    if (window.location.hash) {
-        window.addEventListener('load', () => {
+    const handleInitialHashScroll = () => {
+        if (window.location.hash) {
             const target = document.querySelector(window.location.hash);
             if (target) {
-                setTimeout(() => scrollToElement(target), 100);
+                // Short timeout to ensure layout has stabilized
+                setTimeout(() => scrollToElement(target), 200);
             }
-        });
-    }
+        }
+    };
+
+    window.addEventListener('load', handleInitialHashScroll);
 
     // 3. Counter Animation
     const counters = document.querySelectorAll('.stat-number');
@@ -225,6 +229,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 allTradesData.sort((a, b) => a.name.localeCompare(b.name, 'pl'));
 
                 renderTrades(allTradesData);
+
+                // Re-trigger hash scroll after trades are rendered (specific for Employers page)
+                if (window.location.hash) {
+                    handleInitialHashScroll();
+                }
             } catch (error) {
                 console.error('Error loading data:', error);
                 employersRoot.innerHTML = '<p class="error-msg">Wystąpił błąd podczas ładowania danych. Spróbuj odświeżyć stronę.</p>';
