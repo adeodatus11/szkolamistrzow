@@ -157,46 +157,44 @@ document.addEventListener('DOMContentLoaded', () => {
     if (employersRoot) {
         const loadEmployers = async () => {
             try {
-                let xmlText;
-                const embeddedXml = document.getElementById('employers-data-xml');
-                
-                if (embeddedXml) {
-                    xmlText = embeddedXml.textContent;
+                // Try from global variable first (embedded in HTML)
+                if (window.EMPLOYERS_DATA) {
+                    allTradesData = window.EMPLOYERS_DATA;
                 } else {
+                    // Fallback to XML if needed
                     const response = await fetch('pracodawcy.xml');
-                    xmlText = await response.text();
-                }
-
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-                const trades = xmlDoc.querySelectorAll('zawod');
-                
-                allTradesData = Array.from(trades).map(tradeNode => {
-                    const name = tradeNode.getAttribute('nazwa');
-                    const cechNode = tradeNode.querySelector('cech');
-                    const employersNodes = tradeNode.querySelectorAll('pracodawcy firma');
+                    const xmlText = await response.text();
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                    const trades = xmlDoc.querySelectorAll('zawod');
                     
-                    return {
-                        name,
-                        cech: cechNode ? {
-                            nazwa: cechNode.querySelector('nazwa_firmy')?.textContent || '',
-                            adres: cechNode.querySelector('adres_firmy')?.textContent || '',
-                            telefon: cechNode.querySelector('telefon')?.textContent || '',
-                            email: cechNode.querySelector('email')?.textContent || '',
-                            www: cechNode.querySelector('www')?.textContent || ''
-                        } : null,
-                        employers: Array.from(employersNodes).map(emp => ({
-                            nazwa: emp.querySelector('nazwa_firmy')?.textContent || '',
-                            adres: emp.querySelector('adres_firmy')?.textContent || '',
-                            telefon: emp.querySelector('telefon')?.textContent || '',
-                            kontakt: emp.querySelector('osoba_kontaktowa')?.textContent || ''
-                        }))
-                    };
-                });
+                    allTradesData = Array.from(trades).map(tradeNode => {
+                        const name = tradeNode.getAttribute('nazwa');
+                        const cechNode = tradeNode.querySelector('cech');
+                        const employersNodes = tradeNode.querySelectorAll('pracodawcy firma');
+                        
+                        return {
+                            name,
+                            cech: cechNode ? {
+                                nazwa: cechNode.querySelector('nazwa_firmy')?.textContent || '',
+                                adres: cechNode.querySelector('adres_firmy')?.textContent || '',
+                                telefon: cechNode.querySelector('telefon')?.textContent || '',
+                                email: cechNode.querySelector('email')?.textContent || '',
+                                www: cechNode.querySelector('www')?.textContent || ''
+                            } : null,
+                            employers: Array.from(employersNodes).map(emp => ({
+                                nazwa: emp.querySelector('nazwa_firmy')?.textContent || '',
+                                adres: emp.querySelector('adres_firmy')?.textContent || '',
+                                telefon: emp.querySelector('telefon')?.textContent || '',
+                                kontakt: emp.querySelector('osoba_kontaktowa')?.textContent || ''
+                            }))
+                        };
+                    });
+                }
 
                 renderTrades(allTradesData);
             } catch (error) {
-                console.error('Error loading XML:', error);
+                console.error('Error loading data:', error);
                 employersRoot.innerHTML = '<p class="error-msg">Wystąpił błąd podczas ładowania danych. Spróbuj odświeżyć stronę.</p>';
             }
         };
