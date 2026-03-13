@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!element) return;
         const headerOffset = updateHeaderOffset();
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20; // 20px extra breathing room
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 50; // 50px extra breathing room for perfect visibility
 
         window.scrollTo({
             top: offsetPosition,
