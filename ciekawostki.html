@@ -269,23 +269,23 @@
             <h2 class="section-title" style="color:#fff; margin-bottom:2rem; font-size: 1.8rem;">ZSZ5 – Szkoła Mistrzów w liczbach</h2>
             <div class="stats-grid">
                 <div class="stat-box">
-                    <h3 class="counter" data-target="80">0</h3>
+                    <h3 class="counter" data-prefix="ponad " data-target="80">0</h3>
                     <p>Lat doświadczenia zawodowego</p>
                 </div>
                 <div class="stat-box">
-                    <h3 class="counter" data-target="25000">0</h3>
-                    <p>Absolwentów pracujących w zawodzie</p>
+                    <h3 class="counter" data-target="25000" data-suffix="+">0</h3>
+                    <p>Absolwentów</p>
                 </div>
                 <div class="stat-box">
                     <h3 class="counter" data-target="20">0</h3>
                     <p>Kierunków kształcenia</p>
                 </div>
                 <div class="stat-box">
-                    <h3 class="counter" data-target="250">0</h3>
+                    <h3 class="counter" data-prefix="~" data-target="250">0</h3>
                     <p>Współpracujących firm</p>
                 </div>
                 <div class="stat-box">
-                    <h3 class="counter" data-target="60">0</h3>
+                    <h3 class="counter" data-prefix="ponad " data-target="60">0</h3>
                     <p>Nauczycieli i specjalistów</p>
                 </div>
             </div>
@@ -494,14 +494,17 @@
             counters.forEach(counter => {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
+                    const prefix = counter.getAttribute('data-prefix') || '';
+                    const suffix = counter.getAttribute('data-suffix') || '';
+                    const count = +counter.innerText.replace(prefix, '').replace(suffix, '').replace('+', '');
                     const inc = Math.ceil(target / speed);
 
                     if (count < target) {
-                        counter.innerText = count + inc;
+                        const nextCount = count + inc > target ? target : count + inc;
+                        counter.innerText = prefix + nextCount + suffix;
                         setTimeout(updateCount, 15);
                     } else {
-                        counter.innerText = target + (target > 1000 ? '+' : '');
+                        counter.innerText = prefix + target + suffix;
                     }
                 };
                 updateCount();
