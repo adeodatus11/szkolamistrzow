@@ -217,9 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="trade-card">
                     <button class="trade-card-header faq-question" aria-expanded="false">
                         <div class="trade-header-inner">
+                            <span class="trade-icon-main">${trade.icon || '🛠️'}</span>
                             <span class="trade-name">${trade.name}</span>
                         </div>
-                        <span class="trade-toggle-icon">+</span>
+                        <i class="fa-solid fa-chevron-down trade-toggle-icon"></i>
                     </button>
                     <div class="trade-card-body faq-answer">
                         <div class="trade-card-content">
