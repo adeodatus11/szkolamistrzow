@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             top: offsetPosition,
                             behavior: 'smooth'
                         });
-                    }, 50); // Small delay to allow CSS grid re-ordering
+                    }, 100); // Delay slightly more for genie animation
                 }
                 const answer = tradeHeader.nextElementSibling;
                 if(answer) {
@@ -230,7 +230,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="trade-card-header trade-accordion-header" aria-expanded="false">
                         <div class="trade-header-inner">
                             <span class="trade-icon-main">${trade.icon || '🛠️'}</span>
-                            <span class="trade-name">${trade.name}</span>
+                            <div class="trade-name">
+                                ${trade.name.split(';').map(part => `<span>${part.trim()}</span>`).join('')}
+                            </div>
                         </div>
                         <i class="fa-solid fa-chevron-down trade-toggle-icon"></i>
                     </button>
