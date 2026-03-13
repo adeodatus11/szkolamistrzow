@@ -144,39 +144,44 @@
         .stat-box h3 { font-size: 3.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1; }
         .stat-box p { font-size: 1rem; opacity: 0.9; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 2rem;
-        }
-        .gallery-item {
-            aspect-ratio: 4/3;
-            background: #eee;
-            border-radius: 12px;
+        .gallery-item:hover::after { opacity: 1; }
+
+        /* Carousel Styles */
+        .carousel-container {
+            width: 100%;
             overflow: hidden;
-            cursor: pointer;
+            padding: 2rem 0;
+            background: #fff;
             position: relative;
         }
-        .gallery-item img {
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+        .carousel-track:hover { animation-play-state: paused; }
+        .carousel-item {
+            width: 350px;
+            aspect-ratio: 16/9;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .carousel-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item::after {
-            content: '🔍';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            opacity: 0;
-            transition: opacity 0.3s;
+        .carousel-item:hover img { transform: scale(1.05); }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-370px * 3)); } /* Updated for 3 images */
         }
-        .gallery-item:hover::after { opacity: 1; }
 
         /* Lightbox Layout */
         .lightbox-overlay {
@@ -242,43 +247,34 @@
             <p>Dowiedz się, dlaczego Szkoła Mistrzów to wyjątkowe miejsce na edukacyjnej mapie Wrocławia i Polski.</p>
         </section>
 
-        <!-- Zobacz naszą szkołę - Historia -->
-        <section class="section-container history-section">
-            <h2 class="section-title">Zobacz naszą szkołę</h2>
-            <div class="history-content">
-                <p>Zespół budynków przy <strong>ul. J. Wł. Dawida 5-11 we Wrocławiu</strong> (dawniej Arletiusstrasse) powstał w dwóch etapach: w latach 1901-1903 oraz 1907-1909 jako Zespół Szkół Ludowych.</p>
-                <p>Autorami tego wyjątkowego projektu byli słynni wrocławscy architekci: <strong>Richard Plüddemann</strong> oraz <strong>Karl Klimm</strong>. Budynek powstał na wspólnej działce wraz z kompleksem Gimnazjum Św. Elżbiety (dzisiejszy Instytut Pedagogiki i Psychologii UWr), tworząc zgraną neogotycką całość.</p>
-                <p>Architektura zespołu charakteryzuje się charakterystycznymi ażurowymi szczytami ryzalitów i wnękami okiennymi. Pod koniec II wojny światowej budynek służył jako szpital polowy. Choć uległ częściowemu zniszczeniu, szczęśliwie ocalał i do dziś zachwyca swoim zabytkowym detalem.</p>
-            </div>
-        </section>
-
         <!-- Szkoła w liczbach - Liczniki -->
         <section class="stats-section">
+            <h2 class="section-title" style="color:#fff; margin-bottom:4rem;">ZSZ5 – Szkoła Mistrzów w liczbach</h2>
             <div class="stats-grid">
                 <div class="stat-box">
-                    <h3 class="counter" data-target="70">0</h3>
-                    <p>Lat kształcenia zawodowego</p>
+                    <h3 class="counter" data-target="80">0</h3>
+                    <p>80 lat doświadczenia w kształceniu zawodowym</p>
                 </div>
                 <div class="stat-box">
                     <h3 class="counter" data-target="25000">0</h3>
-                    <p>Absolwentów szkoły</p>
+                    <p>ponad 25 000 absolwentów pracujących w kraju i za granicą</p>
                 </div>
                 <div class="stat-box">
                     <h3 class="counter" data-target="20">0</h3>
-                    <p>Kierunków kształcenia</p>
+                    <p>około 20 kierunków technikum i branżowej</p>
                 </div>
                 <div class="stat-box">
-                    <h3 class="counter" data-target="270">0</h3>
-                    <p>Współpracujących zakładów</p>
+                    <h3 class="counter" data-target="250">0</h3>
+                    <p>ponad 250 współpracujących firm i zakładów</p>
                 </div>
                 <div class="stat-box">
                     <h3 class="counter" data-target="60">0</h3>
-                    <p>Wykwalifikowanych nauczycieli</p>
+                    <p>ponad 60 nauczycieli i specjalistów zawodowych</p>
                 </div>
             </div>
         </section>
 
-
+        <!-- Mówią o nas -->
         <section class="section-container">
             <h2 class="section-title">Mówią o nas</h2>
             <div class="media-grid">
@@ -317,6 +313,16 @@
                     </div>
                     <a href="https://www.wroclaw.pl/dla-mieszkanca/mistrzostwa-polski-uczniow-szkol-cukierniczych" target="_blank" class="read-more">Czytaj artykuł →</a>
                 </div>
+
+                <!-- NOWOŚĆ: 80-lecie -->
+                <div class="media-card" style="border: 2px solid var(--accent-color); background: #fff9c4;">
+                    <div>
+                        <span class="media-tag" style="background: var(--accent-color); color: #000;">WYDARZENIE</span>
+                        <h3 style="color: #000;">Jubileusz 80-lecia Szkoły Mistrzów</h3>
+                        <p style="color: #444; font-size: 0.9rem;">Świętujemy osiem dekad budowania rzemieślniczej tradycji Wrocławia. Zobacz pamiątkową galerię zdjęć z tej wyjątkowej uroczystości.</p>
+                    </div>
+                    <a href="#80-lecie-galeria" class="read-more" style="color: #000;">Zobacz galerię poniżej ↓</a>
+                </div>
             </div>
         </section>
 
@@ -324,7 +330,6 @@
             <div class="section-container">
                 <h2 class="section-title">Ogólnopolskie Turnieje i Konkursy</h2>
                 <div class="awards-grid">
-                    <!-- Turniej 1 -->
                     <div class="award-card">
                         <div class="award-content">
                             <div class="award-icon">🥐</div>
@@ -333,8 +338,6 @@
                             <a href="https://www.turniej.szkolamistrzow.info/" target="_blank" class="award-link">Strona Turnieju →</a>
                         </div>
                     </div>
-
-                    <!-- Turniej 2 -->
                     <div class="award-card">
                         <div class="award-content">
                             <div class="award-icon">✂️</div>
@@ -347,19 +350,65 @@
             </div>
         </section>
 
-        <!-- Galeria zdjęć -->
-        <section class="section-container">
+        <!-- Galeria Dynamiczna (Carousel) -->
+        <section class="section-container" style="padding-bottom: 2rem;">
             <h2 class="section-title">Galeria Szkoły</h2>
-            <p style="text-align:center; color:#666; margin-bottom: 2rem;">Zobacz jak wygląda codzienne życie i architektura Szkoły Mistrzów.</p>
+            <p style="text-align:center; color:#666; margin-bottom: 2rem;">Nasza szkoła w obiektywie – tradycja i nowoczesność.</p>
+        </section>
+        
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Zdjęcia (x3 dla płynnej pętli) -->
+                <div class="carousel-item"><img src="zdjecia/P1040961.png" alt="Szkoła Mistrzów"></div>
+                <div class="carousel-item"><img src="zdjecia/P1040967.png" alt="Warsztaty zawodowe"></div>
+                <div class="carousel-item"><img src="zdjecia/P1050027 — kopia.png" alt="Uroczystość szkolna"></div>
+                <!-- Klonowanie elementów dla pętli -->
+                <div class="carousel-item"><img src="zdjecia/P1040961.png" alt="Szkoła Mistrzów"></div>
+                <div class="carousel-item"><img src="zdjecia/P1040967.png" alt="Warsztaty zawodowe"></div>
+                <div class="carousel-item"><img src="zdjecia/P1050027 — kopia.png" alt="Uroczystość szkolna"></div>
+                <!-- Jeszcze raz dla pewności płynności na szerokich ekranach -->
+                <div class="carousel-item"><img src="zdjecia/P1040961.png" alt="Szkoła Mistrzów"></div>
+                <div class="carousel-item"><img src="zdjecia/P1040967.png" alt="Warsztaty zawodowe"></div>
+                <div class="carousel-item"><img src="zdjecia/P1050027 — kopia.png" alt="Uroczystość szkolna"></div>
+            </div>
+        </div>
+
+            </div>
+        </div>
+
+        <!-- NOWOŚĆ: Galeria 80-lecia -->
+        <section id="80-lecie-galeria" class="section-container" style="background: #fdfdfd;">
+            <h2 class="section-title">Jubileusz 80-lecia – Galeria Pamiątkowa</h2>
+            <p style="text-align:center; color:#666; margin-bottom: 2rem;">Wspomnienia z uroczystości 80-lecia Zespołu Szkół Zawodowych nr 5.</p>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="zdjęcia/szkoła1.jpg" alt="Budynek szkoły" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Budynek+Szkoły'"></div>
-                <div class="gallery-item"><img src="zdjęcia/warsztaty1.jpg" alt="Warsztaty zawodowe" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Warsztaty'"></div>
-                <div class="gallery-item"><img src="zdjęcia/sukcesy1.jpg" alt="Nasze trofea" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Sukcesy'"></div>
-                <div class="gallery-item"><img src="zdjęcia/wnętrze1.jpg" alt="Wnętrze szkoły" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Wnętrze'"></div>
-                <div class="gallery-item"><img src="zdjęcia/lekcja1.jpg" alt="Zajęcia praktyczne" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Zajęcia+Praktyczne'"></div>
-                <div class="gallery-item"><img src="zdjęcia/uroczystość1.jpg" alt="Uroczystości szkolne" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Uroczystości'"></div>
+                <!-- Pliki z folderu 80-lecie -->
+                <div class="gallery-item"><img src="80-lecie/foto1.jpg" alt="80-lecie Szkoły" onerror="this.src='https://placehold.co/600x400/fb8c00/white?text=80-lecie+1'"></div>
+                <div class="gallery-item"><img src="80-lecie/foto2.jpg" alt="80-lecie Szkoły" onerror="this.src='https://placehold.co/600x400/fb8c00/white?text=80-lecie+2'"></div>
+                <div class="gallery-item"><img src="80-lecie/foto3.jpg" alt="80-lecie Szkoły" onerror="this.src='https://placehold.co/600x400/fb8c00/white?text=80-lecie+3'"></div>
+                <div class="gallery-item"><img src="80-lecie/foto4.jpg" alt="80-lecie Szkoły" onerror="this.src='https://placehold.co/600x400/fb8c00/white?text=80-lecie+4'"></div>
+                <div class="gallery-item"><img src="80-lecie/foto5.jpg" alt="80-lecie Szkoły" onerror="this.src='https://placehold.co/600x400/fb8c00/white?text=80-lecie+5'"></div>
+                <div class="gallery-item"><img src="80-lecie/foto6.jpg" alt="80-lecie Szkoły" onerror="this.src='https://placehold.co/600x400/fb8c00/white?text=80-lecie+6'"></div>
+            </div>
+            <style>
+                #80-lecie-galeria .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    gap: 15px;
+                }
+            </style>
+        </section>
+
+        <!-- Poznaj Zespół Szkół Zawodowych nr 5 - Historia i Architektura -->
+        <section class="section-container history-section">
+            <h2 class="section-title">Poznaj Zespół Szkół Zawodowych nr 5 we Wrocławiu</h2>
+            <div class="history-content">
+                <p>Nasza szkoła mieści się w wyjątkowym, zabytkowym kompleksie budynków przy <strong>ul. J. Wł. Dawida 5–11 we Wrocławiu</strong> (dawniej Arletiusstrasse). Powstał on na początku XX wieku – w latach 1901–1903 oraz 1907–1909 – jako zespół szkół ludowych.</p>
+                <p>Projekt przygotowali znani wrocławscy architekci <strong>Richard Plüddemann</strong> i <strong>Karl Klimm</strong>, tworząc harmonijną, neogotycką przestrzeń edukacyjną. Kompleks powstał na wspólnej działce z dawnym Gimnazjum św. Elżbiety (dzisiejszy Instytut Pedagogiki i Psychologii Uniwersytetu Wrocławskiego). Razem tworzą wyjątkową architektoniczną całość, która do dziś jest jednym z ciekawszych przykładów szkolnej architektury z początku XX wieku.</p>
+                <p>Charakterystycznym elementem budynku są neogotyckie detale, ażurowe szczyty ryzalitów oraz ozdobne wnęki okienne, które nadają całemu kompleksowi niepowtarzalny klimat. Pod koniec II wojny światowej budynek służył jako szpital polowy. Mimo częściowych zniszczeń przetrwał trudny czas i do dziś zachwyca swoim historycznym charakterem.</p>
+                <p>Dziś w tych samych murach działa nowoczesna szkoła zawodowa, w której tradycja spotyka się z praktycznym przygotowaniem do zawodu.</p>
             </div>
         </section>
+
 
         <!-- Lightbox Overlay -->
         <div class="lightbox-overlay" id="lightbox">
@@ -454,16 +503,16 @@
             observer.observe(statsSection);
         }
 
-        // Galeria Lightbox
+        // Galeria Lightbox (dla wszystkich obrazków w galeriach i karuzeli)
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
-        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const allGalleryImages = document.querySelectorAll('.carousel-item img, .gallery-item img');
 
-        galleryItems.forEach(item => {
+        allGalleryImages.forEach(item => {
             item.parentElement.addEventListener('click', () => {
                 lightboxImg.src = item.src;
                 lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Blokada przewijania
+                document.body.style.overflow = 'hidden'; 
             });
         });
 
