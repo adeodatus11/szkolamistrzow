@@ -157,8 +157,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (employersRoot) {
         const loadEmployers = async () => {
             try {
-                const response = await fetch('pracodawcy.xml');
-                const xmlText = await response.text();
+                let xmlText;
+                const embeddedXml = document.getElementById('employers-data-xml');
+                
+                if (embeddedXml) {
+                    xmlText = embeddedXml.textContent;
+                } else {
+                    const response = await fetch('pracodawcy.xml');
+                    xmlText = await response.text();
+                }
+
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
                 const trades = xmlDoc.querySelectorAll('zawod');
