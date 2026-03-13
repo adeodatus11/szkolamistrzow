@@ -27,7 +27,8 @@
                 <li><a href="#promocja">O szkole</a></li>
                 <li><a href="#rekrutacja">Rekrutacja</a></li>
                 <li><a href="#zawody">Oferta zawodów</a></li>
-                <li><a href="pracodawcy.html">Cechy i Pracodawcy</a></li>
+                <li><a href="pracodawcy.html">Pracodawcy</a></li>
+                <li><a href="dokumenty.html">Dokumenty</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
@@ -38,7 +39,7 @@
         <section id="promocja" class="hero-section">
             <div class="hero-content">
                 <h1>Zespół Szkół Zawodowych nr 5 we Wrocławiu</h1>
-                <p class="hero-subtitle" style="max-width:900px;">Szkoła Mistrzów to szkoła zawodowa oparta na <strong>systemie dualnym</strong> – połączeniu nauki szkolnej z praktyką u pracodawcy.</p>
+                <p class="hero-subtitle" style="max-width:900px;">Szkoła Mistrzów to <strong>zespół szkół</strong> oparty na <strong>systemie dualnym</strong> – połączeniu nauki szkolnej z praktyką u pracodawcy.</p>
                 
                 <div class="why-us" style="padding-top:2rem; padding-bottom: 3rem;">
                     <h2>Zasady systemu dualnego</h2>
@@ -205,6 +206,24 @@
             </div>
         </section>
 
+        <!-- Sekcja: Aktualności z Facebooka -->
+        <section id="aktualnosci" class="info-section" style="background: #f9f9f9; padding: 4rem 5%;">
+            <div class="section-container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Aktualności</h2>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+                    <p style="text-align: center; max-width: 700px; font-size: 1.1rem; color: #555;">Bądź na bieżąco z życiem szkoły! Codzienne relacje, ważne ogłoszenia i sukcesy naszych uczniów znajdziesz na naszym profilu na Facebooku.</p>
+                    
+                    <!-- Dynamiczny podgląd Facebooka (iframe) -->
+                    <div style="width: 100%; max-width: 500px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fzsz5wro&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                            width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    
+                    <a href="https://www.facebook.com/zsz5wro" target="_blank" class="cta-button" style="background: #1877F2; border: none;">👍 Zobacz nasz profil na Facebooku</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Sekcja 3: Zawody -->
         <section id="zawody" class="info-section" style="padding: 5rem 5%;">
             <div class="section-container">
@@ -275,14 +294,22 @@
                 <p style="text-align:center; font-size:1.2rem; max-width: 800px; margin: 0 auto 3rem;">
                     Szkoła współpracuje z licznymi firmami i zakładami rzemieślniczymi, które prowadzą praktyczną naukę zawodu, zatrudniają uczniów jako pracowników młodocianych oraz kompleksowo przygotowują młodzież do późniejszych egzaminów zawodowych.
                 </p>
-                <div id="kontakt" class="info-card" style="max-width: 800px; margin: 0 auto; text-align:center; padding: 3rem;">
+                <div id="kontakt" class="info-card" style="max-width: 900px; margin: 0 auto; text-align:center; padding: 3rem;">
                     <h3>Porozmawiajmy o rekrutacji</h3>
-                    <p style="font-size:1.2rem; margin-top:2rem;"><strong>Telefon do szkoły:</strong></p>
-                    <p style="font-size: 1.8rem; font-weight:700; color:var(--primary-color);"><a href="tel:717986934">71 798 69 34</a> (wew. 104)</p>
+                    <p style="font-size:1.2rem; margin-top:2rem;"><strong>Masz pytania? Napisz do nas:</strong></p>
+                    <p style="font-size: 1.8rem; font-weight:700; color:var(--primary-color); word-break: break-all;">
+                        <a href="mailto:rekrutacja@zsz5.edupage.org">rekrutacja@zsz5.edupage.org</a>
+                    </p>
+                    <p style="margin-top: 1rem; color: #666;">Czekamy na Ciebie! Odpowiemy na każde pytanie dotyczące kierunków i procesu przyjęcia.</p>
                     
-                    <div style="margin-top:2.5rem; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-                        <a href="http://www.zsz5.edupage.org" target="_blank" class="cta-button secondary">www.zsz5.edupage.org</a>
-                        <a href="http://www.szkolamistrzow.info" target="_blank" class="cta-button secondary">www.szkolamistrzow.info</a>
+                    <!-- Google Maps Embed -->
+                    <div style="margin: 2.5rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 350px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m1a!1s0x470fc2778888888b%3A0x6666666666666666!2zU2zEmcW8bmEgNzgsIDUzLTMwNiBXcm9jxYJhdw!5e0!3m2!1spl!2spl!4v1710350000000!5m2!1spl!2spl" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+                        <a href="https://www.zsz5.edupage.org" target="_blank" class="cta-button secondary">Oficjalna strona: zsz5.edupage.org</a>
                     </div>
                 </div>
             </div>
@@ -294,6 +321,9 @@
         <div class="footer-content">
             <div class="footer-logo">Szkoła Mistrzów</div>
             <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
+            <div style="margin-top: 1rem;">
+                <a href="https://www.zsz5.edupage.org" target="_blank" style="color: #fff; text-decoration: underline; font-size: 0.9rem;">www.zsz5.edupage.org</a>
+            </div>
         </div>
     </footer>
 </body>

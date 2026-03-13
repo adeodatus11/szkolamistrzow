@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ważne dokumenty – Szkoła Mistrzów</title>
+    <meta name="description" content="Dokumenty i wzory umów dla pracodawców i uczniów Szkoły Mistrzów. Dowiedz się jak prawidłowo zawrzeć umowę o pracę.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <style>
+        .doc-hero {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #388e3c 100%);
+            color: #fff;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .doc-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.8rem; }
+        .doc-hero p { font-size: 1.05rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        
+        .doc-container { max-width: 1000px; margin: 0 auto; padding: 4rem 5%; }
+        
+        .doc-alert {
+            background: #fff8e1;
+            border-left: 5px solid #ff8f00;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .doc-alert h2 { color: #e65100; margin-top: 0; font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
+        .doc-alert p { line-height: 1.7; color: #5d4037; margin-bottom: 0; }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .doc-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid #eee;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .doc-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .doc-card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.25rem; margin-bottom: 1rem; line-height: 1.4; }
+        .doc-card .doc-desc { font-size: 0.95rem; color: #666; margin-bottom: 1.5rem; line-height: 1.6; }
+        
+        .doc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .doc-btn:hover { background: #1b5e20; }
+        .doc-btn.template { background: #555; }
+        .doc-btn.template:hover { background: #333; }
+        
+        .instruction-section {
+            background: #f1f8e9;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 4rem;
+        }
+        .instruction-section h2 { color: var(--primary-color); margin-top: 0; margin-bottom: 1.5rem; }
+        .instruction-list { list-style: none; padding: 0; }
+        .instruction-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        .instruction-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html" style="display:flex; align-items:center; gap:15px; color:inherit; text-decoration:none;">
+                <img src="orzeł logo ZSZ5.png" alt="Logo Szkoła Mistrzów" class="logo">
+                <span class="slogan">Szkoła Mistrzów</span>
+            </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Otwórz menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#promocja">O szkole</a></li>
+                <li><a href="rekrutacja.html">Rekrutacja</a></li>
+                <li><a href="pracodawcy.html">Pracodawcy</a></li>
+                <li><a href="dokumenty.html" style="color:var(--primary-color);">Dokumenty</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="doc-hero">
+            <h1>Umowa o pracę i ważne dokumenty</h1>
+            <p>Pobierz niezbędne wzory umów oraz zapoznaj się z instrukcją prawidłowego zawarcia współpracy z pracodawcą.</p>
+        </section>
+
+        <div class="doc-container">
+            
+            <div class="doc-alert">
+                <h2><span>💡</span> Dokumenty dla pracodawców niezrzeszonych w cechach</h2>
+                <p>Jeżeli Twój pracodawca nie należy do żadnego Cechu Rzemieślniczego, musi on sporządzić dokumentację według poniższych zasad. Prawidłowo skompletowana dokumentacja jest warunkiem koniecznym do rozpoczęcia praktycznej nauki zawodu w naszej szkole.</p>
+            </div>
+
+            <div class="doc-grid">
+                <!-- Dokument 1 -->
+                <div class="doc-card">
+                    <div>
+                        <h3>Umowa o pracę w celu przygotowania zawodowego</h3>
+                        <p class="doc-desc">Podstawowy dokument określający warunki pracy i nauki ucznia jako młodocianego pracownika.</p>
+                    </div>
+                    <a href="umowa-o-prace-przygotowanie-zawodowe.pdf" target="_blank" class="doc-btn">
+                        <span>📄</span> Pobierz Umowę (PDF)
+                    </a>
+                </div>
+
+                <!-- Dokument 2 (Wzór) -->
+                <div class="doc-card">
+                    <div>
+                        <h3>WZÓR - Prawidłowo wypełniona umowa</h3>
+                        <p class="doc-desc">Zobacz przykładowo wypełniony wzorzec, aby uniknąć błędów przy uzupełnianiu danych.</p>
+                    </div>
+                    <a href="wzor-umowa-o-prace.pdf" target="_blank" class="doc-btn template">
+                        <span>🔍</span> Zobacz Wzór (PDF)
+                    </a>
+                </div>
+
+                <!-- Dokument 3 (Załącznik) -->
+                <div class="doc-card">
+                    <div>
+                        <h3>Porozumienie (Załącznik do Umowy)</h3>
+                        <p class="doc-desc">Porozumienie jest integralną częścią umowy i stanowi komplet dokumentów świadczących o prawidłowej współpracy.</p>
+                    </div>
+                    <a href="zalacznik-umowa-porozumienie.pdf" target="_blank" class="doc-btn">
+                        <span>📎</span> Pobierz Załącznik (PDF)
+                    </a>
+                </div>
+            </div>
+
+            <div class="instruction-section">
+                <h2>Ważne zasady organizacyjne</h2>
+                <ul class="instruction-list">
+                    <li><strong>Zasada 3 egzemplarzy:</strong> Umowę o pracę w celu przygotowania zawodowego pracodawca sporządza w trzech egzemplarzach – po jednym dla każdej ze stron (uczeń/rodzic i pracodawca) oraz dla szkoły.</li>
+                    <li><strong>Podpis Pana Dyrektora:</strong> Pracodawca powinien wypełnić i podpisać dwa egzemplarze Porozumienia i przekazać je (np. poprzez ucznia) wraz z jedną umową do szkoły, celem podpisania przez <strong>Pana Dyrektora Wiesława Filipiaka</strong>.</li>
+                    <li><strong>Odbiór dokumentów:</strong> Jeden podpisany dokument młodociany przekazuje pracodawcy, drugi egzemplarz pozostaje w szkole.</li>
+                    <li><strong>Kompletność:</strong> Porozumienie jest integralną częścią umowy o pracę i musi być złożone razem z nią, aby komplet dokumentów był uznany za prawidłowy.</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <p style="color: #666; font-style: italic;">Masz wątpliwości? Skontaktuj się z sekretariatem szkoły lub napisz do nas: <strong>rekrutacja@zsz5.edupage.org</strong></p>
+                <a href="index.html#kontakt" class="cta-button secondary" style="margin-top: 1rem;">Wróć do kontaktu →</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">Szkoła Mistrzów</div>
+            <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
+            <div style="margin-top: 1rem;">
+                <a href="https://www.zsz5.edupage.org" target="_blank" style="color: #fff; text-decoration: underline; font-size: 0.9rem;">www.zsz5.edupage.org</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
