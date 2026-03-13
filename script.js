@@ -17,10 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return header ? header.offsetHeight : 80;
     };
 
+    const scrollToElement = (element) => {
+        if (!element) return;
+        const headerOffset = updateHeaderOffset();
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20; // 20px extra breathing room
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (targetId === '#' || targetId === '') return;
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
@@ -30,13 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainNav.classList.remove('active');
                 }
                 
-                window.scrollTo({
-                    top: targetElement.offsetTop - updateHeaderOffset(),
-                    behavior: 'smooth'
-                });
+                scrollToElement(targetElement);
             }
         });
     });
+
+    // Scroll to hash on page load (bug fix for recruitment timeline)
+    if (window.location.hash) {
+        window.addEventListener('load', () => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                setTimeout(() => scrollToElement(target), 100);
+            }
+        });
+    }
 
     // 3. Counter Animation
     const counters = document.querySelectorAll('.stat-number');
@@ -112,17 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 tradeHeader.classList.add('active');
                 if (card) {
                     card.classList.add('expanded');
-                    // Smooth scroll to card after it moves to top (with delay for order change)
+                    // Smooth scroll to card after it moves to top (with delay for order change and animation)
                     setTimeout(() => {
-                        const offset = 100; // Account for sticky header
-                        const elementPosition = card.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }, 100); // Delay slightly more for genie animation
+                        scrollToElement(card);
+                    }, 300); // 300ms delay for layout and genie animation stabilization
                 }
                 const answer = tradeHeader.nextElementSibling;
                 if(answer) {
