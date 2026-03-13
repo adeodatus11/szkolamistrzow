@@ -92,27 +92,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Accordion Behavior (Event Delegation)
     document.addEventListener('click', (e) => {
-        const questionSize = e.target.closest('.faq-question');
-        if (questionSize) {
-            const card = questionSize.closest('.trade-card');
-            const isActive = questionSize.classList.contains('active');
+        const tradeHeader = e.target.closest('.trade-accordion-header');
+        if (tradeHeader) {
+            const card = tradeHeader.closest('.trade-card');
+            const isActive = tradeHeader.classList.contains('active');
             
             // Close all items in the same container
-            const container = questionSize.closest('section') || document.body;
-            container.querySelectorAll('.faq-question').forEach(q => {
+            const containerEl = tradeHeader.closest('section') || document.body;
+            containerEl.querySelectorAll('.trade-accordion-header').forEach(q => {
                 q.classList.remove('active');
                 const p = q.nextElementSibling;
                 if(p) p.style.maxHeight = null;
-                // Remove expanded class if it's a trade card
                 const otherCard = q.closest('.trade-card');
                 if (otherCard) otherCard.classList.remove('expanded');
             });
 
             // If it wasn't active, open it
             if (!isActive) {
-                questionSize.classList.add('active');
+                tradeHeader.classList.add('active');
                 if (card) card.classList.add('expanded');
-                const answer = questionSize.nextElementSibling;
+                const answer = tradeHeader.nextElementSibling;
                 if(answer) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
                 }
@@ -215,14 +214,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             employersRoot.innerHTML = tradesToShow.map(trade => `
                 <div class="trade-card">
-                    <button class="trade-card-header faq-question" aria-expanded="false">
+                    <button class="trade-card-header trade-accordion-header" aria-expanded="false">
                         <div class="trade-header-inner">
                             <span class="trade-icon-main">${trade.icon || '🛠️'}</span>
                             <span class="trade-name">${trade.name}</span>
                         </div>
                         <i class="fa-solid fa-chevron-down trade-toggle-icon"></i>
                     </button>
-                    <div class="trade-card-body faq-answer">
+                    <div class="trade-card-body trade-accordion-body">
                         <div class="trade-card-content">
                             ${trade.cech ? `
                                 <div class="guild-box">
