@@ -231,7 +231,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="trade-header-inner">
                             <span class="trade-icon-main">${trade.icon || '🛠️'}</span>
                             <div class="trade-name">
-                                ${trade.name.split(/;\s*/).filter(n => n.length > 0).map(part => `<span>${part.trim()}</span>`).join('')}
+                                ${trade.name.split(/;\s*/).filter(n => n.length > 0).map(part => {
+                                    const full = part.trim();
+                                    // Logic for specific "Monter zabudowy..." shortening
+                                    let short = full;
+                                    if (full.toLowerCase().includes("monter zabudowy i robót wykończeniowych")) {
+                                        short = "monter zabudowy";
+                                    }
+                                    return `
+                                        <div class="trade-name-line">
+                                            <span class="trade-name-short">${short}</span>
+                                            <span class="trade-name-full">${full}</span>
+                                        </div>
+                                    `;
+                                }).join('')}
                             </div>
                         </div>
                         <i class="fa-solid fa-chevron-down trade-toggle-icon"></i>
@@ -272,18 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `).join('');
         };
 
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const term = e.target.value.toLowerCase().trim();
-                const filtered = allTradesData.filter(trade => {
-                    const tradeMatches = trade.name.toLowerCase().includes(term);
-                    const guildMatches = trade.cech?.nazwa.toLowerCase().includes(term);
-                    const employerMatches = trade.employers.some(emp => emp.nazwa.toLowerCase().includes(term));
-                    return tradeMatches || guildMatches || employerMatches;
-                });
-                renderTrades(filtered);
-            });
-        }
 
         loadEmployers();
     }
