@@ -110,7 +110,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // If it wasn't active, open it
             if (!isActive) {
                 tradeHeader.classList.add('active');
-                if (card) card.classList.add('expanded');
+                if (card) {
+                    card.classList.add('expanded');
+                    // Smooth scroll to card after it moves to top (with delay for order change)
+                    setTimeout(() => {
+                        const offset = 100; // Account for sticky header
+                        const elementPosition = card.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 50); // Small delay to allow CSS grid re-ordering
+                }
                 const answer = tradeHeader.nextElementSibling;
                 if(answer) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
