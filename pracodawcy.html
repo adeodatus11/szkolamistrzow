@@ -18,7 +18,7 @@
             text-align: center;
         }
         .employer-hero h1 {
-            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-size: 3.8rem;
             margin-bottom: 1rem;
             font-weight: 700;
             color: #fff;
@@ -43,7 +43,7 @@
         }
         .employer-section {
             padding: 3rem 5%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         /* Trade card accordion */
@@ -223,6 +223,58 @@
             .employers-list { grid-template-columns: 1fr; }
             .trade-header-inner { flex-direction: column; align-items: flex-start; }
         }
+
+        /* Search Bar Styles */
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            padding: 0 5%;
+        }
+        .search-wrapper {
+            position: relative;
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .search-wrapper:focus-within {
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 30px rgba(0,100,0,0.1);
+        }
+        .search-wrapper i {
+            color: #999;
+            margin-right: 1rem;
+        }
+        #employer-search {
+            border: none;
+            outline: none;
+            padding: 0.8rem 0;
+            width: 100%;
+            font-size: 1.1rem;
+            font-family: inherit;
+        }
+        .loading-state {
+            text-align: center;
+            padding: 4rem;
+            color: #888;
+        }
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -260,645 +312,20 @@
             <p style="margin-bottom:0;">📄 <a href="wzor-umowa-o-prace.pdf" target="_blank" style="color:#1b5e20; font-weight:600;">Pobierz wzór umowy o pracę w celu przygotowania zawodowego (PDF)</a></p>
         </div>
 
-        <section class="employer-section">
+        <div class="search-container">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="employer-search" placeholder="Wyszukaj zawód lub nazwę firmy...">
+            </div>
+        </div>
 
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Fotograf</span>
-      <span class="trade-badge" style="background:#4caf5020; color:#4caf50; border:1px solid #4caf5040;">📷 Zawód usługowy</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">Fotograf Cech Rzemiosł Różnych we Wrocławiu</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kazimierza Wielkiego 9</span>
-<span class="guild-detail">50-077 Wrocław</span>
-<a href="mailto:Tel. 71 344 44 19, e-mail  crr_aldona@poczta.onet.pl ," class="guild-link">✉️ Tel. 71 344 44 19, e-mail  crr_aldona@poczta.onet.pl ,</a>
-<a href="http://www.cechwroclaw.pl/" class="guild-link" target="_blank">🌐 http://www.cechwroclaw.pl/</a>
-<span class="guild-detail">Fotograf   - Cech Rzemieślników i Przedsiębiorców w Oławie</span>
-<span class="guild-detail">Zakład Fotograficzny HQ</span>
-<span class="guild-detail">Anna Matuszewicz</span>
-<span class="guild-detail">📍 55-200 Oława</span>
-<span class="guild-detail">ul. Młyńska 1-1a/1u</span>
-<a href="tel:+48512272357" class="guild-phone">📞 tel. 512 272 357</a>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="no-employers-msg">Aktualną listę pracodawców można uzyskać przez kontakt z odpowiednim cechem.</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Krawiec</span>
-      <span class="trade-badge" style="background:#4caf5020; color:#4caf50; border:1px solid #4caf5040;">✂️ Zawód usługowy</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">Krawiec Cech Rzemiosł Odzieżowo – Włókienniczych</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kaszubska 4, 50-214 Wrocław</span>
-<span class="guild-detail">Wanda Fok tel. 602 638 911, http://izba.wroc.pl/cecha/cech-rzemiosl-odziezowo-wlokienniczych/</span>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="no-employers-msg">Aktualną listę pracodawców można uzyskać przez kontakt z odpowiednim cechem.</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Elektryk, monter zabudowy i robót wykończeniowych w budownictwie, murarz- tynkarz</span>
-      <span class="trade-badge" style="background:#55555520; color:#555; border:1px solid #55555540;">💼 Zawód</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">Elektryk; Monter zabudowy i robót wykończeniowych w budownictwie; Murarz-tynkarz; CECH RZEMIOSŁ BUDOWLANYCH WE WROCŁAWIU</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kazimierza Wielkiego 19, 50-077 Wrocław</span>
-<a href="mailto:tel.600 466 825, e-mail sekretariat@crzb.com.pl" class="guild-link">✉️ tel.600 466 825, e-mail sekretariat@crzb.com.pl</a>
-<a href="https://crzb.com.pl/" class="guild-link" target="_blank">🌐 https://crzb.com.pl/</a>
-<a href="https://crzb.com.pl/nauka-zawodu/dokumenty-do-pobrania#" class="guild-link" target="_blank">🌐 https://crzb.com.pl/nauka-zawodu/dokumenty-do-pobrania#</a>
-<span class="guild-detail">Firmy niezrzeszone w Cechu:</span>
-<span class="guild-detail">Elektryk; Monter zabudowy i robót wykończeniowych w budownictwie; Murarz-tynkarz;</span>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="employers-list">
-<div class="employer-item">
-<div class="employer-name">Usługi Budowlane</div>
-<div class="employer-contact-person">👤 Duda Paweł</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>51-148 Wrocław, ul. Przybyszewskiego114/15</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48516129543">tel.  516 129 543</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">CZECHBUD</div>
-<div class="employer-contact-person">👤 Krzysztof Orszulski</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-505 Wrocław, ul. Nyska 81/56</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48601952777">TEL. 601 952 777</a></div>
-</div>
-</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Fryzjer</span>
-      <span class="trade-badge" style="background:#4caf5020; color:#4caf50; border:1px solid #4caf5040;">💇 Zawód usługowy</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">Fryzjer Cech Rzemiosł Różnych we Wrocławiu</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kazimierza Wielkiego 9</span>
-<span class="guild-detail">50-077 Wrocław</span>
-<a href="tel:+48690501774" class="guild-phone">📞 Tel. 690 501 774</a>
-<a href="mailto:e-mail  crr_aldona@poczta.onet.pl ," class="guild-link">✉️ e-mail  crr_aldona@poczta.onet.pl ,</a>
-<a href="http://www.cechwroclaw.pl/" class="guild-link" target="_blank">🌐 http://www.cechwroclaw.pl/</a>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="no-employers-msg">Aktualną listę pracodawców można uzyskać przez kontakt z odpowiednim cechem.</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Kucharz i kelner</span>
-      <span class="trade-badge" style="background:#ff8f0020; color:#ff8f00; border:1px solid #ff8f0040;">🍽️ Zawód gastronomiczny</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">Dolnośląski Cech Piekarzy i Cukierników</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kazimierza Wielkiego 9</span>
-<span class="guild-detail">50-077 Wrocław</span>
-<a href="mailto:tel. 71 344 61 97 ,  e-mail  info@dcpic.pl" class="guild-link">✉️ tel. 71 344 61 97 ,  e-mail  info@dcpic.pl</a>
-<a href="http://www.dcpic.pl/index.php" class="guild-link" target="_blank">🌐 http://www.dcpic.pl/index.php</a>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="employers-list">
-<div class="employer-item">
-<div class="employer-name">„Bistro u Nowaków”</div>
-<div class="employer-contact-person">👤 Nowak Leszek</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-330 Wróblowice, ul. B. Krzywoustego 5 lok.2</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713881897">71 3881897</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Bar „KRABIK”</div>
-<div class="employer-contact-person">👤 Agnieszka Rabiak</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-140 Żmigród, ul. Rybacka 4</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">„HORN” Rusiecki Piotr</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-305 Wrocław, ul. S. Jaracza 77 B</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">71 3301755</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">DZPZ Sp.z o.o.</div>
-<div class="employer-contact-person">👤 Beata Gabriel-Sajnok</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>54-289 Wrocław, ul.Wejherowska 34</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Rezydencja ROSATO</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-095 Mirków, ul. Wrocławska 64</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Hotel -Restauracja Bielany Danuta Gierczyk 55-040 b wroc , ul. Kleciń 3    713352910</div>
-<div class="employer-contact-person">👤 55-040               Bielany Wrocł.</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>ul. Klecińska 3</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713352910">71/3352910</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Kawiarnia i cukiernia</div>
-<div class="employer-contact-person">👤 ”U Spychały”</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-443 Wrocław, ul. Icchaka Lejba Pereca 7, z blisko 800 hotelami.</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713622195">71 362 21 95</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Novotel &amp; Ibis</div>
-<div class="employer-contact-person">👤 Wrocław Centrum</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-332 Wrocław, ul. Powstańców Śląskich</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48717224960">71 7224960</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48502198214">502 198 214</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Hotel MERCURE Wrocław Centrum</div>
-<div class="employer-contact-person">👤 Szef kuchni -Wojciech Marczak</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-159 Wrocław, pl. Dominikański 1</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713232744">71 3232744</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713232701">71 3232701</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Restauracja</div>
-<div class="employer-contact-person">👤 Nowa by Wiatrowski</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-551 Wrocław, ul. Borowska 160A</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Kuchnia” Pobite gary”</div>
-<div class="employer-contact-person">👤 Kamila Kraska</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-316 Wrocław, ul. B. Prusa 69/17</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Desilva Citi sp. z o.o.</div>
-<div class="employer-contact-person">👤 Novotel    Wrocław City Ibis Budget Wrocław Południe</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-011 Wrocław, ul. Wyścigowa 35</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713268303">71 3268303</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48538432692">538 432 692</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48882953090">882 953 090</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Wrocław Q Hotel</div>
-<div class="employer-contact-person">👤 Sp. z o.o. Sp. Komandytowa</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-334 Wrocław, ul. Zaolziańska 2</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48717491700">71 7491700</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48508313030">508 313 030</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Hotel Movenpic Grand</div>
-<div class="employer-contact-person">👤 Michał Bekisz</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>58-018 Wrocław, Ul. Stawowa  13</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48570364482">570 364 482</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Hotel i Restauracja „Monopol”</div>
-<div class="employer-contact-person">👤 Mariusz Kozak,</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-071 Wrocław, ul. H. Modrzejewskiej 2</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48717723740">71 7723740</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">GASTRMORK</div>
-<div class="employer-contact-person">👤 Tomasz Morkisz</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>52-013 Wrocław, 50-038 Wrocław, ul. Opolska 119h/9, ul. Kościuszki 16a/1a</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">WROREST S.C.</div>
-<div class="employer-contact-person">👤 Monika Piskozub- Olewińska</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-102 Wrocław, Rynek 35</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Restauracja  „Niewinni       Czarodzieje”</div>
-<div class="employer-contact-person">👤 Agnieszka Woźniak</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-107 Wrocław, Sukiennice 6</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Karmazyn BIS</div>
-<div class="employer-contact-person">👤 Joanna Pierz</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>54-130 Wrocław, ul. Horbaczewskiego 4-6</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">SOBOTEL Sp. z o.o.</div>
-<div class="employer-contact-person">👤 Piotr Żejmo</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-050 Sobótka, Al. Św. Anny 16</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48717151600">71 7151600</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48505032108">505 032 108</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">BAR „MYŚLIWSKI”</div>
-<div class="employer-contact-person">👤 Beata Gałka</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-061 Mietków, ul. Kolejowa 27</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713168368">71 3168368</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Rest.” Zielona oliwka”</div>
-<div class="employer-contact-person">👤 Szef kuchni Mateusz Bednarski</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-093 Kiełczów, ul. Rzeczna 58</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Four Points</div>
-<div class="employer-contact-person">👤 by Sheraton Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-322 Wrocław, ul. Gajowicka 130</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Citronex Trans Energy           Sp. z o. o.                         Restauracja PICARO</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-080 Kąty Wrocławskie, ul. Handlowa 5</div>
-</div>
-</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Lakiernik samochodowy, blacharz samochodowy</span>
-      <span class="trade-badge" style="background:#1565c020; color:#1565c0; border:1px solid #1565c040;">🚗 Zawód samochodowy</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">Blacharz samochodowy, lakiernik samochodowy Dolnośląski Cech Rzemiosł Metalowych i Motoryzacyjnych oraz Małej Przedsiębiorczości Wrocław, ul. Kaszubska 4</div>
-<div class="guild-details">
-<a href="mailto:Tel. 71 328-70-91, e-mail biuro@cechmetmot.k.pl" class="guild-link">✉️ Tel. 71 328-70-91, e-mail biuro@cechmetmot.k.pl</a>
-<a href="http://izba.wroc.pl/cecha/dolnoslaski-cech-rzemiosl-metalowych-i-motoryzacyjnych-oraz-malej-przedsiebiorczosci/" class="guild-link" target="_blank">🌐 http://izba.wroc.pl/cecha/dolnoslaski-cech-rzemiosl-metalowych-i-motoryzacyjnych-oraz-malej-przedsiebiorczosci/</a>
-<span class="guild-detail">blacharz samochodowy, elektromechanik pojazdów samochodowych</span>
-<span class="guild-detail">CENTRUM BLACHARSKO - LAKIERNICZE M. Wróbel sp. z o.o.</span>
-<span class="guild-detail">ul. Fabryczna 32, 55-080 Pietrzykowice</span>
-<span class="guild-detail">Firmy niezrzeszone w Cechu</span>
-<span class="guild-detail">Lakiernik samochodowy</span>
-<span class="guild-detail">Autoryzowany Salon i Serwis SEAT DYNAMICA</span>
-<span class="guild-detail">32-400 Myślenice</span>
-<span class="guild-detail">Jawornik 525</span>
-<a href="tel:+48122734400" class="guild-phone">📞 tel. 12 273 44 00</a>
-<span class="guild-detail">Toyota Długołęka Dobrygowski</span>
-<span class="guild-detail">📍 55-095 Długołęka</span>
-<span class="guild-detail">ul. Wrocławska 54</span>
-<a href="tel:+48660729400" class="guild-phone">📞 660 729 400</a>
-<span class="guild-detail">Lakiernik samochodowy i blacharz samochodowy</span>
-<span class="guild-detail">Konieczny Company</span>
-<span class="guild-detail">Bartłomiej Konieczny</span>
-<span class="guild-detail">Ewelina Kowalik</span>
-<span class="guild-detail">📍 55-114 Szewce</span>
-<span class="guild-detail">ul. Rzemieślnicza 7</span>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="no-employers-msg">Aktualną listę pracodawców można uzyskać przez kontakt z odpowiednim cechem.</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Piekarz</span>
-      <span class="trade-badge" style="background:#ff8f0020; color:#ff8f00; border:1px solid #ff8f0040;">🥖 Zawód gastronomiczny</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">PIEKARZ Dolnośląski Cech Piekarzy i Cukierników</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kazimierza Wielkiego 9</span>
-<span class="guild-detail">50-077 Wrocław</span>
-<a href="mailto:tel. 71 344 61 97 ,  e-mail  info@dcpic.pl" class="guild-link">✉️ tel. 71 344 61 97 ,  e-mail  info@dcpic.pl</a>
-<a href="http://www.dcpic.pl/index.php" class="guild-link" target="_blank">🌐 http://www.dcpic.pl/index.php</a>
-<span class="guild-detail">Firmy niezrzeszone w Cechu:</span>
-<span class="guild-detail">Piekarz</span>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="employers-list">
-<div class="employer-item">
-<div class="employer-name">AUCHAN</div>
-<div class="employer-contact-person">👤 Bielany Wrocławskie</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-040 Bielany Wrocławskie, ul. Francuska 6</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48717988671">71 7988671</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48502446262">502 446 262</a></div>
-</div>
-</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Sprzedawca</span>
-      <span class="trade-badge" style="background:#7b1fa220; color:#7b1fa2; border:1px solid #7b1fa240;">🛒 Zawód handlowy</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">Sprzedawca Umowy podpisywane w Dolnośląskim Cechu Piekarzy i Cukierników</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kazimierza Wielkiego 9</span>
-<span class="guild-detail">50-077 Wrocław</span>
-<a href="mailto:tel. 71 344 61 97 ,  e-mail  info@dcpic.pl" class="guild-link">✉️ tel. 71 344 61 97 ,  e-mail  info@dcpic.pl</a>
-<a href="http://www.dcpic.pl/index.php" class="guild-link" target="_blank">🌐 http://www.dcpic.pl/index.php</a>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="employers-list">
-<div class="employer-item">
-<div class="employer-name">Biegański Wojciech</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-262 Jen. Narodowej 85</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713221877">71 3221877</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Danielik Józef i ska</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>54-017 Średzka 14</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713491040">71 3491040</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Grabarczyk Agnieszka</div>
-<div class="employer-contact-person">👤 Kąty Wrocławskie</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-080 Rynek 18/19</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713166829">71 3166829</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Grabarczyk Ryszard</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-212 Odkrywców 22</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713633900">71 3633900</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Jaworscy S.R.s.c</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>54-613 Krzemieniecka 47</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713139524">71 3139524</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Kibało Stanisław</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>54-017 Średzka 28</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713493414">71 349 3414</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Łuźniak Ryszard</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-354 Mikołaja Reja 22</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713225157">71 3225157</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Machalski-Tomski</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>51-644 Olszewskiego 77</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713452948">71 3452948</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Siemionko Sergiusz i ska</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>51-672 Partyzantów 16</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713485340">71 3485340</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Cukiernia u Spychały</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-433 Pereca 7</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713622195">71 3622195</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Tyszko Marian i ska</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-223 Al. Pracy 7a</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713633427">71 3633427</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Wróbel Piotr</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>51-126 Sulejowska 19</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713458028">71 3458028</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Zając Izabela</div>
-<div class="employer-contact-person">👤 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-369 M. C.-Skłodowskiej 51</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713529199">71 3529199</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Bąkowski Marian</div>
-<div class="employer-contact-person">👤 Rogów Sobócki</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-045 Wrocławska 55</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Sprzedawca</div>
-<div class="employer-contact-person">👤 Umowy podpisywane u pracodawców</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">DA-ROM</div>
-<div class="employer-contact-person">👤 Roman Skałecki</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-330 Piastowska 2a</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713968734">71 3968734</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Sklep Ogólnospożywczy „Marysieńka”</div>
-<div class="employer-contact-person">👤 Grzegorz Wójcik</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>51-200 Krzywoustego 320, Oleska 5</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713456716">71 3456716</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713454253">71 3454253</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Społem “Tęcza “ kadry</div>
-<div class="employer-contact-person">👤 Hala Targowa “Tęcza “</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>53-603 ul. Tęczowa 65, Bajana 1</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713433345">71 3433345</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">71 3620684</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Hala Sprzedaży Transgourmet (Selgros)</div>
-<div class="employer-contact-person">👤 Polska- Sp. z o.o.</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-426 Krakowska 71-105</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713354102">71 3354102</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Żabka nr Z0738</div>
-<div class="employer-contact-person">👤 Anna Kozak- Kowalik</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>50-326 ul. K. Józefa Poniatowskiego 21/1B, Wrocław</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">AUCHAN Centrum Handlowe KORONA</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>51-421 B. Krzywoustego 126 Wrocław</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48717988671">71 7988671</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48502446262">502 446 262</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">AUCHAN Bielany Wrocławskie</div>
-<div class="employer-contact-person">👤 Bielany Wrocławskie</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-040 Francuska 6</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48717988671">71 7988671</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48502446262">502 446 262</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">P.P.H.U. „TRAK”</div>
-<div class="employer-contact-person">👤 Sklep „RABAT”</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-114 Szkolna 22a</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713127431">71 3127431</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">MIT 10 Sp.z o.o. S.K</div>
-<div class="employer-contact-person">👤 Paweł Witkowski</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-200 1-go Maja 31</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">PHU Agnieszka Gelger</div>
-<div class="employer-contact-person">👤 Sklep Żabka</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-200 ul. Miła 7/3u</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">CONECT             Małgorzata Ruszkowska</div>
-<div class="employer-contact-person">👤 Jelcz Laskowice</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>56-231 ul. Rumiankowa 141</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48601828058">601 828 058</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Żabka nr Z 724  Małgorzata Cierniewska</div>
-<div class="employer-contact-person">👤 Jelcz-Laskowice</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-220 ul. Oławska 70</div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Cukiernia „BakeMania”</div>
-<div class="employer-contact-person">👤 Anna Możejko</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>52-436 ul. Karmelkowa 2a,</div>
-</div>
-</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Cukiernik</span>
-      <span class="trade-badge" style="background:#ff8f0020; color:#ff8f00; border:1px solid #ff8f0040;">🍰 Zawód gastronomiczny</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">CUKIERNIK Dolnośląski Cech Piekarzy i Cukierników</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kazimierza Wielkiego 9</span>
-<span class="guild-detail">50-077 Wrocław</span>
-<a href="mailto:tel. 71 344 61 97 ,  e-mail  info@dcpic.pl" class="guild-link">✉️ tel. 71 344 61 97 ,  e-mail  info@dcpic.pl</a>
-<a href="http://www.dcpic.pl/index.php" class="guild-link" target="_blank">🌐 http://www.dcpic.pl/index.php</a>
-<span class="guild-detail">Firmy niezrzeszone w Cechu:</span>
-<span class="guild-detail">Cukiernik</span>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="employers-list">
-<div class="employer-item">
-<div class="employer-name">AUCHAN</div>
-<div class="employer-contact-person">👤 Bielany Wrocławskie</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-040 Bielany Wrocławskie, ul. Francuska 6</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48717988671">71 7988671</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48502446262">502 446 262</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">Cukiernia- Dariusz Babiuch</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>54-028 Wrocław, Ul. Rajska 1a</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48601384300">601 384 300</a></div>
-</div>
-<div class="employer-item">
-<div class="employer-name">„BakeMania”</div>
-<div class="employer-contact-person">👤 Anna Możejko</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>52-436 Wrocław, ul. Karmelkowa 2a,</div>
-</div>
-</div>
-    </div>
-  </div>
-</div>
-
-<div class="trade-card">
-  <button class="trade-card-header faq-question" aria-expanded="false">
-    <div class="trade-header-inner">
-      <span class="trade-name">Stolarz, tapicer</span>
-      <span class="trade-badge" style="background:#8d6e6320; color:#8d6e63; border:1px solid #8d6e6340;">🪵 Zawód rzemieślniczy</span>
-    </div>
-    <span class="trade-toggle-icon">+</span>
-  </button>
-  <div class="trade-card-body faq-answer">
-    <div class="trade-card-content">
-      <div class="guild-box">
-<div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
-<div class="guild-name">Stolarz, tapicer Cech Rzemiosł Różnych we Wrocławiu</div>
-<div class="guild-details">
-<span class="guild-detail">ul. Kazimierza Wielkiego 9</span>
-<span class="guild-detail">50-077 Wrocław</span>
-<a href="tel:+48690501774" class="guild-phone">📞 Tel. 690 501 774</a>
-<a href="mailto:e-mail  crr_aldona@poczta.onet.pl ," class="guild-link">✉️ e-mail  crr_aldona@poczta.onet.pl ,</a>
-<a href="http://www.cechwroclaw.pl/" class="guild-link" target="_blank">🌐 http://www.cechwroclaw.pl/</a>
-<span class="guild-detail">Firmy niezrzeszone w Cechu:</span>
-<span class="guild-detail">Stolarz</span>
-<span class="guild-detail">RAMS Sp. z o.o.</span>
-<span class="guild-detail">Sp. komandytowa</span>
-<span class="guild-detail">📍 55-093 Kiełczów</span>
-<span class="guild-detail">ul. Wiązowa 5</span>
-<span class="guild-detail">tel.</span>
-</div></div>
-      <div class="employers-section-label">Pracodawcy</div>
-      <div class="employers-list">
-<div class="employer-item">
-<div class="employer-name">Stolarstwo G.T.J.</div>
-<div class="employer-contact-person">👤 Jan Jakubek</div>
-<div class="employer-detail"><span class="emp-icon">📍</span>55-040 Domasław, ul. Akacjowa 11, 57-100 Strzelin, Gęsiniec, ul. Świerkowa 15</div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713119978">tel. 71 311 99 78</a></div>
-<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:+48713923872">71 3923872</a></div>
-</div>
-</div>
-    </div>
-  </div>
-</div>
+        <section class="employer-section" id="employers-root">
+            <div class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Ładowanie listy pracodawców...</p>
+            </div>
         </section>
+
 
         <div class="employer-cta">
             <p style="font-size:1.1rem; color:#444; margin-bottom:1.5rem;">Nie możesz znaleźć pracodawcy? Skontaktuj się ze szkołą – pomożemy!</p>

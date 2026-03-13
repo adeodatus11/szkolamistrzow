@@ -90,15 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. FAQ Accordion Behavior
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const isActive = question.classList.contains('active');
+    // 4. Accordion Behavior (Event Delegation)
+    document.addEventListener('click', (e) => {
+        const questionSize = e.target.closest('.faq-question');
+        if (questionSize) {
+            const isActive = questionSize.classList.contains('active');
             
-            // Close all items
-            faqQuestions.forEach(q => {
+            // Close all items in the same container
+            const container = questionSize.closest('section') || document.body;
+            container.querySelectorAll('.faq-question').forEach(q => {
                 q.classList.remove('active');
                 const p = q.nextElementSibling;
                 if(p) p.style.maxHeight = null;
@@ -106,14 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // If it wasn't active, open it
             if (!isActive) {
-                question.classList.add('active');
-                const answer = question.nextElementSibling;
+                questionSize.classList.add('active');
+                const answer = questionSize.nextElementSibling;
                 if(answer) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
                 }
             }
-        });
+        }
     });
+
     // 5. Timeline Horizontal Scroll
     const scrollContainer = document.getElementById('htl-scroll-container');
     const prevBtn = document.getElementById('htl-prev');
@@ -146,5 +147,115 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Initial state
         setTimeout(updateScrollButtons, 100);
+    }
+
+    // 6. Employers Page Logic (XML Loader)
+    const employersRoot = document.getElementById('employers-root');
+    const searchInput = document.getElementById('employer-search');
+    let allTradesData = [];
+
+    if (employersRoot) {
+        const loadEmployers = async () => {
+            try {
+                const response = await fetch('pracodawcy.xml');
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                const trades = xmlDoc.querySelectorAll('zawod');
+                
+                allTradesData = Array.from(trades).map(tradeNode => {
+                    const name = tradeNode.getAttribute('nazwa');
+                    const cechNode = tradeNode.querySelector('cech');
+                    const employersNodes = tradeNode.querySelectorAll('pracodawcy firma');
+                    
+                    return {
+                        name,
+                        cech: cechNode ? {
+                            nazwa: cechNode.querySelector('nazwa_firmy')?.textContent || '',
+                            adres: cechNode.querySelector('adres_firmy')?.textContent || '',
+                            telefon: cechNode.querySelector('telefon')?.textContent || '',
+                            email: cechNode.querySelector('email')?.textContent || '',
+                            www: cechNode.querySelector('www')?.textContent || ''
+                        } : null,
+                        employers: Array.from(employersNodes).map(emp => ({
+                            nazwa: emp.querySelector('nazwa_firmy')?.textContent || '',
+                            adres: emp.querySelector('adres_firmy')?.textContent || '',
+                            telefon: emp.querySelector('telefon')?.textContent || '',
+                            kontakt: emp.querySelector('osoba_kontaktowa')?.textContent || ''
+                        }))
+                    };
+                });
+
+                renderTrades(allTradesData);
+            } catch (error) {
+                console.error('Error loading XML:', error);
+                employersRoot.innerHTML = '<p class="error-msg">Wystąpił błąd podczas ładowania danych. Spróbuj odświeżyć stronę.</p>';
+            }
+        };
+
+        const renderTrades = (tradesToShow) => {
+            if (tradesToShow.length === 0) {
+                employersRoot.innerHTML = '<p class="no-results">Nie znaleziono zawodów ani firm pasujących do wyszukiwania.</p>';
+                return;
+            }
+
+            employersRoot.innerHTML = tradesToShow.map(trade => `
+                <div class="trade-card">
+                    <button class="trade-card-header faq-question" aria-expanded="false">
+                        <div class="trade-header-inner">
+                            <span class="trade-name">${trade.name}</span>
+                        </div>
+                        <span class="trade-toggle-icon">+</span>
+                    </button>
+                    <div class="trade-card-body faq-answer">
+                        <div class="trade-card-content">
+                            ${trade.cech ? `
+                                <div class="guild-box">
+                                    <div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
+                                    <div class="guild-name">${trade.cech.nazwa}</div>
+                                    <div class="guild-details">
+                                        ${trade.cech.adres ? `<span class="guild-detail">${trade.cech.adres}</span>` : ''}
+                                        ${trade.cech.telefon ? `<a href="tel:${trade.cech.telefon.replace(/\s/g, '')}" class="guild-phone">📞 ${trade.cech.telefon}</a>` : ''}
+                                        ${trade.cech.email ? `<a href="mailto:${trade.cech.email}" class="guild-link">✉️ ${trade.cech.email}</a>` : ''}
+                                        ${trade.cech.www ? `<a href="${trade.cech.www}" class="guild-link" target="_blank">🌐 ${trade.cech.www}</a>` : ''}
+                                    </div>
+                                </div>
+                            ` : ''}
+                            
+                            <div class="employers-section-label">Pracodawcy</div>
+                            ${trade.employers.length > 0 ? `
+                                <div class="employers-list">
+                                    ${trade.employers.map(emp => `
+                                        <div class="employer-item">
+                                            <div class="employer-name">${emp.nazwa}</div>
+                                            ${emp.kontakt ? `<div class="employer-contact-person">👤 ${emp.kontakt}</div>` : ''}
+                                            ${emp.adres ? `<div class="employer-detail"><span class="emp-icon">📍</span>${emp.adres}</div>` : ''}
+                                            ${emp.telefon ? `<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:${emp.telefon.replace(/\s/g, '')}">${emp.telefon}</a></div>` : ''}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : `
+                                <div class="no-employers-msg">Aktualną listę pracodawców można uzyskać przez kontakt z odpowiednim cechem.</div>
+                            `}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase().trim();
+                const filtered = allTradesData.filter(trade => {
+                    const tradeMatches = trade.name.toLowerCase().includes(term);
+                    const guildMatches = trade.cech?.nazwa.toLowerCase().includes(term);
+                    const employerMatches = trade.employers.some(emp => emp.nazwa.toLowerCase().includes(term));
+                    return tradeMatches || guildMatches || employerMatches;
+                });
+                renderTrades(filtered);
+            });
+        }
+
+        loadEmployers();
     }
 });
