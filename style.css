@@ -694,7 +694,21 @@ a:hover {
     }
     
     .school-card, .feature-item, .info-card {
-        padding: 2rem;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-container {
+        padding: 3rem 5%;
     }
 
     .instructions-box {
