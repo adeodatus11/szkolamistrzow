@@ -186,12 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const trades = xmlDoc.querySelectorAll('zawod');
                     
                     allTradesData = Array.from(trades).map(tradeNode => {
-                        const name = tradeNode.getAttribute('nazwa');
+                        const rawName = tradeNode.getAttribute('nazwa') || '';
                         const cechNode = tradeNode.querySelector('cech');
                         const employersNodes = tradeNode.querySelectorAll('pracodawcy firma');
                         
                         return {
-                            name,
+                            name: rawName,
                             cech: cechNode ? {
                                 nazwa: cechNode.querySelector('nazwa_firmy')?.textContent || '',
                                 adres: cechNode.querySelector('adres_firmy')?.textContent || '',
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="trade-header-inner">
                             <span class="trade-icon-main">${trade.icon || '🛠️'}</span>
                             <div class="trade-name">
-                                ${trade.name.split(';').map(part => `<span>${part.trim()}</span>`).join('')}
+                                ${trade.name.split(/;\s*/).filter(n => n.length > 0).map(part => `<span>${part.trim()}</span>`).join('')}
                             </div>
                         </div>
                         <i class="fa-solid fa-chevron-down trade-toggle-icon"></i>
