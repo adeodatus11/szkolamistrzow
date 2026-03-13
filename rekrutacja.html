@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szkoła Mistrzów – Szczegółowy przewodnik rekrutacyjny 2026</title>
+    <meta name="description" content="Krok po kroku – szczegółowy przewodnik rekrutacyjny do Szkoły Mistrzów na rok szkolny 2026/2027.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <style>
+        .rec-hero {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #388e3c 100%);
+            color: #fff;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .rec-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.8rem; }
+        .rec-hero p { font-size: 1.05rem; opacity: 0.9; max-width: 680px; margin: 0 auto; }
+        .rec-container { max-width: 860px; margin: 0 auto; padding: 3rem 5%; }
+        .step-card {
+            display: flex; gap: 1.5rem; margin-bottom: 2.5rem; align-items: flex-start;
+        }
+        .step-num {
+            flex-shrink: 0; width: 52px; height: 52px;
+            background: var(--primary-color); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1.4rem; font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,100,0,0.3);
+        }
+        .step-num.highlight {
+            background: #ff8f00; box-shadow: 0 4px 15px rgba(255,143,0,0.4);
+        }
+        .step-body {
+            flex: 1; background: #fff; border-radius: 12px; padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--primary-color);
+        }
+        .step-body.highlight { border-left-color: #ff8f00; background: #fffde7; }
+        .step-title-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
+        .step-icon { font-size: 1.5rem; }
+        .step-title { margin: 0; font-size: 1.3rem; color: var(--primary-color); }
+        .step-body.highlight .step-title { color: #e65100; }
+        .step-date {
+            display: inline-block; background: #e8f5e9; color: #1b5e20;
+            font-weight: 600; font-size: 0.9rem; padding: 0.3rem 0.8rem;
+            border-radius: 20px; margin-bottom: 0.8rem;
+        }
+        .step-body.highlight .step-date { background: #fff3e0; color: #e65100; }
+        .step-body p { margin: 0 0 0.7rem; color: var(--text-color); line-height: 1.6; }
+        .step-body ul { margin: 0; padding-left: 1.2rem; color: var(--text-color); line-height: 1.8; }
+        .tip-box {
+            background: #e3f2fd; border-left: 4px solid #1565c0;
+            border-radius: 8px; padding: 1rem 1.2rem; margin-top: 0.8rem;
+            font-size: 0.95rem; color: #0d47a1;
+        }
+        .tip-box strong { color: #1565c0; }
+        .summary-table {
+            background: #fff; border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; margin-top: 3rem;
+        }
+        .summary-table-header {
+            background: var(--primary-color); color: #fff; padding: 1.2rem 1.5rem;
+        }
+        .summary-table-header h2 { margin: 0; font-size: 1.3rem; }
+        .summary-table table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+        .summary-table th { padding: 0.9rem 1.2rem; text-align: left; background: #f1f8e9; border-bottom: 2px solid #c8e6c9; color: #1b5e20; }
+        .summary-table td { padding: 0.8rem 1.2rem; border-bottom: 1px solid #f0f0f0; color: var(--text-color); }
+        .summary-table td strong { color: var(--primary-color); }
+        .scored-box {
+            margin-top: 2.5rem; background: #f1f8e9; border-radius: 12px;
+            padding: 1.5rem 2rem; border-left: 4px solid var(--primary-color);
+        }
+        .scored-box h2 { margin-top: 0; color: var(--primary-color); font-size: 1.2rem; }
+        .rec-cta { text-align: center; margin-top: 2.5rem; padding-bottom: 3rem; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html" style="display:flex; align-items:center; gap:15px; color:inherit; text-decoration:none;">
+                <img src="orzeł logo ZSZ5.png" alt="Logo Szkoła Mistrzów" class="logo">
+                <span class="slogan">Szkoła Mistrzów.</span>
+            </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Otwórz menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#promocja">O szkole</a></li>
+                <li><a href="index.html#rekrutacja" style="color:var(--primary-color);">Rekrutacja</a></li>
+                <li><a href="index.html#zawody">Oferta zawodów</a></li>
+                <li><a href="pracodawcy.html">Cechy i Pracodawcy</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="rec-hero">
+            <h1>Rekrutacja – przewodnik krok po kroku (2026)</h1>
+            <p>Wszystkie etapy rekrutacji z dokładnymi terminami i praktycznymi wskazówkami. Kliknij w dowolny etap na osi czasu strony głównej, aby przejść bezpośrednio do szczegółów.</p>
+        </section>
+
+        <div class="rec-container">
+
+            <!-- Wideo instruktażowe -->
+            <div style="margin-bottom: 3.5rem;">
+                <h2 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.5rem; text-align: center;">Jak zarejestrować się w systemie? – Instruktaż wideo</h2>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); background: #f0f0f0;">
+                    <iframe 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                        src="https://www.youtube-nocookie.com/embed/eKVk0b31kMo?rel=0" 
+                        title="Instruktaż rekrutacji" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #666; font-style: italic;">
+                        💡 Powyższy film to instruktaż z roku 2024. Mimo upływu czasu, proces rejestracji pozostaje bardzo zbliżony.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=eKVk0b31kMo" target="_blank" style="display: inline-block; margin-top: 10px; color: var(--primary-color); font-weight: 600; text-decoration: underline;">
+                        📺 Jeśli wideo się nie wyświetla, kliknij tutaj, aby obejrzeć je bezpośrednio na YouTube
+                    </a>
+                </div>
+            </div>
+
+            <!-- Krok 1 -->
+            <div class="step-card" id="step-1">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">🖥️</span>
+                        <h2 class="step-title">Rejestracja w systemie rekrutacji</h2>
+                    </div>
+                    <span class="step-date">📅 18 maja – 22 czerwca 2026</span>
+                    <p>Zarejestruj się w systemie: <a href="https://rekrutacje.edu.wroclaw.pl" target="_blank" style="color:var(--primary-color); font-weight:600;">rekrutacje.edu.wroclaw.pl</a>. W tym czasie możesz zmieniać preferencje szkół i zawodów.</p>
+                    <p><strong>Ważne:</strong> do systemu rekrutacyjnego należy dołączyć skany dokumentów:</p>
+                    <ul>
+                        <li>skan świadectwa ukończenia szkoły podstawowej</li>
+                        <li>skan zaświadczenia o wynikach egzaminu ósmoklasisty</li>
+                    </ul>
+                    <div class="tip-box" style="margin-top:0.8rem;">
+                        💡 <strong>Protip:</strong> W systemie rekrutacyjnym wybierz <strong>więcej niż jeden zawód i więcej niż jedną szkołę</strong>. Możesz wskazać kilka preferencji w kolejności – to zwiększa Twoje szanse na miejsce, jeśli pierwszy wybór okaże się trudniejszy. Nie ograniczaj się do jednej opcji!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Krok 2 -->
+            <div class="step-card" id="step-2">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">🩺</span>
+                        <h2 class="step-title">Skierowanie do lekarza medycyny pracy</h2>
+                    </div>
+                    <span class="step-date">📅 18 maja – 16 lipca 2026</span>
+                    <p>Po rejestracji zgłoś się do szkoły po <strong>skierowanie na badanie lekarskie</strong>. Lekarz sprawdza brak przeciwwskazań zdrowotnych do nauki wybranego zawodu i wystawia odpowiednie zaświadczenie. Najlepiej dostarczyć je do szkoły jak najwcześniej.</p>
+                </div>
+            </div>
+
+            <!-- Krok 3 -->
+            <div class="step-card" id="step-3">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">🏢</span>
+                        <h2 class="step-title">Poszukiwanie pracodawcy</h2>
+                    </div>
+                    <span class="step-date">📅 W trakcie rekrutacji</span>
+                    <p>Uczeń szkoły branżowej musi znaleźć pracodawcę z <strong>uprawnieniami do szkolenia młodocianych pracowników</strong>. Można skorzystać z naszej listy lub cechów rzemieślniczych.</p>
+                    <a href="pracodawcy.html" style="color:var(--primary-color); font-weight:600; text-decoration:underline;">👉 Sprawdź listę pracodawców i kontakty do cechów</a>
+                </div>
+            </div>
+
+            <!-- Krok 4 -->
+            <div class="step-card" id="step-4">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">🔬</span>
+                        <h2 class="step-title">Badania wstępne u pracodawcy</h2>
+                    </div>
+                    <span class="step-date">📅 Po wyborze pracodawcy</span>
+                    <p>Pracodawca wystawia skierowanie na <strong>badania wstępne</strong>. W zawodach gastronomicznych mogą być wymagane dodatkowe <strong>badania sanitarno-epidemiologiczne (sanepid)</strong>. Badania te pokrywa kandydat.</p>
+                </div>
+            </div>
+
+            <!-- Krok 5 -->
+            <div class="step-card" id="step-5">
+                <div class="step-num">5</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">📋</span>
+                        <h2 class="step-title">Dostarczenie świadectwa i wyników egzaminu</h2>
+                    </div>
+                    <span class="step-date">📅 3–7 lipca 2026 (do godz. 15:00)</span>
+                    <p>Po zakończeniu szkoły podstawowej dostarcz do szkoły w oryginałach:</p>
+                    <ul>
+                        <li><strong>świadectwo ukończenia szkoły podstawowej</strong></li>
+                        <li><strong>zaświadczenie o wynikach egzaminu ósmoklasisty</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rekomendacja -->
+            <div class="step-card" id="step-rekomendacja">
+                <div class="step-num highlight">💡</div>
+                <div class="step-body highlight">
+                    <h2 class="step-title" style="margin:0 0 0.8rem;">Rekomendacja szkoły dla zdecydowanych kandydatów</h2>
+                    <p>Jeżeli uczeń jest zdecydowany, że chce uczyć się w naszej szkole, rekomendujemy <strong>przynieść oryginały dokumentów jak najwcześniej – najlepiej pod koniec czerwca</strong>, zaraz po zakończeniu roku szkolnego:</p>
+                    <ul style="margin-bottom:0.8rem;">
+                        <li><strong>świadectwo ukończenia szkoły podstawowej</strong></li>
+                        <li><strong>zaświadczenie o wynikach egzaminu ósmoklasisty</strong></li>
+                    </ul>
+                    <p>Nie trzeba czekać do ostatniego dnia. Przyspiesza to rekrutację, pozwala wcześniej potwierdzić miejsce i zmniejsza ryzyko problemów organizacyjnych.</p>
+                </div>
+            </div>
+
+            <!-- Krok 6 -->
+            <div class="step-card" id="step-6">
+                <div class="step-num">6</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">📣</span>
+                        <h2 class="step-title">Ogłoszenie list kandydatów zakwalifikowanych</h2>
+                    </div>
+                    <span class="step-date">📅 15 lipca 2026 do godz. 15:00</span>
+                    <p>Szkoła ogłasza listy kandydatów zakwalifikowanych do przyjęcia.</p>
+                </div>
+            </div>
+
+            <!-- Krok 7 -->
+            <div class="step-card" id="step-7">
+                <div class="step-num">7</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">✅</span>
+                        <h2 class="step-title">Potwierdzenie woli przyjęcia</h2>
+                    </div>
+                    <span class="step-date">📅 16–21 lipca 2026</span>
+                    <p>Dostarcz do szkoły w oryginałach:</p>
+                    <ul>
+                        <li>Świadectwo ukończenia szkoły podstawowej</li>
+                        <li>Wyniki egzaminu ósmoklasisty</li>
+                        <li>Zaświadczenie lekarskie o braku przeciwwskazań do nauki zawodu</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Krok 8 -->
+            <div class="step-card" id="step-8">
+                <div class="step-num">8</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">🎉</span>
+                        <h2 class="step-title">Ogłoszenie listy uczniów przyjętych</h2>
+                    </div>
+                    <span class="step-date">📅 22 lipca 2026 do godz. 12:00</span>
+                    <p>Szkoła ogłasza ostateczną listę uczniów przyjętych do klas pierwszych.</p>
+                </div>
+            </div>
+
+            <!-- Krok 9 -->
+            <div class="step-card" id="step-9">
+                <div class="step-num">9</div>
+                <div class="step-body">
+                    <div class="step-title-row">
+                        <span class="step-icon">🤝</span>
+                        <h2 class="step-title">Umowa o praktyczną naukę zawodu</h2>
+                    </div>
+                    <span class="step-date">📅 Do połowy sierpnia 2026</span>
+                    <p>W systemie dualnym konieczne jest podpisanie <strong>umowy o praktyczną naukę zawodu</strong> z pracodawcą lub złożenie <strong>deklaracji pracodawcy o zatrudnieniu ucznia</strong>. Umowę złóż w szkole najpóźniej do połowy sierpnia.</p>
+                    <a href="WZÓR-UMOWA%20O%20PRACĘ%20w%20celu%20przygot.%20zawod.(ze%20szkoły)%20-Wzór%202024%20(1).pdf" target="_blank" style="color:var(--primary-color); font-weight:600; text-decoration:underline;">📄 Pobierz wzór umowy o pracę w celu przygotowania zawodowego (PDF)</a>
+                </div>
+            </div>
+
+            <!-- Tabela skrót -->
+            <div class="summary-table">
+                <div class="summary-table-header"><h2>📅 Najważniejsze terminy – skrót</h2></div>
+                <table>
+                    <thead><tr><th>Etap</th><th>Termin</th></tr></thead>
+                    <tbody>
+                        <tr><td>Rejestracja w systemie</td><td><strong>18 maja – 22 czerwca 2026</strong></td></tr>
+                        <tr style="background:#fafafa;"><td>Skierowanie do lekarza medycyny pracy</td><td><strong>18 maja – 16 lipca 2026</strong></td></tr>
+                        <tr><td>Dostarczenie świadectwa i wyników egzaminu</td><td><strong>3–7 lipca 2026</strong></td></tr>
+                        <tr style="background:#fafafa;"><td>Lista kandydatów zakwalifikowanych</td><td><strong>15 lipca 2026</strong></td></tr>
+                        <tr><td>Potwierdzenie woli przyjęcia</td><td><strong>16–21 lipca 2026</strong></td></tr>
+                        <tr style="background:#fafafa;"><td>Lista uczniów przyjętych</td><td><strong>22 lipca 2026</strong></td></tr>
+                        <tr><td>Złożenie umowy z pracodawcą</td><td><strong>Do połowy sierpnia 2026</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Punktowane przedmioty -->
+            <div class="scored-box">
+                <h2>Przedmioty punktowane w rekrutacji ze szkoły podstawowej</h2>
+                <p style="margin:0; font-size:1.05rem; color:var(--text-color);">Na Twoje punkty składają się oceny ze świadectwa: <strong>język polski, język obcy, matematyka</strong> oraz przedmiot dodatkowy dla wybranego zawodu (np. biologia, geografia, plastyka, technika, informatyka, fizyka).</p>
+            </div>
+
+            <div class="rec-cta">
+                <a href="https://rekrutacje.edu.wroclaw.pl" target="_blank" class="cta-button">Przejdź do systemu rekrutacji →</a>
+                &nbsp;
+                <a href="index.html#rekrutacja" class="cta-button secondary">← Wróć na stronę główną</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">Szkoła Mistrzów.</div>
+            <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
+        </div>
+    </footer>
+</body>
+</html>
