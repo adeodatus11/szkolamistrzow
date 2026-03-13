@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const questionSize = e.target.closest('.faq-question');
         if (questionSize) {
+            const card = questionSize.closest('.trade-card');
             const isActive = questionSize.classList.contains('active');
             
             // Close all items in the same container
@@ -102,11 +103,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 q.classList.remove('active');
                 const p = q.nextElementSibling;
                 if(p) p.style.maxHeight = null;
+                // Remove expanded class if it's a trade card
+                const otherCard = q.closest('.trade-card');
+                if (otherCard) otherCard.classList.remove('expanded');
             });
 
             // If it wasn't active, open it
             if (!isActive) {
                 questionSize.classList.add('active');
+                if (card) card.classList.add('expanded');
                 const answer = questionSize.nextElementSibling;
                 if(answer) {
                     answer.style.maxHeight = answer.scrollHeight + "px";
@@ -191,6 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         };
                     });
                 }
+
+                // Sort alphabetically by name
+                allTradesData.sort((a, b) => a.name.localeCompare(b.name, 'pl'));
 
                 renderTrades(allTradesData);
             } catch (error) {
