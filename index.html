@@ -29,6 +29,7 @@
                 <li><a href="#zawody">Oferta zawodów</a></li>
                 <li><a href="pracodawcy.html">Pracodawcy</a></li>
                 <li><a href="dokumenty.html">Dokumenty</a></li>
+                <li><a href="ciekawostki.html">Ciekawostki</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
@@ -105,7 +106,7 @@
                 .htl-wrap::-webkit-scrollbar-track { background: #f1f8e9; border-radius: 2px; }
                 .htl-wrap::-webkit-scrollbar-thumb { background: #a5d6a7; border-radius: 2px; }
                 .htl { display: flex; align-items: flex-start; gap: 0; min-width: max-content; padding: 2rem 0.5rem 0.5rem; position: relative; }
-                .htl::before { content: ''; position: absolute; top: 2.5rem; left: 40px; right: 40px; height: 3px; background: linear-gradient(90deg, #2e7d32, #81c784); border-radius: 2px; }
+                .htl::before { content: ''; position: absolute; top: 4.15rem; left: 40px; right: 40px; height: 3px; background: linear-gradient(90deg, #2e7d32, #81c784); border-radius: 2px; }
                 .htl-step { display: flex; flex-direction: column; align-items: center; width: 150px; flex-shrink: 0; text-align: center; text-decoration: none; cursor: pointer; transition: opacity 0.2s; }
                 .htl-step:hover { opacity: 0.8; }
                 .htl-dot { width: 16px; height: 16px; background: #2e7d32; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px #2e7d32; margin-bottom: 1rem; flex-shrink: 0; z-index: 1; transition: transform 0.2s; }
@@ -213,13 +214,10 @@
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
                     <p style="text-align: center; max-width: 700px; font-size: 1.1rem; color: #555;">Bądź na bieżąco z życiem szkoły! Codzienne relacje, ważne ogłoszenia i sukcesy naszych uczniów znajdziesz na naszym profilu na Facebooku.</p>
                     
-                    <!-- Dynamiczny podgląd Facebooka (iframe) -->
-                    <div style="width: 100%; max-width: 500px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd;">
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fzsz5wro&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                            width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    </div>
-                    
-                    <a href="https://www.facebook.com/zsz5wro" target="_blank" class="cta-button" style="background: #1877F2; border: none;">👍 Zobacz nasz profil na Facebooku</a>
+                    <a href="https://www.facebook.com/zsz5wro" target="_blank" class="cta-button" style="background: #1877F2; border: none; font-size: 1.2rem; padding: 1.2rem 2.5rem; display: flex; align-items: center; gap: 12px; transition: transform 0.2s, background 0.2s;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Odwiedź nasz Facebook
+                    </a>
                 </div>
             </div>
         </section>
@@ -304,7 +302,7 @@
                     
                     <!-- Google Maps Embed -->
                     <div style="margin: 2.5rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 350px;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m1a!1s0x470fc2778888888b%3A0x6666666666666666!2zU2zEmcW8bmEgNzgsIDUzLTMwNiBXcm9jxYJhdw!5e0!3m2!1spl!2spl!4v1710350000000!5m2!1spl!2spl" 
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.7635648776177!2d17.03344339678955!3d51.094370800000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc2756d9072d9%3A0x436e739505b4aa69!2zWmVzcMOzxYIgU3prw7PFgiBaYXdvZG93eWNoIG5yIDU!5e0!3m2!1spl!2spl!4v1773429537172!5m2!1spl!2spl" 
                             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
@@ -321,9 +319,38 @@
         <div class="footer-content">
             <div class="footer-logo">Szkoła Mistrzów</div>
             <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
-            <div style="margin-top: 1rem;">
-                <a href="https://www.zsz5.edupage.org" target="_blank" style="color: #fff; text-decoration: underline; font-size: 0.9rem;">www.zsz5.edupage.org</a>
+            
+            <div class="footer-socials" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://www.zsz5.edupage.org" target="_blank" class="footer-social-btn" title="Oficjalna strona">🌐 WWW</a>
+                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook">FB</a>
+                <a href="https://www.youtube.com/@zesposzkozawodowychnr5wroc483" target="_blank" class="footer-social-btn" title="YouTube">YT</a>
+                <a href="https://www.linkedin.com/company/zesp%C3%B3%C5%82-szk%C3%B3%C5%82-zawodowych-nr-5/" target="_blank" class="footer-social-btn" title="LinkedIn">IN</a>
+                <a href="https://zsz5.edupage.org/a/rodo" target="_blank" class="footer-social-btn rodo" title="RODO">RODO</a>
             </div>
+
+            <style>
+                .footer-social-btn {
+                    background: rgba(255,255,255,0.1);
+                    color: #fff;
+                    padding: 0.6rem 1.2rem;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 0.85rem;
+                    transition: all 0.2s;
+                    border: 1px solid rgba(255,255,255,0.2);
+                }
+                .footer-social-btn:hover {
+                    background: #fff;
+                    color: var(--primary-color);
+                    transform: translateY(-3px);
+                }
+                .footer-social-btn.rodo {
+                    background: transparent;
+                    border: 1px dashed rgba(255,255,255,0.4);
+                    opacity: 0.8;
+                }
+            </style>
         </div>
     </footer>
 </body>

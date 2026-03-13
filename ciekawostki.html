@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciekawostki i Sukcesy – Szkoła Mistrzów</title>
+    <meta name="description" content="Poznaj ciekawostki o Szkole Mistrzów, nasze sukcesy w ogólnopolskich konkursach oraz zobacz, co piszą o nas media.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <style>
+        .trivia-hero {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: #fff;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        .trivia-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; }
+        .trivia-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+        .section-container { max-width: 1100px; margin: 0 auto; padding: 5rem 5%; }
+        .section-title { 
+            text-align: center; 
+            margin-bottom: 3rem; 
+            font-size: 2.2rem; 
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Media Grid */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .media-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .media-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+        .media-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+        }
+        .media-card h3 { font-size: 1.3rem; line-height: 1.4; margin-bottom: 1rem; color: #333; }
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1.5rem;
+        }
+        .read-more:hover { text-decoration: underline; }
+
+        /* Competitions Section */
+        .awards-section { background: #f9f9f9; width: 100%; }
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 600px) { .awards-grid { grid-template-columns: 1fr; } }
+
+        .award-card {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        .award-content { padding: 2.5rem; }
+        .award-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .award-card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--primary-color); }
+        .award-card p { line-height: 1.7; color: #555; margin-bottom: 2rem; }
+        .award-link {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.2s;
+            text-align: center;
+        }
+        .award-link:hover { background: #1b5e20; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html" style="display:flex; align-items:center; gap:15px; color:inherit; text-decoration:none;">
+                <img src="orzeł logo ZSZ5.png" alt="Logo Szkoła Mistrzów" class="logo">
+                <span class="slogan">Szkoła Mistrzów</span>
+            </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Otwórz menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#promocja">O szkole</a></li>
+                <li><a href="rekrutacja.html">Rekrutacja</a></li>
+                <li><a href="pracodawcy.html">Pracodawcy</a></li>
+                <li><a href="dokumenty.html">Dokumenty</a></li>
+                <li><a href="ciekawostki.html" style="color:var(--primary-color);">Ciekawostki</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="trivia-hero">
+            <h1>Ciekawostki i Sukcesy</h1>
+            <p>Dowiedz się, dlaczego Szkoła Mistrzów to wyjątkowe miejsce na edukacyjnej mapie Wrocławia i Polski.</p>
+        </section>
+
+        <section class="section-container">
+            <h2 class="section-title">Mówią o nas</h2>
+            <div class="media-grid">
+                <!-- Artykuł 1 -->
+                <div class="media-card">
+                    <div>
+                        <span class="media-tag">Gazeta Wyborcza</span>
+                        <h3>Uczą zawodu w modelu dualnym – od 1 września każdy uczeń musi...</h3>
+                    </div>
+                    <a href="https://wroclaw.wyborcza.pl/wroclaw/7,35771,31935746,ucza-zawodu-w-modelu-dualnym-od-1-wrzesnia-kazdy-uczen-musi.html" target="_blank" class="read-more">Czytaj artykuł →</a>
+                </div>
+
+                <!-- Artykuł 2 -->
+                <div class="media-card">
+                    <div>
+                        <span class="media-tag">Gazeta Wrocławska</span>
+                        <h3>Tak wyglądała studniówka Zespołu Szkół Zawodowych nr 5 we Wrocławiu</h3>
+                    </div>
+                    <a href="https://gazetawroclawska.pl/tak-wygladala-studniowka-zespolu-szkol-zawodowych-nr-5-we-wroclawiu-byl-polonez-toast-i-rozdanie-swiadectw-nauczycielom/ar/c5p2-28684925" target="_blank" class="read-more">Zobacz galerię →</a>
+                </div>
+
+                <!-- Artykuł 3 -->
+                <div class="media-card">
+                    <div>
+                        <span class="media-tag">Gazeta Wyborcza</span>
+                        <h3>We Wrocławiu chcą lepiej kształcić w zawodach</h3>
+                    </div>
+                    <a href="https://wroclaw.wyborcza.pl/wroclaw/7,35771,31978487,we-wroclawiu-chca-lepiej-ksztalcic-w-zawodach.html" target="_blank" class="read-more">Czytaj artykuł →</a>
+                </div>
+
+                <!-- Artykuł 4 -->
+                <div class="media-card">
+                    <div>
+                        <span class="media-tag">Wroclaw.pl</span>
+                        <h3>Mistrzostwa Polski Uczniów Szkół Cukierniczych</h3>
+                    </div>
+                    <a href="https://www.wroclaw.pl/dla-mieszkanca/mistrzostwa-polski-uczniow-szkol-cukierniczych" target="_blank" class="read-more">Czytaj artykuł →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="awards-section">
+            <div class="section-container">
+                <h2 class="section-title">Ogólnopolskie Turnieje i Konkursy</h2>
+                <div class="awards-grid">
+                    <!-- Turniej 1 -->
+                    <div class="award-card">
+                        <div class="award-content">
+                            <div class="award-icon">🥐</div>
+                            <h3>Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz</h3>
+                            <p>Prestiżowe ogólnopolskie wydarzenie, którego finał gości w murach naszej szkoły. Tutaj rodzą się prawdziwe rzemieślnicze talenty.</p>
+                            <a href="https://www.turniej.szkolamistrzow.info/" target="_blank" class="award-link">Strona Turnieju →</a>
+                        </div>
+                    </div>
+
+                    <!-- Turniej 2 -->
+                    <div class="award-card">
+                        <div class="award-content">
+                            <div class="award-icon">✂️</div>
+                            <h3>Konkurs im. Antoniego Cierplikowskiego</h3>
+                            <p>Ogólnopolski Konkurs w kategorii fryzjerstwo stylowe. Upamiętniamy "Króla Fryzjerów" promując kunszt i nowoczesne techniki fryzjerskie.</p>
+                            <a href="https://www.krolfryzjerow.szkolamistrzow.info/konkurs" target="_blank" class="award-link">Strona Konkursu →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">Szkoła Mistrzów</div>
+            <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
+            
+            <div class="footer-socials" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://www.zsz5.edupage.org" target="_blank" class="footer-social-btn" title="Oficjalna strona">🌐 WWW</a>
+                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook">FB</a>
+                <a href="https://www.youtube.com/@zesposzkozawodowychnr5wroc483" target="_blank" class="footer-social-btn" title="YouTube">YT</a>
+                <a href="https://www.linkedin.com/company/zesp%C3%B3%C5%82-szk%C3%B3%C5%82-zawodowych-nr-5/" target="_blank" class="footer-social-btn" title="LinkedIn">IN</a>
+                <a href="https://zsz5.edupage.org/a/rodo" target="_blank" class="footer-social-btn rodo" title="RODO">RODO</a>
+            </div>
+
+            <style>
+                .footer-social-btn {
+                    background: rgba(255,255,255,0.1);
+                    color: #fff;
+                    padding: 0.6rem 1.2rem;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 0.85rem;
+                    transition: all 0.2s;
+                    border: 1px solid rgba(255,255,255,0.2);
+                }
+                .footer-social-btn:hover {
+                    background: #fff;
+                    color: var(--primary-color);
+                    transform: translateY(-3px);
+                }
+                .footer-social-btn.rodo {
+                    background: transparent;
+                    border: 1px dashed rgba(255,255,255,0.4);
+                    opacity: 0.8;
+                }
+            </style>
+        </div>
+    </footer>
+</body>
+</html>

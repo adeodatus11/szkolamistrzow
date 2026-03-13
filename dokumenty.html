@@ -110,6 +110,7 @@
                 <li><a href="rekrutacja.html">Rekrutacja</a></li>
                 <li><a href="pracodawcy.html">Pracodawcy</a></li>
                 <li><a href="dokumenty.html" style="color:var(--primary-color);">Dokumenty</a></li>
+                <li><a href="ciekawostki.html">Ciekawostki</a></li>
                 <li><a href="index.html#kontakt">Kontakt</a></li>
             </ul>
         </nav>
@@ -185,9 +186,38 @@
         <div class="footer-content">
             <div class="footer-logo">Szkoła Mistrzów</div>
             <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
-            <div style="margin-top: 1rem;">
-                <a href="https://www.zsz5.edupage.org" target="_blank" style="color: #fff; text-decoration: underline; font-size: 0.9rem;">www.zsz5.edupage.org</a>
+            
+            <div class="footer-socials" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://www.zsz5.edupage.org" target="_blank" class="footer-social-btn" title="Oficjalna strona">🌐 WWW</a>
+                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook">FB</a>
+                <a href="https://www.youtube.com/@zesposzkozawodowychnr5wroc483" target="_blank" class="footer-social-btn" title="YouTube">YT</a>
+                <a href="https://www.linkedin.com/company/zesp%C3%B3%C5%82-szk%C3%B3%C5%82-zawodowych-nr-5/" target="_blank" class="footer-social-btn" title="LinkedIn">IN</a>
+                <a href="https://zsz5.edupage.org/a/rodo" target="_blank" class="footer-social-btn rodo" title="RODO">RODO</a>
             </div>
+
+            <style>
+                .footer-social-btn {
+                    background: rgba(255,255,255,0.1);
+                    color: #fff;
+                    padding: 0.6rem 1.2rem;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 0.85rem;
+                    transition: all 0.2s;
+                    border: 1px solid rgba(255,255,255,0.2);
+                }
+                .footer-social-btn:hover {
+                    background: #fff;
+                    color: var(--primary-color);
+                    transform: translateY(-3px);
+                }
+                .footer-social-btn.rodo {
+                    background: transparent;
+                    border: 1px dashed rgba(255,255,255,0.4);
+                    opacity: 0.8;
+                }
+            </style>
         </div>
     </footer>
 </body>
