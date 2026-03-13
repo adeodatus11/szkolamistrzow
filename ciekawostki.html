@@ -7,6 +7,7 @@
     <meta name="description" content="Poznaj ciekawostki o Szkole Mistrzów, nasze sukcesy w ogólnopolskich konkursach oraz zobacz, co piszą o nas media.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="script.js" defer></script>
     <style>
         .trivia-hero {
@@ -118,6 +119,98 @@
             text-align: center;
         }
         .award-link:hover { background: #1b5e20; }
+
+        /* History Section */
+        .history-section { background: #fff; }
+        .history-content { 
+            line-height: 1.8; 
+            color: #444; 
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .history-content p { margin-bottom: 1.5rem; }
+
+        /* Stats Counters */
+        .stats-section { background: var(--primary-color); color: #fff; padding: 6rem 5%; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .stat-box h3 { font-size: 3.5rem; margin-bottom: 0.5rem; color: #fff; line-height: 1; }
+        .stat-box p { font-size: 1rem; opacity: 0.9; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            aspect-ratio: 4/3;
+            background: #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+
+        /* Lightbox Layout */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            cursor: zoom-out;
+        }
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-overlay.active .lightbox-img { transform: scale(1); }
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 3rem;
+            cursor: pointer;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -148,6 +241,43 @@
             <h1>Ciekawostki i Sukcesy</h1>
             <p>Dowiedz się, dlaczego Szkoła Mistrzów to wyjątkowe miejsce na edukacyjnej mapie Wrocławia i Polski.</p>
         </section>
+
+        <!-- Zobacz naszą szkołę - Historia -->
+        <section class="section-container history-section">
+            <h2 class="section-title">Zobacz naszą szkołę</h2>
+            <div class="history-content">
+                <p>Zespół budynków przy <strong>ul. J. Wł. Dawida 5-11 we Wrocławiu</strong> (dawniej Arletiusstrasse) powstał w dwóch etapach: w latach 1901-1903 oraz 1907-1909 jako Zespół Szkół Ludowych.</p>
+                <p>Autorami tego wyjątkowego projektu byli słynni wrocławscy architekci: <strong>Richard Plüddemann</strong> oraz <strong>Karl Klimm</strong>. Budynek powstał na wspólnej działce wraz z kompleksem Gimnazjum Św. Elżbiety (dzisiejszy Instytut Pedagogiki i Psychologii UWr), tworząc zgraną neogotycką całość.</p>
+                <p>Architektura zespołu charakteryzuje się charakterystycznymi ażurowymi szczytami ryzalitów i wnękami okiennymi. Pod koniec II wojny światowej budynek służył jako szpital polowy. Choć uległ częściowemu zniszczeniu, szczęśliwie ocalał i do dziś zachwyca swoim zabytkowym detalem.</p>
+            </div>
+        </section>
+
+        <!-- Szkoła w liczbach - Liczniki -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3 class="counter" data-target="70">0</h3>
+                    <p>Lat kształcenia zawodowego</p>
+                </div>
+                <div class="stat-box">
+                    <h3 class="counter" data-target="25000">0</h3>
+                    <p>Absolwentów szkoły</p>
+                </div>
+                <div class="stat-box">
+                    <h3 class="counter" data-target="20">0</h3>
+                    <p>Kierunków kształcenia</p>
+                </div>
+                <div class="stat-box">
+                    <h3 class="counter" data-target="270">0</h3>
+                    <p>Współpracujących zakładów</p>
+                </div>
+                <div class="stat-box">
+                    <h3 class="counter" data-target="60">0</h3>
+                    <p>Wykwalifikowanych nauczycieli</p>
+                </div>
+            </div>
+        </section>
+
 
         <section class="section-container">
             <h2 class="section-title">Mówią o nas</h2>
@@ -216,7 +346,29 @@
                 </div>
             </div>
         </section>
+
+        <!-- Galeria zdjęć -->
+        <section class="section-container">
+            <h2 class="section-title">Galeria Szkoły</h2>
+            <p style="text-align:center; color:#666; margin-bottom: 2rem;">Zobacz jak wygląda codzienne życie i architektura Szkoły Mistrzów.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="zdjęcia/szkoła1.jpg" alt="Budynek szkoły" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Budynek+Szkoły'"></div>
+                <div class="gallery-item"><img src="zdjęcia/warsztaty1.jpg" alt="Warsztaty zawodowe" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Warsztaty'"></div>
+                <div class="gallery-item"><img src="zdjęcia/sukcesy1.jpg" alt="Nasze trofea" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Sukcesy'"></div>
+                <div class="gallery-item"><img src="zdjęcia/wnętrze1.jpg" alt="Wnętrze szkoły" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Wnętrze'"></div>
+                <div class="gallery-item"><img src="zdjęcia/lekcja1.jpg" alt="Zajęcia praktyczne" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Zajęcia+Praktyczne'"></div>
+                <div class="gallery-item"><img src="zdjęcia/uroczystość1.jpg" alt="Uroczystości szkolne" onerror="this.src='https://placehold.co/600x400/2e7d32/white?text=Uroczystości'"></div>
+            </div>
+        </section>
+
+        <!-- Lightbox Overlay -->
+        <div class="lightbox-overlay" id="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img src="" alt="Powiększone zdjęcie" class="lightbox-img" id="lightbox-img">
+        </div>
     </main>
+
+
 
     <footer class="main-footer">
         <div class="footer-content">
@@ -224,37 +376,101 @@
             <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
             
             <div class="footer-socials" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a href="https://www.zsz5.edupage.org" target="_blank" class="footer-social-btn" title="Oficjalna strona">🌐 WWW</a>
-                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook">FB</a>
-                <a href="https://www.youtube.com/@zesposzkozawodowychnr5wroc483" target="_blank" class="footer-social-btn" title="YouTube">YT</a>
-                <a href="https://www.linkedin.com/company/zesp%C3%B3%C5%82-szk%C3%B3%C5%82-zawodowych-nr-5/" target="_blank" class="footer-social-btn" title="LinkedIn">IN</a>
-                <a href="https://zsz5.edupage.org/a/rodo" target="_blank" class="footer-social-btn rodo" title="RODO">RODO</a>
+                <a href="https://zsz5.edupage.org" target="_blank" class="footer-social-btn" title="Oficjalna strona szkoły"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@zesposzkozawodowychnr5wroc483" target="_blank" class="footer-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/zesp%C3%B3%C5%82-szk%C3%B3%C5%82-zawodowych-nr-5/" target="_blank" class="footer-social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://zsz5.edupage.org/a/rodo" target="_blank" class="footer-social-btn rodo" title="Deklaracja RODO"><i class="fa-solid fa-user-shield"></i></a>
             </div>
 
             <style>
                 .footer-social-btn {
                     background: rgba(255,255,255,0.1);
                     color: #fff;
-                    padding: 0.6rem 1.2rem;
-                    border-radius: 8px;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
                     text-decoration: none;
-                    font-weight: 600;
-                    font-size: 0.85rem;
-                    transition: all 0.2s;
+                    font-size: 1.2rem;
+                    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     border: 1px solid rgba(255,255,255,0.2);
                 }
                 .footer-social-btn:hover {
                     background: #fff;
                     color: var(--primary-color);
-                    transform: translateY(-3px);
+                    transform: translateY(-5px) scale(1.1);
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
                 }
                 .footer-social-btn.rodo {
                     background: transparent;
                     border: 1px dashed rgba(255,255,255,0.4);
-                    opacity: 0.8;
                 }
             </style>
         </div>
     </footer>
+
+    <script>
+        // Animacja liczników
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = Math.ceil(target / speed);
+
+                    if (count < target) {
+                        counter.innerText = count + inc;
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target + (target > 1000 ? '+' : '');
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Trigger animacji przy przewinięciu
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Galeria Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+
+        galleryItems.forEach(item => {
+            item.parentElement.addEventListener('click', () => {
+                lightboxImg.src = item.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Blokada przewijania
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
 </body>
 </html>

@@ -7,6 +7,7 @@
     <meta name="description" content="Krok po kroku – szczegółowy przewodnik rekrutacyjny do Szkoły Mistrzów na rok szkolny 2026/2027.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="script.js" defer></script>
     <style>
         .rec-hero {
@@ -316,34 +317,38 @@
             <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
             
             <div class="footer-socials" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a href="https://www.zsz5.edupage.org" target="_blank" class="footer-social-btn" title="Oficjalna strona">🌐 WWW</a>
-                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook">FB</a>
-                <a href="https://www.youtube.com/@zesposzkozawodowychnr5wroc483" target="_blank" class="footer-social-btn" title="YouTube">YT</a>
-                <a href="https://www.linkedin.com/company/zesp%C3%B3%C5%82-szk%C3%B3%C5%82-zawodowych-nr-5/" target="_blank" class="footer-social-btn" title="LinkedIn">IN</a>
-                <a href="https://zsz5.edupage.org/a/rodo" target="_blank" class="footer-social-btn rodo" title="RODO">RODO</a>
+
+                <a href="https://zsz5.edupage.org" target="_blank" class="footer-social-btn" title="Oficjalna strona szkoły"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@zesposzkozawodowychnr5wroc483" target="_blank" class="footer-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/zesp%C3%B3%C5%82-szk%C3%B3%C5%82-zawodowych-nr-5/" target="_blank" class="footer-social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://zsz5.edupage.org/a/rodo" target="_blank" class="footer-social-btn rodo" title="Deklaracja RODO"><i class="fa-solid fa-user-shield"></i></a>
             </div>
 
             <style>
                 .footer-social-btn {
                     background: rgba(255,255,255,0.1);
                     color: #fff;
-                    padding: 0.6rem 1.2rem;
-                    border-radius: 8px;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
                     text-decoration: none;
-                    font-weight: 600;
-                    font-size: 0.85rem;
-                    transition: all 0.2s;
+                    font-size: 1.2rem;
+                    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     border: 1px solid rgba(255,255,255,0.2);
                 }
                 .footer-social-btn:hover {
                     background: #fff;
                     color: var(--primary-color);
-                    transform: translateY(-3px);
+                    transform: translateY(-5px) scale(1.1);
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
                 }
                 .footer-social-btn.rodo {
                     background: transparent;
                     border: 1px dashed rgba(255,255,255,0.4);
-                    opacity: 0.8;
                 }
             </style>
         </div>
