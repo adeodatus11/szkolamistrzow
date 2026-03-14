@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <div class="guild-details">
                                         ${trade.cech.adres ? `<span class="guild-detail">${trade.cech.adres}</span>` : ''}
                                         ${trade.cech.telefon ? `<a href="tel:${trade.cech.telefon.replace(/\s/g, '')}" class="guild-phone">📞 ${trade.cech.telefon}</a>` : ''}
-                                        ${trade.cech.email ? `<a href="mailto:${trade.cech.email}" class="guild-link">✉️ ${trade.cech.email}</a>` : ''}
+                                        ${trade.cech.email ? `<a href="mailto:${trade.cech.email}" class="guild-link word-break-mobile">✉️ ${trade.cech.email}</a>` : ''}
                                         ${trade.cech.www ? `<a href="${trade.cech.www}" class="guild-link" target="_blank">🌐 ${trade.cech.www}</a>` : ''}
                                     </div>
                                 </div>

@@ -29,6 +29,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    hyphens: auto;
 }
 
 h1, h2, h3, h4 {
@@ -55,7 +56,7 @@ a:hover {
 
 /* Header */
 .main-header {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: transparent;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     position: sticky;
@@ -603,6 +604,7 @@ a:hover {
     color: rgba(255,255,255,0.85);
     padding: 4rem 5% 2rem;
     text-align: center;
+    margin-top: 0;
 }
 
 .footer-logo {
@@ -690,7 +692,7 @@ a:hover {
     }
     
     .hero-content h1 {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
     
     .school-card, .feature-item, .info-card {
@@ -719,6 +721,18 @@ a:hover {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+    }
+
+    /* Fix for long text (e.g. email) breaking layout on phone */
+    .word-break-mobile {
+        word-break: normal;
+        overflow-wrap: anywhere;
+        font-size: clamp(0.85rem, 3.5vw, 1.6rem) !important;
+        line-height: 1.2;
+    }
+
+    .hero-content h1 {
+        word-wrap: break-word;
     }
 }
 
