@@ -734,6 +734,10 @@ a:hover {
     .hero-content h1 {
         word-wrap: break-word;
     }
+
+    .nowrap-mobile {
+        white-space: nowrap;
+    }
 }
 
 @keyframes fadeIn {
