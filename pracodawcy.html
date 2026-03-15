@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+                document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
+            }
+        })();
+    </script>
     <script src="script.js" defer></script>
     <style>
         /* ======== EMPLOYER PAGE STYLES ======== */
@@ -33,7 +44,7 @@
             line-height: 1.6;
         }
         .employer-intro-box {
-            background: #fff;
+            background: var(--white);
             border-radius: 16px;
             padding: 2rem 2.5rem;
             max-width: 850px;
@@ -56,7 +67,7 @@
         }
         /* Trade card accordion */
         .trade-card {
-            background: #fff;
+            background: var(--white);
             border-radius: 14px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             overflow: hidden;
@@ -98,7 +109,7 @@
         }
         .trade-accordion-header {
             width: 100%;
-            background: #f9fdf9;
+            background: var(--bg-color);
             border: none;
             padding: 1.8rem 1.5rem;
             cursor: pointer;
@@ -181,7 +192,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out;
-            background: #fff;
+            background: var(--white);
         }
         .trade-card-content {
             padding: 2rem;
@@ -497,9 +508,12 @@
                 <span class="slogan">Szkoła Mistrzów</span>
             </a>
         </div>
-        <button class="mobile-menu-toggle" aria-label="Otwórz menu">
-            <span></span><span></span><span></span>
-        </button>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <button id="darkModeToggle" class="theme-toggle" aria-label="Przełącz tryb ciemny">🌙</button>
+            <button class="mobile-menu-toggle" aria-label="Otwórz menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html#promocja">O szkole</a></li>

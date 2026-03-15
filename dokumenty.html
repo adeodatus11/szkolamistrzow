@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+                document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
+            }
+        })();
+    </script>
     <script src="script.js" defer></script>
     <style>
         .doc-hero {
@@ -24,7 +35,7 @@
         .doc-container { max-width: 1200px; margin: 0 auto; padding: 4rem 5%; }
         
         .doc-alert {
-            background: #fff8e1;
+            background: var(--accent-color);
             border-left: 5px solid #ff8f00;
             padding: 2rem;
             border-radius: 12px;
@@ -41,7 +52,7 @@
             margin-top: 3rem;
         }
         .doc-card {
-            background: #fff;
+            background: var(--white);
             border-radius: 16px;
             padding: 2rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
@@ -73,7 +84,7 @@
         .doc-btn.template:hover { background: #333; }
         
         .instruction-section {
-            background: #f1f8e9;
+            background: var(--accent-color);
             border-radius: 20px;
             padding: 3rem;
             margin-top: 4rem;
@@ -104,9 +115,12 @@
                 <span class="slogan">Szkoła Mistrzów</span>
             </a>
         </div>
-        <button class="mobile-menu-toggle" aria-label="Otwórz menu">
-            <span></span><span></span><span></span>
-        </button>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <button id="darkModeToggle" class="theme-toggle" aria-label="Przełącz tryb ciemny">🌙</button>
+            <button class="mobile-menu-toggle" aria-label="Otwórz menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html#promocja">O szkole</a></li>

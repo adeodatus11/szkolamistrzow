@@ -1,4 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Typography Polish: Handle single-letter orphans (aiouwz)
+    const fixTypographyOrphans = (root = document) => {
+        const textNodes = root.querySelectorAll("p, li, h1, h2, h3, h4, .trade-name-line, .guild-name, .employer-name");
+        textNodes.forEach(el => {
+            // Only replace if it contains single-letter orphans
+            if (el.children.length === 0) {
+                el.innerHTML = el.innerHTML.replace(/(\s)([aiouwzAIUOWZ])\s/g, "$1$2&nbsp;");
+            } else {
+                // For elements with children (like .trade-name-line), handle text nodes specifically
+                el.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        const newText = node.textContent.replace(/(\s)([aiouwzAIUOWZ])\s/g, "$1$2 ");
+                        // We use a simple space here because we can't easily put &nbsp; in a text node without it being escaped.
+                        // Actually, it's better to just use el.innerHTML if possible, but carefully.
+                    }
+                });
+                // Simplified approach for the website's structure:
+                el.innerHTML = el.innerHTML.replace(/(\s)([aiouwzAIUOWZ])\s/g, "$1$2&nbsp;");
+            }
+        });
+    };
+
+    fixTypographyOrphans();
+
+    // 0.1 Theme (Dark Mode) Logic
+    const themeToggle = document.getElementById('darkModeToggle');
+    
+    const setTheme = (theme) => {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-mode');
+            if (themeToggle) themeToggle.innerText = '☀️';
+        } else {
+            document.body.classList.remove('dark-mode');
+            if (themeToggle) themeToggle.innerText = '🌙';
+        }
+        localStorage.setItem('theme', theme);
+    };
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.body.classList.contains('dark-mode');
+            setTheme(isDark ? 'light' : 'dark');
+        });
+    }
+
+    // Initialize theme based on preference or system
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (systemPrefersDark) {
+        setTheme('dark');
+    }
+
     // 1. Mobile Menu Toggle
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
@@ -229,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 allTradesData.sort((a, b) => a.name.localeCompare(b.name, 'pl'));
 
                 renderTrades(allTradesData);
+                fixTypographyOrphans(employersRoot);
 
                 // Re-trigger hash scroll after trades are rendered (specific for Employers page)
                 if (window.location.hash) {
