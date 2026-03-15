@@ -27,12 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('darkModeToggle');
     
     const setTheme = (theme) => {
+        const logos = document.querySelectorAll('.logo');
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
             if (themeToggle) themeToggle.innerText = '☀️';
+            logos.forEach(img => img.src = 'orzeł negatyw.png');
         } else {
             document.body.classList.remove('dark-mode');
             if (themeToggle) themeToggle.innerText = '🌙';
+            logos.forEach(img => img.src = 'orzeł bez tła.png');
         }
         localStorage.setItem('theme', theme);
     };
