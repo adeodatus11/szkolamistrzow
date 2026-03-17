@@ -18,7 +18,6 @@
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
                 document.documentElement.classList.add('dark-mode');
-                document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
             }
         })();
     </script>
@@ -125,10 +124,13 @@
             <p>Wszystkie etapy rekrutacji z dokładnymi terminami i praktycznymi wskazówkami. Kliknij w dowolny etap na osi czasu strony głównej, aby przejść bezpośrednio do szczegółów.</p>
 
             <!-- SEO Block 21: Rekrutacja przewodnik -->
-            <div style="margin-top: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 16px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; border: 1px solid rgba(255,255,255,0.1);">
-                <h2 style="color: #fff; font-size: 1.4rem; margin-bottom: 0.8rem;">Rekrutacja do szkoły zawodowej we Wrocławiu – przewodnik</h2>
-                <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.5;">Proces <strong>rekrutacji do ZSZ nr 5</strong> odbywa się za pośrednictwem wrocławskiego systemu rekrutacji elektronicznej. Pamiętaj o terminach składania wniosków i oryginałów dokumentów (świadectwo 8-klasisty). Zapraszamy na konsultacje, jeśli potrzebujesz pomocy z wyborem profilu!</p>
-            </div>
+            <details class="seo-accordion" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; text-align: left;">
+                <summary style="color: rgba(255,255,255,0.7); border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 5px; display: inline-block;">Szczegóły formalne dla kandydatów ↓</summary>
+                <div class="seo-accordion-content" style="background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); margin-top: 1rem;">
+                    <h2 style="color: #fff; font-size: 1.4rem; margin-bottom: 0.8rem;">Rekrutacja do szkoły zawodowej we Wrocławiu – przewodnik</h2>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.5;">Proces <strong>rekrutacji do ZSZ nr 5</strong> odbywa się za pośrednictwem wrocławskiego systemu rekrutacji elektronicznej. Pamiętaj o terminach składania wniosków i oryginałów dokumentów (świadectwo 8-klasisty). Zapraszamy na konsultacje, jeśli potrzebujesz pomocy z wyborem profilu!</p>
+                </div>
+            </details>
         </section>
 
         <div class="rec-container">
@@ -331,19 +333,23 @@
                         <p style="color: #555; line-height: 1.6;">Wybór technikum lub szkoły branżowej zależy od predyspozycji. Technikum pozwala na zdobycie matury i tytułu technika, natomiast szkoła branżowa to najszybsza droga do pewnego zawodu i samodzielności finansowej.</p>
                     </div>
                     <!-- SEO Block 23: Czy szkoła zawodowa to dobry wybór -->
-                    <div style="border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem;">Czy szkoła zawodowa to dobry wybór w 2026 roku?</h3>
-                        <p style="color: #555; line-height: 1.6;">Współczesny rynek pracy woła o specjalistów. <strong>Szkoła zawodowa</strong> daje przewagę już na starcie – kiedy rówieśnicy będą dopiero kończyć studia, nasi absolwenci są już doświadczonymi ekspertami z kilkuletnim stażem pracy.</p>
-                    </div>
+                    <details class="seo-accordion" style="border-bottom: 1px solid #eee; padding-bottom: 1.5rem; margin-top: 1.5rem; padding-top:0; border-top:none; margin-bottom:0;">
+                        <summary style="text-align: left; color: #333; font-size: 1.25rem; font-weight: 600; padding:0; border:none; margin-bottom: 0.8rem;">Czy szkoła zawodowa to dobry wybór w 2026 roku?</summary>
+                        <div class="seo-accordion-content" style="color: #555; line-height: 1.6;">
+                            Współczesny rynek pracy woła o specjalistów. <strong>Szkoła zawodowa</strong> daje przewagę już na starcie – kiedy rówieśnicy będą dopiero kończyć studia, nasi absolwenci są już doświadczonymi ekspertami z kilkuletnim stażem pracy.
+                        </div>
+                    </details>
                     <div style="border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
                         <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem;">Jakie technikum wybrać we Wrocławiu?</h3>
                         <p style="color: #555; line-height: 1.6;">Szukając technikum, warto zwrócić uwagę na współpracę z pracodawcami. Nasze technikum nr 5 kształci fryzjerów i handlowców w ścisłym kontakcie z rynkiem pracy.</p>
                     </div>
                     <!-- SEO Block 27: Szkoła zawodowa a rynek pracy -->
-                    <div style="border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem;">Czy po szkole zawodowej łatwo o pracę we Wrocławiu?</h3>
-                        <p style="color: #555; line-height: 1.6;">Wrocław stale potrzebuje rzemieślników. Ukończenie <strong>szkoły zawodowej</strong> to gwarancja stabilności. Nasi absolwenci są często rozchwytywani przez lokalne firmy jeszcze przed odebraniem dyplomu.</p>
-                    </div>
+                    <details class="seo-accordion" style="border-bottom: 1px solid #eee; padding-bottom: 1.5rem; margin-top: 1.5rem; padding-top:0; border-top:none; margin-bottom:0;">
+                        <summary style="text-align: left; color: #333; font-size: 1.25rem; font-weight: 600; padding:0; border:none; margin-bottom: 0.8rem;">Czy po szkole zawodowej łatwo o pracę we Wrocławiu?</summary>
+                        <div class="seo-accordion-content" style="color: #555; line-height: 1.6;">
+                            Wrocław stale potrzebuje rzemieślników. Ukończenie <strong>szkoły zawodowej</strong> to gwarancja stabilności. Nasi absolwenci są często rozchwytywani przez lokalne firmy jeszcze przed odebraniem dyplomu.
+                        </div>
+                    </details>
                     <div style="border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
                         <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem;">Czy nauka zawodu w Szkole Mistrzów jest płatna?</h3>
                         <p style="color: #555; line-height: 1.6;">Wręcz przeciwnie! Nasi uczniowie jako młodociani pracownicy otrzymują realne wynagrodzenie od pierwszego dnia nauki u pracodawcy.</p>
@@ -356,12 +362,15 @@
             </section>
 
             <!-- SEO Block 20: Branżowa Szkoła II stopnia -->
-            <section style="margin-top: 5rem; padding: 3rem; background: rgba(0,100,0,0.03); border-radius: 24px; border: 1px solid rgba(0,100,0,0.1);">
-                <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem;">Branżowa Szkoła II stopnia – Twoja droga do matury</h2>
-                <p style="color: #444; line-height: 1.7; font-size: 1.1rem;">
-                    Dla ambitnych absolwentów szkół branżowych przygotowaliśmy ofertę <strong>Branżowej Szkoły II stopnia nr 5</strong>. Umożliwia ona kontynuację nauki, przystąpienie do matury oraz podniesienie kwalifikacji do poziomu technika bez konieczności rezygnacji z pracy zawodowej. To szansa na zdobycie pełnego wykształcenia średniego przy zachowaniu ciągłości zarobkowej.
-                </p>
-            </section>
+            <details class="seo-accordion" style="margin-top: 5rem; padding: 2rem; background: rgba(0,100,0,0.03); border-radius: 24px; border: 1px solid rgba(0,100,0,0.1);">
+                <summary style="color: var(--primary-color); font-weight: 600; font-size: 1.2rem; display: block; text-align: left; border-bottom: 1px dashed var(--border-color); padding-bottom: 10px;">Branżowa Szkoła II stopnia – dowiedz się więcej o drodze do matury ↓</summary>
+                <div class="seo-accordion-content" style="margin-top: 1.5rem;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem;">Branżowa Szkoła II stopnia – Twoja droga do matury</h2>
+                    <p style="color: #444; line-height: 1.7; font-size: 1.1rem;">
+                        Dla ambitnych absolwentów szkół branżowych przygotowaliśmy ofertę <strong>Branżowej Szkoły II stopnia nr 5</strong>. Umożliwia ona kontynuację nauki, przystąpienie do matury oraz podniesienie kwalifikacji do poziomu technika bez konieczności rezygnacji z pracy zawodowej. To szansa na zdobycie pełnego wykształcenia średniego przy zachowaniu ciągłości zarobkowej.
+                    </p>
+                </div>
+            </details>
 
             <!-- Punktowane przedmioty -->
             <div class="scored-box">

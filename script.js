@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const setTheme = (theme) => {
         const logos = document.querySelectorAll('.logo');
         if (theme === 'dark') {
-            document.body.classList.add('dark-mode');
+            document.documentElement.classList.add('dark-mode');
             if (themeToggle) themeToggle.innerText = '☀️';
             logos.forEach(img => img.src = 'orzeł negatyw.png');
         } else {
-            document.body.classList.remove('dark-mode');
+            document.documentElement.classList.remove('dark-mode');
             if (themeToggle) themeToggle.innerText = '🌙';
             logos.forEach(img => img.src = 'orzeł bez tła.png');
         }
@@ -42,9 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            const isDark = document.body.classList.contains('dark-mode');
+            const isDark = document.documentElement.classList.contains('dark-mode');
             setTheme(isDark ? 'light' : 'dark');
         });
+        
+        const isDarkInitial = document.documentElement.classList.contains('dark-mode');
+        themeToggle.innerText = isDarkInitial ? '☀️' : '🌙';
     }
 
     // Initialize theme based on preference or system

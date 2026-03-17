@@ -17,7 +17,6 @@
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
                 document.documentElement.classList.add('dark-mode');
-                document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
             }
         })();
     </script>
@@ -534,10 +533,13 @@
             <p>Znajdź pracodawcę do praktycznej nauki zawodu. Poniżej znajdziesz listę firm i zakładów współpracujących ze Szkołą Mistrzów, pogrupowaną według zawodu.</p>
 
             <!-- SEO Block 24: Praktyczna nauka zawodu -->
-            <div style="margin-top: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 16px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; border: 1px solid rgba(255,255,255,0.1);">
-                <h2 style="color: #fff; font-size: 1.4rem; margin-bottom: 0.8rem;">Praktyczna nauka zawodu we Wrocławiu u najlepszych pracodawców</h2>
-                <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.5;">Kluczem do sukcesu w Szkole Mistrzów jest <strong>praktyczna nauka zawodu</strong> realizowana bezpośrednio w firmach. Współpracujemy z setkami wrocławskich przedsiębiorstw i cechów rzemiosł, co gwarantuje start w realnym środowisku biznesowym.</p>
-            </div>
+            <details class="seo-accordion" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; text-align: left;">
+                <summary style="color: rgba(255,255,255,0.7); border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 5px; display: inline-block;">Więcej o praktykach ↓</summary>
+                <div class="seo-accordion-content" style="background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); margin-top: 1rem;">
+                    <h2 style="color: #fff; font-size: 1.4rem; margin-bottom: 0.8rem;">Praktyczna nauka zawodu we Wrocławiu u najlepszych pracodawców</h2>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.5;">Kluczem do sukcesu w Szkole Mistrzów jest <strong>praktyczna nauka zawodu</strong> realizowana bezpośrednio w firmach. Współpracujemy z setkami wrocławskich przedsiębiorstw i cechów rzemiosł, co gwarantuje start w realnym środowisku biznesowym.</p>
+                </div>
+            </details>
         </section>
 
         <div class="employer-intro-box">
@@ -547,16 +549,19 @@
 
 
         <!-- SEO Blocks 26 & 29: Wynagrodzenie i Zawody przyszłości -->
-        <div style="max-width: 1200px; margin: 3rem auto; padding: 0 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <div style="background: #e8f5e9; padding: 2rem; border-radius: 20px; border-left: 5px solid #2e7d32; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <h3 style="color: #1b5e20; margin-bottom: 1rem; font-size: 1.3rem;">Ile zarabia uczeń szkoły branżowej?</h3>
-                <p style="color: #333; line-height: 1.6; font-size: 0.95rem;">Zarobki zależą od stopnia kształcenia. Jako uczeń otrzymujesz procentowy udział w średnim wynagrodzeniu krajowym. To <strong>nauka zawodu z wynagrodzeniem</strong>, która uczy planowania budżetu od najmłodszych lat.</p>
+        <details class="seo-accordion" style="max-width: 1200px; margin: 3rem auto; padding: 0 5%; border: none;">
+            <summary style="text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; display: block;">Rozwiń szczegóły dotyczące wynagrodzenia i perspektyw zawodowych ↓</summary>
+            <div class="seo-accordion-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="background: var(--surface-muted); padding: 2rem; border-radius: 20px; border-left: 5px solid var(--primary-color);">
+                    <h3 style="color: var(--heading-color); margin-bottom: 1rem; font-size: 1.3rem;">Ile zarabia uczeń szkoły branżowej?</h3>
+                    <p style="color: var(--text-color); line-height: 1.6; font-size: 0.95rem;">Zarobki zależą od stopnia kształcenia. Jako uczeń otrzymujesz procentowy udział w średnim wynagrodzeniu krajowym. To <strong>nauka zawodu z wynagrodzeniem</strong>, która uczy planowania budżetu od najmłodszych lat.</p>
+                </div>
+                <div style="background: var(--surface-muted); padding: 2rem; border-radius: 20px; border-left: 5px solid #f57c00;">
+                    <h3 style="color: var(--heading-color); margin-bottom: 1rem; font-size: 1.3rem;">Zawody przyszłości – gdzie warto?</h3>
+                    <p style="color: var(--text-color); line-height: 1.6; font-size: 0.95rem;">Prognozy wskazują, że <strong>zawody techniczne i usługowe</strong> takie jak elektryk czy mistrz fryzjerstwa będą najbardziej odporne na zmiany gospodarcze. Zainwestuj we własne umiejętności!</p>
+                </div>
             </div>
-            <div style="background: #fff3e0; padding: 2rem; border-radius: 20px; border-left: 5px solid #f57c00; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <h3 style="color: #e65100; margin-bottom: 1rem; font-size: 1.3rem;">Zawody przyszłości – gdzie warto?</h3>
-                <p style="color: #333; line-height: 1.6; font-size: 0.95rem;">Prognozy wskazują, że <strong>zawody techniczne i usługowe</strong> takie jak elektryk czy mistrz fryzjerstwa będą najbardziej odporne na zmiany gospodarcze. Zainwestuj we własne umiejętności!</p>
-            </div>
-        </div>
+        </details>
 
         <section class="employer-section" id="employers-root">
             <div class="loading-state">

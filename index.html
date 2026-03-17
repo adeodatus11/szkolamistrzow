@@ -76,13 +76,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <meta name="color-scheme" content="light dark">
     <script>
-        // FOUC prevention
         (function() {
             const savedTheme = localStorage.getItem('theme');
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
                 document.documentElement.classList.add('dark-mode');
-                document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
             }
         })();
     </script>
@@ -123,26 +121,26 @@
         <section id="promocja" class="hero-section">
             <div class="hero-content">
                 <h1><span class="nowrap-mobile">Technikum i Szkoła Zawodowa nr 5</span><br>we&nbsp;Wrocławiu</h1>
-                <p class="hero-subtitle" style="max-width:900px;">Szkoła Mistrzów to <strong>szkoła</strong> oparta na <strong>systemie dualnym</strong> – połączeniu nauki w szkole z zajęciami praktycznymi u pracodawcy.</p>
+                <p class="hero-subtitle" style="max-width:900px;">Szkoła Mistrzów to innowacyjna placówka oparta na <strong>systemie dualnym</strong> – unikalnym połączeniu bezpłatnej nauki szkolnej z opłacanymi praktykami u mistrzów rzemiosła.</p>
                 
                 
                 <div class="why-us" style="padding-top:2rem; padding-bottom: 3rem;">
-                    <h2>Zasady systemu dualnego</h2>
+                    <h2>Zasady systemu dualnego – dlaczego warto?</h2>
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="icon">🏫</div>
-                            <h4>Nauka i Praktyka</h4>
-                            <p>Uczysz się w szkole i jednocześnie zdobywasz doświadczenie zawodowe pracując.</p>
+                            <h4>Zawód z Przyszłością</h4>
+                            <p>Twoje dziecko uczy się w solidnej szkole, ale fachu nabywa w prawdziwym biznesie. Zyskujecie pewność, że po ukończeniu edukacji rynek pracy stoi otworem.</p>
                         </div>
                         <div class="feature-item">
                             <div class="icon">📝</div>
-                            <h4>Umowa o pracę</h4>
-                            <p>Podpisujesz umowę o pracę w celu przygotowania zawodowego i zyskujesz status młodocianego pracownika.</p>
+                            <h4>Umowa i Prawa Pracownika</h4>
+                            <p>Uczeń od pierwszego dnia podpisuje wiążącą umowę o pracę w celu przygotowania zawodowego, zyskując od razu cenne prawa młodocianego pracownika oraz wliczanie nauki do stażu pracy.</p>
                         </div>
                         <div class="feature-item">
                             <div class="icon">💰</div>
                             <h4>Wynagrodzenie</h4>
-                            <p>Otrzymujesz comiesięczne wynagrodzenie za pracę od pierwszego miesiąca.</p>
+                            <p>To nie są zwykłe praktyki. Za swoją pracę edukacyjną uczniowie regularnie otrzymują comiesięczne wynagrodzenie – już od pierwszego miesiąca pierwszej klasy!</p>
                         </div>
                     </div>
                 </div>
@@ -279,7 +277,7 @@
 
 
                 <!-- Szybkie info + link do szczegółowego przewodnika -->
-                <div style="background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.07); padding:2rem 2.5rem; border-left: 4px solid var(--primary-color);">
+                <div style="background:var(--surface-color); border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.07); padding:2rem 2.5rem; border-left: 4px solid var(--primary-color);">
                     <p style="margin:0 0 0.8rem; font-size:1.05rem; color:var(--text-color); line-height:1.6;">Wszystkie kroki, terminy, wymagane dokumenty i wskazówki znajdziesz w naszym pełnym przewodniku rekrutacyjnym. Zachęcamy do zapoznania się ze szczegółami, aby sprawnie przejść cały proces.</p>
                     <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
                         <a href="rekrutacja.html" class="cta-button">📋 Otwórz pełny przewodnik rekrutacyjny →</a>
@@ -293,11 +291,11 @@
         </section>
 
         <!-- Sekcja: Aktualności z Facebooka -->
-        <section id="aktualnosci" class="info-section" style="background: #f9f9f9; padding: 0.8rem 5%;">
+        <section id="aktualnosci" class="info-section" style="background: var(--surface-muted); padding: 0.8rem 5%;">
             <div class="section-container" style="max-width: 800px;">
                 <h2 style="text-align: center; margin-bottom: 0.8rem; font-size: 2.2rem;">Aktualności</h2>
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
-                    <p style="text-align: center; max-width: 700px; font-size: 1.1rem; color: #555;">Bądź na bieżąco z życiem szkoły! Codzienne relacje, ważne ogłoszenia i sukcesy naszych uczniów znajdziesz na naszym profilu na Facebooku.</p>
+                    <p style="text-align: center; max-width: 700px; font-size: 1.1rem; color: var(--text-color);">Bądź na bieżąco z życiem szkoły! Codzienne relacje, ważne ogłoszenia i sukcesy naszych uczniów znajdziesz na naszym profilu na Facebooku.</p>
                     
                     <a href="https://www.facebook.com/zsz5wro" target="_blank" class="cta-button" style="background: #1877F2; border: none; font-size: 1.1rem; padding: 0.8rem 2rem; display: flex; align-items: center; gap: 10px; transition: transform 0.2s, background 0.2s;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -315,19 +313,19 @@
                     
                     <div class="info-card" style="grid-column: 1 / -1; border-top: 4px solid var(--primary-color);">
                         <h3 style="color:var(--primary-color); font-size: 2rem;">Branżowa Szkoła I stopnia nr 5</h3>
-                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-color);">Zdobądź pewny fach w ręku, pracuj i ucz się jednocześnie! To najszybsza i najbardziej stabilna droga do rozpoczęcia kariery zawodowej z pensją już od pierwszych dni pracy.</p>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-color);">Gwarancja zawodu i pewnej pracy! To najszybsza i najbardziej stabilna droga na start dorosłej ścieżki zawodowej Twojego dziecka – edukacja z realnym wynagrodzeniem każdego miesiąca.</p>
                         <div style="column-count: 2; column-gap: 40px;">
                             <ul style="font-size:1.05rem; color: var(--text-color);">
-                                <li><strong><a href="baza-szkoly.html#fryzjer" style="color:inherit; text-decoration:none;">Fryzjer</a></strong> – 64 miejsca. <span style="font-size: 0.9rem; opacity: 0.8;">Profesjonalna szkoła fryzjerska Wrocław.</span> (punktowana: plastyka)</li>
-                                <li><strong><a href="baza-szkoly.html#gastronomia" style="color:inherit; text-decoration:none;">Cukiernik</a></strong> – 64 miejsca. <span style="font-size: 0.9rem; opacity: 0.8;">Nauka zawodu cukiernik Wrocław.</span> (punktowana: plastyka)</li>
-                                <li><strong><a href="baza-szkoly.html#gastronomia" style="color:inherit; text-decoration:none;">Kucharz</a></strong> – 32 miejsca. <span style="font-size: 0.9rem; opacity: 0.8;">Szkoła gastronomiczna Wrocław – kucharz.</span> (punktowana: plastyka)</li>
-                                <li><strong><a href="baza-szkoly.html#handel" style="color:inherit; text-decoration:none;">Sprzedawca</a></strong> – 32 miejsca. <span style="font-size: 0.9rem; opacity: 0.8;">Szkoła handlowa Wrocław.</span> (punktowana: informatyka)</li>
+                                <li><strong><a href="baza-szkoly.html#fryzjer" style="color:inherit; text-decoration:none;">Fryzjer</a></strong> – 64 miejsca. (punktowana: plastyka)</li>
+                                <li><strong><a href="baza-szkoly.html#gastronomia" style="color:inherit; text-decoration:none;">Cukiernik</a></strong> – 64 miejsca. (punktowana: plastyka)</li>
+                                <li><strong><a href="baza-szkoly.html#gastronomia" style="color:inherit; text-decoration:none;">Kucharz</a></strong> – 32 miejsca. (punktowana: plastyka)</li>
+                                <li><strong><a href="baza-szkoly.html#handel" style="color:inherit; text-decoration:none;">Sprzedawca</a></strong> – 32 miejsca. (punktowana: informatyka)</li>
                                 <li><strong><a href="pracodawcy.html" style="color:inherit; text-decoration:none;">Blacharz samochodowy</a></strong> – 16 miejsc. (punktowana: technika)</li>
                                 <li><strong><a href="pracodawcy.html" style="color:inherit; text-decoration:none;">Lakiernik samochodowy</a></strong> – 16 miejsc. (punktowana: plastyka)</li>
-                                <li><strong><a href="baza-szkoly.html#gastronomia" style="color:inherit; text-decoration:none;">Kelner</a></strong> – 7 miejsc. <span style="font-size: 0.9rem; opacity: 0.8;">Ekspert gastronomii – kelner Wrocław.</span> (punktowana: plastyka)</li>
+                                <li><strong><a href="baza-szkoly.html#gastronomia" style="color:inherit; text-decoration:none;">Kelner</a></strong> – 7 miejsc. (punktowana: plastyka)</li>
                                 <li><strong><a href="pracodawcy.html" style="color:inherit; text-decoration:none;">Stolarz</a></strong> – 6 miejsc. (punktowana: plastyka)</li>
                                 <li><strong><a href="baza-szkoly.html#gastronomia" style="color:inherit; text-decoration:none;">Piekarz</a></strong> – 6 miejsc. (punktowana: plastyka)</li>
-                                <li><strong><a href="pracodawcy.html" style="color:inherit; text-decoration:none;">Elektryk</a></strong> – 4 miejsca. <span style="font-size: 0.9rem; opacity: 0.8;">Praktyczna nauka zawodu elektryk Wrocław.</span> (punktowana: fizyka)</li>
+                                <li><strong><a href="pracodawcy.html" style="color:inherit; text-decoration:none;">Elektryk</a></strong> – 4 miejsca. (punktowana: fizyka)</li>
                                 <li><strong><a href="pracodawcy.html" style="color:inherit; text-decoration:none;">Monter zabudowy w budownictwie</a></strong> – 3 miejsca. (punktowana: technika)</li>
                                 <li><strong><a href="baza-szkoly.html#handel" style="color:inherit; text-decoration:none;">Fotograf</a></strong> – 2 miejsca. (punktowana: informatyka i plastyka)</li>
                                 <li><strong><a href="pracodawcy.html" style="color:inherit; text-decoration:none;">Krawiec</a></strong> – 2 miejsca. (punktowana: plastyka)</li>
@@ -395,10 +393,15 @@
         </section>
 
         <!-- SEO Block 30: O szkole -->
-        <section class="info-section" style="padding: 4rem 5%; background: #fff;">
+        <section class="info-section" style="padding: 4rem 5%; background: var(--bg-color);">
             <div class="section-container" style="max-width: 1000px; text-align: center;">
-                <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem;">Szkoła Mistrzów – Zespół Szkół Zawodowych nr 5 we Wrocławiu</h3>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">ZSZ nr 5 we Wrocławiu to szkoła z wieloletnią tradycją kształcenia zawodowego. Uczniowie zdobywają tu wiedzę, doświadczenie zawodowe i kwalifikacje potrzebne na nowoczesnym rynku pracy. Nasza <strong>Szkoła Mistrzów</strong> łączy 80 lat historii z nowoczesnym systemem dualnym i profesjonalną kadrą.</p>
+                <details class="seo-accordion">
+                    <summary>Rozwiń szczegółowe informacje dla kandydatów i rodziców ↓</summary>
+                    <div class="seo-accordion-content">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem; padding-top:2rem;">Szkoła Mistrzów – Zespół Szkół Zawodowych nr 5 we Wrocławiu</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">ZSZ nr 5 we Wrocławiu to szkoła z wieloletnią tradycją kształcenia zawodowego. Uczniowie zdobywają tu wiedzę, doświadczenie zawodowe i kwalifikacje potrzebne na nowoczesnym rynku pracy. Nasza <strong>Szkoła Mistrzów</strong> łączy 80 lat historii z nowoczesnym systemem dualnym i profesjonalną kadrą.</p>
+                    </div>
+                </details>
             </div>
         </section>
 

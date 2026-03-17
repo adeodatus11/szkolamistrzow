@@ -17,7 +17,6 @@
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
                 document.documentElement.classList.add('dark-mode');
-                document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark-mode'));
             }
         })();
     </script>
@@ -148,12 +147,14 @@
             </div>
 
             <!-- SEO Block 25: Umowa o pracę w przygotowaniu zawodowym -->
-            <div style="margin-bottom: 3rem; background: #fff; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border-left: 5px solid var(--primary-color);">
-                <h2 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;">Umowa o pracę w celu przygotowania zawodowego – najważniejsze informacje</h2>
-                <p style="color: #444; line-height: 1.7; font-size: 1.05rem;">
-                    <strong>Umowa o pracę w celu przygotowania zawodowego</strong> to specyficzny rodzaj umowy zawieranej między pracodawcą a młodocianym pracownikiem. Zapewnia ona uczniowi status pracownika, odprowadzanie składek oraz wynagrodzenie. To fundament <strong>systemu dualnego</strong>, który łączy naukę teorii w szkole z praktycznym doświadczeniem zawodowym.
-                </p>
-            </div>
+            <details class="seo-accordion" style="margin-bottom: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto; text-align: left; background: var(--surface-color); padding: 1.5rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border:none; border-left: 5px solid var(--primary-color);">
+                <summary style="color: var(--text-color); font-weight: 600; font-size: 1.1rem; border-bottom: 1px dashed var(--border-color); padding-bottom: 10px; display: block; text-align: left;">Czym jest umowa o pracę w celu przygotowania zawodowego? (Więcej szczegółów) ↓</summary>
+                <div class="seo-accordion-content" style="margin-top: 1.5rem;">
+                    <p style="color: var(--text-color); line-height: 1.7; font-size: 1.05rem;">
+                        <strong>Umowa o pracę w celu przygotowania zawodowego</strong> to specyficzny rodzaj umowy zawieranej między pracodawcą a młodocianym pracownikiem. Zapewnia ona uczniowi status pracownika, odprowadzanie składek oraz wynagrodzenie. To fundament <strong>systemu dualnego</strong>, który łączy naukę teorii w szkole z praktycznym doświadczeniem zawodowym.
+                    </p>
+                </div>
+            </details>
 
             <div class="doc-grid">
                 <!-- Dokument 1 -->

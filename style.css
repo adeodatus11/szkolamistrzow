@@ -7,16 +7,16 @@
     --text-muted: #5B6B63;
     --heading-color: #173625;
 
-    --primary-color: #2F6B3D;
-    --secondary-color: #4B8A5B;
-    --primary-hover: #245530;
-    --primary-soft: #E8F3EB;
+    --primary-color: #089700;
+    --secondary-color: #047690;
+    --primary-hover: #067500;
+    --primary-soft: #E8F5E8;
 
-    --link-color: #2F6B3D;
-    --link-hover: #245530;
+    --link-color: #089700;
+    --link-hover: #067500;
 
-    --badge-bg: #E5EEE6;
-    --badge-text: #356E42;
+    --badge-bg: #E8F5E8;
+    --badge-text: #067500;
 
     --border-color: #D8E3DB;
     --header-bg: rgba(255, 255, 255, 0.88);
@@ -38,21 +38,21 @@
     --text-muted: #B7C5BE;
     --heading-color: #F4FBF7;
 
-    --primary-color: #7BC490;
-    --secondary-color: #96D6A8;
-    --primary-hover: #A7E3B7;
-    --primary-soft: #173326;
+    --primary-color: #51D74A;
+    --secondary-color: #409AAF;
+    --primary-hover: #2CD023;
+    --primary-soft: #1C3320;
 
-    --link-color: #96D6A8;
-    --link-hover: #B3E6C0;
+    --link-color: #51D74A;
+    --link-hover: #2CD023;
 
-    --badge-bg: #DDE8DE;
-    --badge-text: #2E6B3D;
+    --badge-bg: #1C3320;
+    --badge-text: #51D74A;
 
     --border-color: #2D3D48;
     --header-bg: rgba(14, 23, 32, 0.84);
 
-    --on-primary: #08120C;
+    --on-primary: #000000;
 
     --shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
     --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.38);
