@@ -371,4 +371,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
         loadEmployers();
     }
+
+    // 7. Open Day Popup Logic
+    const popup = document.getElementById('openDayPopup');
+    const closeBtn = document.getElementById('closePopup');
+    const popupCta = document.getElementById('popupCta');
+
+    if (popup && closeBtn) {
+        const showPopup = () => {
+            // Check if already shown in this session
+            if (!sessionStorage.getItem('openDayPopupShown')) {
+                setTimeout(() => {
+                    popup.style.display = 'flex';
+                    // Force reflow for animation
+                    popup.offsetHeight; 
+                    popup.classList.add('active');
+                    sessionStorage.setItem('openDayPopupShown', 'true');
+                }, 1200); // 1.2s delay for better UX
+            }
+        };
+
+        const closePopup = () => {
+            popup.classList.remove('active');
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 500); // Wait for fade out animation
+        };
+
+        closeBtn.addEventListener('click', closePopup);
+        
+        // Close on overlay click
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) closePopup();
+        });
+
+        if (popupCta) {
+            popupCta.addEventListener('click', () => {
+                const target = document.querySelector('#rekrutacja');
+                closePopup();
+                if (target) {
+                    setTimeout(() => scrollToElement(target), 600);
+                } else {
+                    window.location.href = 'rekrutacja.html';
+                }
+            });
+        }
+
+        // Initialize popup display
+        showPopup();
+    }
 });

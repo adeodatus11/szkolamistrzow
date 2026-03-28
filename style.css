@@ -87,13 +87,17 @@ body {
     content: url('orzeł negatyw.png');
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     color: var(--heading-color);
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
 
-ul, ol {
+ul,
+ol {
     margin-bottom: 1rem;
 }
 
@@ -254,7 +258,12 @@ a:hover {
 }
 
 /* Cards */
-.school-card, .feature-item, .info-card, .faq-item, .profession-card, .media-card {
+.school-card,
+.feature-item,
+.info-card,
+.faq-item,
+.profession-card,
+.media-card {
     background: var(--surface-color);
     border-radius: var(--border-radius);
     padding: 2.5rem;
@@ -263,14 +272,19 @@ a:hover {
     border: 1px solid var(--border-color);
 }
 
-.school-card:hover, .feature-item:hover, .info-card:hover, .faq-item:hover, .profession-card:hover, .media-card:hover {
+.school-card:hover,
+.feature-item:hover,
+.info-card:hover,
+.faq-item:hover,
+.profession-card:hover,
+.media-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
 }
 
-.dark-mode .school-card, 
-.dark-mode .feature-item, 
-.dark-mode .info-card, 
+.dark-mode .school-card,
+.dark-mode .feature-item,
+.dark-mode .info-card,
 .dark-mode .profession-card,
 .dark-mode .media-card {
     background: linear-gradient(180deg, var(--surface-color) 0%, var(--surface-muted) 100%);
@@ -403,7 +417,11 @@ a:hover {
 }
 
 /* Badges */
-.media-badge, .news-badge, .press-badge, .media-tag, .equip-item {
+.media-badge,
+.news-badge,
+.press-badge,
+.media-tag,
+.equip-item {
     display: inline-block;
     padding: 0.4rem 1.2rem;
     background: var(--badge-bg);
@@ -512,11 +530,11 @@ a:hover {
     .hero-content h1 {
         font-size: 2.8rem;
     }
-    
+
     .mobile-menu-toggle {
         display: flex;
     }
-    
+
     .main-nav {
         display: none;
         position: absolute;
@@ -528,11 +546,11 @@ a:hover {
         box-shadow: var(--shadow);
         border-top: 1px solid var(--border-color);
     }
-    
+
     .main-nav.active {
         display: block;
     }
-    
+
     .main-nav ul {
         flex-direction: column;
         gap: 20px;
@@ -540,5 +558,137 @@ a:hover {
 
     .stat-number {
         font-size: 3rem;
+    }
+}
+
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-modal {
+    background: var(--surface-color);
+    width: 100%;
+    max-width: 550px;
+    border-radius: 24px;
+    position: relative;
+    padding: 3rem 2rem 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(30px) scale(0.95);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.popup-overlay.active .popup-modal {
+    transform: translateY(0) scale(1);
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.2rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    line-height: 1;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.popup-close:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.popup-logo {
+    height: 90px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+}
+
+.popup-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+.popup-text {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.popup-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 2rem;
+    text-align: left;
+    display: inline-block;
+}
+
+.popup-list li {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.popup-footer {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+#popupCta {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+.dark-mode .popup-modal {
+    background: linear-gradient(145deg, #1c2b3c, #162231);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .popup-logo {
+    content: url('orzeł negatyw.png');
+}
+
+@media (max-width: 480px) {
+    .popup-modal {
+        padding: 2.5rem 1.5rem 2rem;
+    }
+    .popup-title {
+        font-size: 1.8rem;
+    }
+    .popup-text {
+        font-size: 1rem;
+    }
+    .popup-logo {
+        height: 70px;
     }
 }
