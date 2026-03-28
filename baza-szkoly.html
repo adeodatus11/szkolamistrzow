@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nowoczesne Pracownie Zawodowe Wrocław – Baza Dydaktyczna ZSZ 5</title>
-    <meta name="description" content="Poznaj infrastrukturę ZSZ nr 5. Nowoczesne pracownie fryzjerskie, gastronomiczne, cukiernicze oraz informatyczne. Zobacz gdzie uczą się mistrzowie we Wrocławiu.">
+    <title>Baza Szkoły – Pracownie i Galeria | ZSZ nr 5 Wrocław – Szkoła Mistrzów</title>
+    <meta name="description"
+        content="Poznaj bazę dydaktyczną ZSZ nr 5. Nowoczesne pracownie fryzjerskie, gastronomiczne, cukiernicze, handlowe oraz sala gimnastyczna. Galeria zdjęć Szkoły Mistrzów Wrocław.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <meta name="color-scheme" content="light dark">
     <script>
-        (function() {
+        (function () {
             const savedTheme = localStorage.getItem('theme');
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
@@ -20,71 +22,377 @@
     </script>
     <script src="script.js" defer></script>
     <style>
+        /* ── Hero ── */
         .baza-hero {
-            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #388e3c 100%);
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 55%, #1565c0 100%);
             color: #fff;
-            padding: 5rem 5%;
+            padding: 6rem 5% 5rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .baza-hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: #fff; }
-        .baza-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
 
-        .baza-container { max-width: 1200px; margin: 0 auto; padding: 4rem 5%; }
-        
-        .pracownia-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 2rem;
+        .baza-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
         }
-        .pracownia-card {
-            background: var(--surface-color);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border: 1px solid #f0f0f0;
-            transition: transform 0.3s ease;
+
+        .baza-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            margin-bottom: 1.2rem;
+            color: #fff;
+            position: relative;
         }
-        .pracownia-card:hover { transform: translateY(-10px); }
-        
-        .pracownia-img {
-            width: 100%;
-            height: 240px;
-            overflow: hidden;
+
+        .baza-hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            opacity: 0.92;
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            line-height: 1.7;
         }
-        .pracownia-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .pracownia-card:hover .pracownia-img img { transform: scale(1.1); }
-        
-        .pracownia-content { padding: 2rem; }
-        .pracownia-content h3 { color: var(--primary-color); font-size: 1.6rem; margin-bottom: 1rem; }
-        .pracownia-content p { color: #555; line-height: 1.7; margin-bottom: 1.5rem; }
-        
-        .equip-list {
-            list-style: none;
-            padding: 0;
+
+        /* ── Nav Tabs wrapper ── */
+        .tabs-wrapper {
+            position: sticky;
+            top: 72px;
+            z-index: 90;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            align-items: stretch;
+            background: var(--surface-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--border-color);
         }
-        .equip-item {
-            background: var(--badge-bg);
-            color: var(--badge-text);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
+
+        /* Prev / Next arrow buttons */
+        .tabs-arrow {
+            flex-shrink: 0;
+            width: 52px;
+            background: var(--surface-color);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            transition: color 0.2s ease, background 0.2s ease;
+            z-index: 3;
+        }
+        .tabs-arrow:hover {
+            color: var(--primary-color);
+            background: var(--primary-soft);
+        }
+        .tabs-arrow-left { border-right: 1px solid var(--border-color); }
+        .tabs-arrow-right { border-left: 1px solid var(--border-color); }
+
+        /* ── Nav Tabs – infinite marquee ── */
+        .gallery-tabs {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* fade edges */
+        .gallery-tabs::before,
+        .gallery-tabs::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .gallery-tabs::before {
+            left: 0;
+            background: linear-gradient(to right, var(--surface-color) 60%, transparent 100%);
+        }
+        .gallery-tabs::after {
+            right: 0;
+            background: linear-gradient(to left, var(--surface-color) 60%, transparent 100%);
+        }
+
+        .tabs-track {
+            display: flex;
+            width: max-content;
+            animation: tabs-marquee 32s linear infinite;
+        }
+        .tabs-track:hover,
+        .tabs-track.paused {
+            animation-play-state: paused;
+        }
+
+        @keyframes tabs-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .tab-btn {
+            flex-shrink: 0;
+            width: 200px;
+            padding: 0.8rem 0.75rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
             font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+            white-space: normal;
+            word-break: break-word;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            line-height: 1.25;
+            user-select: none;
+            text-align: center;
+            min-height: 58px;
+        }
+        .tab-btn:hover {
+            color: var(--primary-color);
+            background: var(--primary-soft);
+        }
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        .tab-btn .tab-icon { font-size: 1.05rem; }
+
+        /* ── Section ── */
+        .gallery-section {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 4rem 4%;
+            display: none;
+        }
+
+        .gallery-section.active {
+            display: block;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-icon-wrap {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(8, 151, 0, 0.25);
+        }
+
+        .section-text h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--heading-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-text p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* ── Masonry Gallery ── */
+        .photo-grid {
+            columns: 3;
+            column-gap: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .photo-grid {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .photo-grid {
+                columns: 1;
+            }
+        }
+
+        .photo-item {
+            break-inside: avoid;
+            margin-bottom: 14px;
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            background: var(--surface-muted);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+            object-fit: cover;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .photo-item::after {
+            content: '\f065';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            background: rgba(8, 151, 0, 0.0);
+            transition: background 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .photo-item:hover::after {
+            opacity: 1;
+            background: rgba(8, 151, 0, 0.35);
+        }
+
+        /* ── Lightbox ── */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.93);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+
+        #lightbox.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #lightbox img {
+            max-width: min(90vw, 1200px);
+            max-height: 88vh;
+            border-radius: 12px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            object-fit: contain;
+            transform: scale(0.93);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        #lightbox.open img {
+            transform: scale(1);
+        }
+
+        .lb-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 2.4rem;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.8;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 10;
+        }
+
+        .lb-close:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+
+        .lb-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 54px;
+            height: 54px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            backdrop-filter: blur(6px);
+        }
+
+        .lb-nav:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        #lb-prev {
+            left: 16px;
+        }
+
+        #lb-next {
+            right: 16px;
+        }
+
+        .lb-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            font-family: 'Outfit', sans-serif;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 6px 18px;
+            border-radius: 999px;
+        }
+
+        /* ── Responsive section header ── */
+        @media (max-width: 600px) {
+            .section-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-icon-wrap {
+                width: 56px;
+                height: 56px;
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
+    <!-- Header -->
     <header class="main-header">
         <div class="logo-container">
-            <a href="index.html" style="display:flex; align-items:center; gap:15px; color:inherit; text-decoration:none;">
+            <a href="index.html"
+                style="display:flex; align-items:center; gap:15px; color:inherit; text-decoration:none;">
                 <img src="orzeł bez tła.png" alt="Logo Szkoła Mistrzów" class="logo">
                 <span class="slogan">Szkoła Mistrzów</span>
             </a>
@@ -109,154 +417,528 @@
     </header>
 
     <main>
+        <!-- Hero -->
         <section class="baza-hero">
-            <h1>Baza dydaktyczna szkoły</h1>
-            <p>Stwarzamy optymalne warunki do nauki zawodu. Nasze pracownie są wyposażone w profesjonalny sprzęt, identyczny z tym, który spotkasz w najlepszych zakładach pracy.</p>
-
-            <!-- SEO Block 2: Technikum we Wrocławiu -->
-            <details class="seo-accordion" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; text-align: left;">
-                <summary style="color: rgba(255,255,255,0.7); border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 5px; display: inline-block;">Rozwiń szczegóły dla kandydatów ↓</summary>
-                <div class="seo-accordion-content" style="background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); margin-top: 1rem;">
-                    <h2 style="color: #fff; font-size: 1.4rem; margin-bottom: 0.8rem;">Technikum we Wrocławiu – nauka zawodu i matura</h2>
-                    <p style="color: rgba(255,255,255,0.9); font-size: 1rem; line-height: 1.5;">Technikum to szkoła średnia, która pozwala zdobyć zawód oraz przygotować się do matury. W ZSZ nr 5 uczniowie zdobywają praktyczne umiejętności, przygotowując się do egzaminu maturalnego i dalszej nauki na studiach.</p>
-                </div>
-            </details>
+            <h1>📸 Baza Szkoły – galeria</h1>
+            <p>Zajrzyj do naszych pracowni, sal i przestrzeni szkolnych. Profesjonalny sprzęt, nowoczesne warunki i
+                atmosfera, która inspiruje do mistrzostwa.</p>
         </section>
 
-        <div class="baza-container">
-            <div class="pracownia-grid">
-                <!-- Fryzjerska -->
-                <div class="pracownia-card">
-                    <div class="pracownia-img"><img src="zdjecia/P1040967.png" alt="Pracownia fryzjerska"></div>
-                    <div class="pracownia-content">
-                        <h3 id="fryzjer">Pracownia Fryzjerska</h3>
-                        <p>Nowoczesne stanowiska myjące, profesjonalne fotele i pełne oprzyrządowanie do stylizacji, koloryzacji oraz pielęgnacji włosów.</p>
-                        <!-- SEO Block 4: Zawód fryzjer -->
-                        <details class="seo-accordion" style="margin-top: 1.5rem; margin-bottom: 1rem; padding:0; border:none;">
-                            <summary style="text-align: left; padding: 0.5rem 0; border-top: 1px solid var(--border-color);">Więcej o zawodzie ↓</summary>
-                            <div class="seo-accordion-content" style="padding-top: 0.5rem; color: var(--text-muted);">
-                                <strong>Zawód fryzjer Wrocław:</strong> Fryzjerstwo to zawód dla osób z pasją i poczuciem estetyki. W naszym technikum i szkole branżowej nauczysz się nowoczesnych technik strzyżenia i koloryzacji, co pozwoli Ci na szybkie znalezienie pracy w prestiżowych salonach lub otwarcie własnego biznesu.
-                            </div>
-                        </details>
-                        <div class="equip-list">
-                            <span class="equip-item">Stanowiska myjące</span>
-                            <span class="equip-item">Infrazony</span>
-                            <span class="equip-item">Profesjonalne kosmetyki</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Tabs Navigation – infinite marquee -->
+        <div class="tabs-wrapper">
+            <button class="tabs-arrow tabs-arrow-left" id="tabs-prev" aria-label="Poprzednia kategoria">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <nav class="gallery-tabs" aria-label="Kategorie galerii">
+            <div class="tabs-track" id="tabs-track">
+                <!-- Original set -->
+                <button class="tab-btn active" data-tab="lecie"><span class="tab-icon">🎉</span> 80-lecie
+                    szkoły</button>
+                <button class="tab-btn" data-tab="cukiernicza"><span class="tab-icon">🍰</span> Pracownia
+                    cukierniczo-gastronomiczna</button>
+                <button class="tab-btn" data-tab="fryzjerska"><span class="tab-icon">✂️</span> Pracownia
+                    fryzjerska</button>
+                <button class="tab-btn" data-tab="handlowa"><span class="tab-icon">🛒</span> Pracownia handlowa</button>
+                <button class="tab-btn" data-tab="gym"><span class="tab-icon">🏋️</span> Sala gimnastyczna</button>
+                <button class="tab-btn" data-tab="szkola"><span class="tab-icon">🏛️</span> Szkoła – budynek i
+                    sale</button>
+                <button class="tab-btn" data-tab="turniej"><span class="tab-icon">🏆</span> Turniej Cukiernik i
+                    Piekarz</button>
+                <!-- Duplicate set for seamless loop -->
+                <button class="tab-btn" data-tab="lecie" aria-hidden="true" tabindex="-1"><span
+                        class="tab-icon">🎉</span> 80-lecie szkoły</button>
+                <button class="tab-btn" data-tab="cukiernicza" aria-hidden="true" tabindex="-1"><span
+                        class="tab-icon">🍰</span> Pracownia cukierniczo-gastronomiczna</button>
+                <button class="tab-btn" data-tab="fryzjerska" aria-hidden="true" tabindex="-1"><span
+                        class="tab-icon">✂️</span> Pracownia fryzjerska</button>
+                <button class="tab-btn" data-tab="handlowa" aria-hidden="true" tabindex="-1"><span
+                        class="tab-icon">🛒</span> Pracownia handlowa</button>
+                <button class="tab-btn" data-tab="gym" aria-hidden="true" tabindex="-1"><span
+                        class="tab-icon">🏋️</span> Sala gimnastyczna</button>
+                <button class="tab-btn" data-tab="szkola" aria-hidden="true" tabindex="-1"><span
+                        class="tab-icon">🏛️</span> Szkoła – budynek i sale</button>
+                <button class="tab-btn" data-tab="turniej" aria-hidden="true" tabindex="-1"><span
+                        class="tab-icon">🏆</span> Turniej Cukiernik i Piekarz</button>
+            </div>
+            </nav>
+            <button class="tabs-arrow tabs-arrow-right" id="tabs-next" aria-label="Następna kategoria">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
 
-                <!-- Gastronomiczna -->
-                <div class="pracownia-card">
-                    <div class="pracownia-img"><img src="zdjecia/P1040961.png" alt="Pracownia gastronomiczna"></div>
-                    <div class="pracownia-content">
-                        <h3 id="gastronomia">Pracownia Gastronomiczna</h3>
-                        <p>Miejsce, gdzie kucharze i kelnerzy szlifują swoje umiejętności. Wyposażona w piece konwekcyjno-parowe, profesjonalne ciągi kuchenne i akcesoria.</p>
-                        <!-- SEO Blocks 5 & 19: Kucharz i Kelner -->
-                        <details class="seo-accordion" style="margin-top: 1.5rem; margin-bottom: 1rem; padding:0; border:none;">
-                            <summary style="text-align: left; padding: 0.5rem 0; border-top: 1px solid var(--border-color);">Więcej o gastronomii ↓</summary>
-                            <div class="seo-accordion-content" style="padding-top: 0.5rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.8rem;">
-                                <p><strong>Szkoła gastronomiczna Wrocław – kucharz:</strong> Nauka w zawodzie kucharza to przygoda pełna smaków. Uczniowie poznają techniki przyrządzania potraw z różnych kuchni świata oraz zasady zdrowego żywienia, przygotowując się do pracy w najlepszych restauracjach.</p>
-                                <p><strong>Ekspert gastronomii – kelner Wrocław:</strong> Zawód kelnera wymaga wysokiej kultury osobistej i umiejętności komunikacyjnych. Nasi uczniowie uczą się profesjonalnej obsługi gości, aranżacji stołów i serwowania potraw na najwyższym poziomie.</p>
-                            </div>
-                        </details>
-                        <div class="equip-list" style="margin-top: 1rem;">
-                            <span class="equip-item">Piece konwekcyjne</span>
-                            <span class="equip-item">Stanowiska kelnerskie</span>
-                            <span class="equip-item">Chłodnie profesjonalne</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cukiernicza -->
-                <div class="pracownia-card">
-                    <div class="pracownia-img"><img src="zdjecia/P1050027 — kopia.png" alt="Pracownia cukiernicza"></div>
-                    <div class="pracownia-content">
-                        <h3>Pracownia Cukiernicza</h3>
-                        <p>Zaplecze dla przyszłych cukierników. Miksery planetarne, stacje do temperowania czekolady i profesjonalne formy cukiernicze.</p>
-                        <!-- SEO Block 6: Cukiernik -->
-                        <details class="seo-accordion" style="margin-top: 1.5rem; margin-bottom: 1rem; padding:0; border:none;">
-                            <summary style="text-align: left; padding: 0.5rem 0; border-top: 1px solid var(--border-color);">Więcej o cukiernictwie ↓</summary>
-                            <div class="seo-accordion-content" style="padding-top: 0.5rem; color: var(--text-muted);">
-                                <strong>Nauka zawodu cukiernik Wrocław:</strong> Cukiernictwo to branża, która stale się rozwija. Uczniowie zdobywają umiejętności tworzenia artystycznych wypieków, deserów i wyrobów czekoladowych, co otwiera drogę do pracy w nowoczesnych cukierniach i pracowniach tortów.
-                            </div>
-                        </details>
-                        <div class="equip-list">
-                            <span class="equip-item">Miksery planetarne</span>
-                            <span class="equip-item">Marmurowe blaty</span>
-                            <span class="equip-item">Profesjonalne formy</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Handlowa -->
-                <div class="pracownia-card">
-                    <div class="pracownia-img"><img src="zdjecia/P1040961.png" alt="Pracownia handlowa"></div>
-                    <div class="pracownia-content">
-                        <h3 id="handel">Pracownia Handlowa</h3>
-                        <p>Symulacja prawdziwego sklepu. Kasy fiskalne, wagi elektroniczne, czytniki kodów i systemy do zarządzania magazynem.</p>
-                        <!-- SEO Block 7: Sprzedawca/Handlowiec -->
-                        <details class="seo-accordion" style="margin-top: 1.5rem; margin-bottom: 1rem; padding:0; border:none;">
-                            <summary style="text-align: left; padding: 0.5rem 0; border-top: 1px solid var(--border-color);">Więcej o sekcji handlowej ↓</summary>
-                            <div class="seo-accordion-content" style="padding-top: 0.5rem; color: var(--text-muted);">
-                                <strong>Szkoła handlowa Wrocław:</strong> W zawodzie sprzedawcy i technika handlowca kluczowe są umiejętności sprzedażowe i znajomość technik marketingowych. Kształcimy profesjonalistów gotowych do pracy w nowoczesnym handlu i obsłudze klienta.
-                            </div>
-                        </details>
-                        <div class="equip-list">
-                            <span class="equip-item">Kasy fiskalne</span>
-                            <span class="equip-item">Wagi elektroniczne</span>
-                            <span class="equip-item">Systemy POS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Informatyczne -->
-                </div>
-
-                <!-- NOWOŚĆ: Sekcja zawodów technicznych i rzemieślniczych -->
-                <div class="pracownia-card" style="grid-column: 1 / -1; background: #fafafa; border: 1px dashed #ccc;">
-                    <div class="pracownia-content">
-                        <h3>Pozostałe kierunki i pracownie rzemieślnicze</h3>
-                        <p>Kształcimy w szerokim wachlarzu zawodów technicznych, współpracując z wyspecjalizowanymi warsztatami rzemieślniczymi we Wrocławiu.</p>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; text-align: left; font-size: 0.9rem; color: #444;">
-                            <div>
-                                <p><strong>Lakiernik i Blacharz samochodowy:</strong> Branża motoryzacyjna we Wrocławiu dynamicznie się rozwija. Nasi uczniowie zdobywają doświadczenie w profesjonalnych lakierniach i warsztatach blacharskich, ucząc się renowacji nadwozi i nowoczesnych systemów naprawczych.</p>
-                            </div>
-                            <div>
-                                <p><strong>Stolarz i Tapicer:</strong> Praca z drewnem i renowacja mebli to powrót do korzeni rzemiosła. Uczniowie uczą się tworzenia mebli od podstaw oraz profesjonalnego wykańczania wnętrz.</p>
-                            </div>
-                            <div>
-                                <p><strong>Elektryk:</strong> Jeden z najbardziej poszukiwanych zawodów na rynku. Nauka obejmuje montaż instalacji elektrycznych, konserwację urządzeń oraz nowoczesne systemy inteligentnych domów.</p>
-                            </div>
-                            <div>
-                                <p><strong>Budownictwo (Murarz, Monter):</strong> Solidna wiedza o wznoszeniu budynków i pracach wykończeniowych. Praktyka na placach budowy daje realne doświadczenie w branży deweloperskiej i remontowej.</p>
-                            </div>
-                            <div>
-                                <p><strong>Krawiec i Fotograf:</strong> Zawody artystyczne wymagające precyzji. Krawiectwo to projektowanie i szycie odzieży, a fotografia to praca z obrazem i nowoczesnym sprzętem studyjnym.</p>
-                            </div>
-                            <div>
-                                <p><strong>Piekarz:</strong> Tradycyjna receptura i nowoczesny proces produkcji pieczywa. Nauka obejmuje cały proces – od doboru składników po wypiek w profesjonalnych piecach.</p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- ══ SECTION 1: 80-lecie ══ -->
+        <section class="gallery-section active" id="section-lecie" aria-labelledby="tab-lecie">
+            <div class="section-header">
+                <div class="section-icon-wrap">🎉</div>
+                <div class="section-text">
+                    <h2>80-lecie szkoły</h2>
+                    <p>Jubileusz 80-lecia naszej szkoły był wyjątkowym wydarzeniem, które połączyło pokolenia uczniów,
+                        nauczycieli i absolwentów. To historia wielu mistrzów, którzy zaczynali swoją drogę właśnie
+                        tutaj. Tradycja zobowiązuje – dlatego dalej kształcimy kolejne pokolenia w Szkole Mistrzów.</p>
                 </div>
             </div>
-        </div>
+            <div class="photo-grid" data-gallery="lecie">
+                <div class="photo-item"
+                    data-src="zdjecia/80 lecie/85 lecie, Dawida, ZSZ nr 5, 20250926 (00077)_03_28_2026.webp">
+                    <img src="zdjecia/80 lecie/85 lecie, Dawida, ZSZ nr 5, 20250926 (00077)_03_28_2026.webp"
+                        alt="Jubileusz 80-lecia szkoły" loading="lazy">
+                </div>
+                <div class="photo-item"
+                    data-src="zdjecia/80 lecie/85 lecie, Dawida, ZSZ nr 5, 20250926 (00178)_03_28_2026.webp">
+                    <img src="zdjecia/80 lecie/85 lecie, Dawida, ZSZ nr 5, 20250926 (00178)_03_28_2026.webp"
+                        alt="Jubileusz 80-lecia szkoły" loading="lazy">
+                </div>
+                <div class="photo-item"
+                    data-src="zdjecia/80 lecie/85 lecie, Dawida, ZSZ nr 5, 20250926 (00299)_03_28_2026.webp">
+                    <img src="zdjecia/80 lecie/85 lecie, Dawida, ZSZ nr 5, 20250926 (00299)_03_28_2026.webp"
+                        alt="Jubileusz 80-lecia szkoły" loading="lazy">
+                </div>
+                <div class="photo-item"
+                    data-src="zdjecia/80 lecie/85 lecie, Dawida, ZSZ nr 5, 20250926 (00389)_03_28_2026.webp">
+                    <img src="zdjecia/80 lecie/85 lecie, Dawida, ZSZ nr 5, 20250926 (00389)_03_28_2026.webp"
+                        alt="Jubileusz 80-lecia szkoły" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SECTION 2: Pracownia cukierniczo-gastronomiczna ══ -->
+        <section class="gallery-section" id="section-cukiernicza" aria-labelledby="tab-cukiernicza">
+            <div class="section-header">
+                <div class="section-icon-wrap">🍰</div>
+                <div class="section-text">
+                    <h2>Pracownia cukierniczo-gastronomiczna</h2>
+                    <p>Nowoczesna pracownia, w której uczą się przyszli kucharze, cukiernicy, piekarze i kelnerzy.
+                        Pracujemy na profesjonalnym sprzęcie wysokiej klasy, takim jak w prawdziwej gastronomii. Tutaj
+                        zaczyna się droga do mistrzostwa w zawodach gastronomicznych.</p>
+                </div>
+            </div>
+            <div class="photo-grid" data-gallery="cukiernicza">
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00008_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00008_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00102_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00102_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00124_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00124_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00172_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00172_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00187_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00187_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00215_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00215_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00352_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00352_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00392_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00392_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00426_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00426_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00444_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00444_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00456_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00456_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00465_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00465_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00486_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00486_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00651_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00651_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00652_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00652_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00653_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00653_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00654_03_28_2026.webp"><img
+                        src="zdjecia/pracownia cukierniczo-gastronomiczna/DSC00654_03_28_2026.webp"
+                        alt="Pracownia gastronomiczna" loading="lazy"></div>
+            </div>
+        </section>
+
+        <!-- ══ SECTION 3: Pracownia fryzjerska ══ -->
+        <section class="gallery-section" id="section-fryzjerska" aria-labelledby="tab-fryzjerska">
+            <div class="section-header">
+                <div class="section-icon-wrap">✂️</div>
+                <div class="section-text">
+                    <h2>Pracownia fryzjerska</h2>
+                    <p>Pracownia fryzjerska dedykowana Antoniemu Cierplikowskiemu – jednemu z największych mistrzów
+                        fryzjerstwa w historii. Nowoczesny sprzęt, profesjonalne stanowiska pracy i współpraca z
+                        topowymi markami fryzjerskimi. Rozwijamy także fryzjerstwo naturalne we współpracy z
+                        CulumNATURA. Tu uczysz się zawodu w prawdziwych warunkach – w Szkole Mistrzów.</p>
+                </div>
+            </div>
+            <div class="photo-grid" data-gallery="fryzjerska">
+                <div class="photo-item" data-src="zdjecia/pracownia fryzjerska/DSC00643_03_28_2026.webp"><img
+                        src="zdjecia/pracownia fryzjerska/DSC00643_03_28_2026.webp" alt="Pracownia fryzjerska"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia fryzjerska/DSC00645_03_28_2026.webp"><img
+                        src="zdjecia/pracownia fryzjerska/DSC00645_03_28_2026.webp" alt="Pracownia fryzjerska"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia fryzjerska/DSC00646_03_28_2026.webp"><img
+                        src="zdjecia/pracownia fryzjerska/DSC00646_03_28_2026.webp" alt="Pracownia fryzjerska"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia fryzjerska/DSC00648_03_28_2026.webp"><img
+                        src="zdjecia/pracownia fryzjerska/DSC00648_03_28_2026.webp" alt="Pracownia fryzjerska"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia fryzjerska/DSC00650_03_28_2026.webp"><img
+                        src="zdjecia/pracownia fryzjerska/DSC00650_03_28_2026.webp" alt="Pracownia fryzjerska"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia fryzjerska/kon_fryz2025_29_03_28_2026.webp"><img
+                        src="zdjecia/pracownia fryzjerska/kon_fryz2025_29_03_28_2026.webp" alt="Konkurs fryzjerski"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia fryzjerska/kon_fryz2025_30_03_28_2026.webp"><img
+                        src="zdjecia/pracownia fryzjerska/kon_fryz2025_30_03_28_2026.webp" alt="Konkurs fryzjerski"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia fryzjerska/kon_fryz2025_31_03_28_2026.webp"><img
+                        src="zdjecia/pracownia fryzjerska/kon_fryz2025_31_03_28_2026.webp" alt="Konkurs fryzjerski"
+                        loading="lazy"></div>
+            </div>
+        </section>
+
+        <!-- ══ SECTION 4: Pracownia handlowa ══ -->
+        <section class="gallery-section" id="section-handlowa" aria-labelledby="tab-handlowa">
+            <div class="section-header">
+                <div class="section-icon-wrap">🛒</div>
+                <div class="section-text">
+                    <h2>Pracownia handlowa</h2>
+                    <p>Uczniowie w zawodzie sprzedawca oraz technik handlowiec uczą się w pracowni odwzorowującej realne
+                        warunki pracy w handlu. Przygotowujemy do egzaminów zawodowych i prawdziwej pracy w branży.
+                        Praktyka, doświadczenie i konkretne umiejętności – czyli droga do mistrzostwa w handlu.</p>
+                </div>
+            </div>
+            <div class="photo-grid" data-gallery="handlowa">
+                <div class="photo-item" data-src="zdjecia/pracownia handlowa/DSC00655_03_28_2026.webp"><img
+                        src="zdjecia/pracownia handlowa/DSC00655_03_28_2026.webp" alt="Pracownia handlowa"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia handlowa/DSC00656_03_28_2026.webp"><img
+                        src="zdjecia/pracownia handlowa/DSC00656_03_28_2026.webp" alt="Pracownia handlowa"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia handlowa/DSC00657_03_28_2026.webp"><img
+                        src="zdjecia/pracownia handlowa/DSC00657_03_28_2026.webp" alt="Pracownia handlowa"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia handlowa/DSC00659_03_28_2026.webp"><img
+                        src="zdjecia/pracownia handlowa/DSC00659_03_28_2026.webp" alt="Pracownia handlowa"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia handlowa/DSC00662_03_28_2026.webp"><img
+                        src="zdjecia/pracownia handlowa/DSC00662_03_28_2026.webp" alt="Pracownia handlowa"
+                        loading="lazy"></div>
+                <div class="photo-item" data-src="zdjecia/pracownia handlowa/DSC00663_03_28_2026.webp"><img
+                        src="zdjecia/pracownia handlowa/DSC00663_03_28_2026.webp" alt="Pracownia handlowa"
+                        loading="lazy"></div>
+            </div>
+        </section>
+
+        <!-- ══ SECTION 5: Sala gimnastyczna ══ -->
+        <section class="gallery-section" id="section-gym" aria-labelledby="tab-gym">
+            <div class="section-header">
+                <div class="section-icon-wrap">🏋️</div>
+                <div class="section-text">
+                    <h2>Sala gimnastyczna</h2>
+                    <p>Świeżo wyremontowana sala gimnastyczna i rozwijająca się baza sportowa pozwalają naszym uczniom
+                        dbać o zdrowie i kondycję. Korzystamy także z Aquaparku przy ul. Borowskiej oraz zajęć na
+                        lodowisku i rolkach przy ul. Spiskiej. W Szkole Mistrzów dbamy nie tylko o zawód, ale także o
+                        zdrowie i rozwój fizyczny.</p>
+                </div>
+            </div>
+            <div class="photo-grid" data-gallery="gym">
+                <div class="photo-item" data-src="zdjecia/sala gimnastyczna/DSC00601_03_28_2026.webp"><img
+                        src="zdjecia/sala gimnastyczna/DSC00601_03_28_2026.webp" alt="Sala gimnastyczna" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/sala gimnastyczna/DSC00608_03_28_2026.webp"><img
+                        src="zdjecia/sala gimnastyczna/DSC00608_03_28_2026.webp" alt="Sala gimnastyczna" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/sala gimnastyczna/DSC00638_03_28_2026.webp"><img
+                        src="zdjecia/sala gimnastyczna/DSC00638_03_28_2026.webp" alt="Sala gimnastyczna" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/sala gimnastyczna/DSC00959_03_28_2026.webp"><img
+                        src="zdjecia/sala gimnastyczna/DSC00959_03_28_2026.webp" alt="Sala gimnastyczna" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/sala gimnastyczna/DSC00970_03_28_2026.webp"><img
+                        src="zdjecia/sala gimnastyczna/DSC00970_03_28_2026.webp" alt="Sala gimnastyczna" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SECTION 6: Szkoła ogólnie ══ -->
+        <section class="gallery-section" id="section-szkola" aria-labelledby="tab-szkola">
+            <div class="section-header">
+                <div class="section-icon-wrap">🏛️</div>
+                <div class="section-text">
+                    <h2>Szkoła – budynek i sale lekcyjne</h2>
+                    <p>Nasza szkoła mieści się w zabytkowym, klimatycznym budynku z ponad stuletnią historią. To miejsce
+                        z charakterem, które nieustannie modernizujemy i rozwijamy, tworząc coraz lepsze warunki do
+                        nauki zawodu i zdobywania wiedzy. Tradycja i nowoczesność spotykają się tutaj – w Szkole
+                        Mistrzów.</p>
+                </div>
+            </div>
+            <div class="photo-grid" data-gallery="szkola">
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/000096730003_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/000096730003_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/000096730009_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/000096730009_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/000103030001_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/000103030001_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/000103030003_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/000103030003_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/DSC00422_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/DSC00422_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/DSC00437_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/DSC00437_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/DSC00745_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/DSC00745_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/DSC00822_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/DSC00822_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/DSC00931_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/DSC00931_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/DSC04423_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/DSC04423_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/DSC04424_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/DSC04424_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/P1040961_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/P1040961_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/P1040967_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/P1040967_03_28_2026.webp" alt="Szkoła ZSZ nr 5" loading="lazy">
+                </div>
+                <div class="photo-item" data-src="zdjecia/szkoła ogólnie/P1050027 — kopia_03_28_2026.webp"><img
+                        src="zdjecia/szkoła ogólnie/P1050027 — kopia_03_28_2026.webp" alt="Szkoła ZSZ nr 5"
+                        loading="lazy"></div>
+            </div>
+        </section>
+
+        <!-- ══ SECTION 7: Turniej ══ -->
+        <section class="gallery-section" id="section-turniej" aria-labelledby="tab-turniej">
+            <div class="section-header">
+                <div class="section-icon-wrap">🏆</div>
+                <div class="section-text">
+                    <h2>Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz</h2>
+                    <p>Ogólnopolski Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz to wydarzenie z
+                        wieloletnią tradycją – w 2026 roku odbywa się już XXXI edycja. Do naszej szkoły przyjeżdżają
+                        najlepsi uczniowie z całej Polski, by rywalizować o tytuł mistrza. To konkurs, który doskonale
+                        pokazuje, że Zespół Szkół Zawodowych nr 5 to prawdziwa Szkoła Mistrzów.</p>
+                </div>
+            </div>
+            <div class="photo-grid" data-gallery="turniej">
+                <div class="photo-item"
+                    data-src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/DSC00525_03_28_2026.webp">
+                    <img src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/DSC00525_03_28_2026.webp"
+                        alt="Turniej Cukiernik i Piekarz" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/DSC00533_03_28_2026.webp">
+                    <img src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/DSC00533_03_28_2026.webp"
+                        alt="Turniej Cukiernik i Piekarz" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/DSC00534_03_28_2026.webp">
+                    <img src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/DSC00534_03_28_2026.webp"
+                        alt="Turniej Cukiernik i Piekarz" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0521_03_28_2026.webp">
+                    <img src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0521_03_28_2026.webp"
+                        alt="Turniej Cukiernik i Piekarz" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0553_03_28_2026.webp">
+                    <img src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0553_03_28_2026.webp"
+                        alt="Turniej Cukiernik i Piekarz" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0554_03_28_2026.webp">
+                    <img src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0554_03_28_2026.webp"
+                        alt="Turniej Cukiernik i Piekarz" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0577_03_28_2026.webp">
+                    <img src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0577_03_28_2026.webp"
+                        alt="Turniej Cukiernik i Piekarz" loading="lazy"></div>
+                <div class="photo-item"
+                    data-src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0597_03_28_2026.webp">
+                    <img src="zdjecia/Turniej na Najlepszego Ucznia w Zawodzie Cukiernik i Piekarz/IMG_0597_03_28_2026.webp"
+                        alt="Turniej Cukiernik i Piekarz" loading="lazy"></div>
+            </div>
+        </section>
     </main>
 
+    <!-- Lightbox -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+        <button class="lb-close" id="lb-close" aria-label="Zamknij">&times;</button>
+        <button class="lb-nav" id="lb-prev" aria-label="Poprzednie zdjęcie"><i
+                class="fa-solid fa-chevron-left"></i></button>
+        <img id="lb-img" src="" alt="Powiększone zdjęcie">
+        <button class="lb-nav" id="lb-next" aria-label="Następne zdjęcie"><i
+                class="fa-solid fa-chevron-right"></i></button>
+        <div class="lb-counter" id="lb-counter"></div>
+    </div>
+
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="orzeł bez tła.png" alt="Szkoła Mistrzów Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">
+                <img src="orzeł bez tła.png" alt="Szkoła Mistrzów Logo"
+                    style="height:40px; vertical-align:middle; margin-right:10px;">
                 Szkoła Mistrzów
             </div>
             <p>&copy; 2026 Zespół Szkół Zawodowych nr 5 we Wrocławiu.</p>
-            <div class="footer-socials" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a href="https://zsz5.edupage.org" target="_blank" class="footer-social-btn" title="Oficjalna strona szkoły"><i class="fa-solid fa-globe"></i></a>
-                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <div class="footer-socials"
+                style="margin-top:1.5rem; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                <a href="https://zsz5.edupage.org" target="_blank" class="footer-social-btn"
+                    title="Oficjalna strona szkoły"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.facebook.com/zsz5wro" target="_blank" class="footer-social-btn" title="Facebook"><i
+                        class="fa-brands fa-facebook-f"></i></a>
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            // ── Tab switching (works with cloned marquee buttons) ──
+            const sections = document.querySelectorAll('.gallery-section');
+
+            function activateTab(tabKey) {
+                document.querySelectorAll('.tab-btn').forEach(t => {
+                    t.classList.toggle('active', t.dataset.tab === tabKey);
+                });
+                sections.forEach(s => s.classList.remove('active'));
+                const target = document.getElementById('section-' + tabKey);
+                if (target) target.classList.add('active');
+            }
+
+            document.getElementById('tabs-track').addEventListener('click', e => {
+                const btn = e.target.closest('.tab-btn');
+                if (!btn) return;
+                activateTab(btn.dataset.tab);
+            });
+
+            // ── Arrow buttons: step through tabs manually ──
+            const TAB_KEYS = ['lecie','cukiernicza','fryzjerska','handlowa','gym','szkola','turniej'];
+            let currentTabIdx = 0;
+
+            function stepTab(dir) {
+                currentTabIdx = (currentTabIdx + dir + TAB_KEYS.length) % TAB_KEYS.length;
+                activateTab(TAB_KEYS[currentTabIdx]);
+                // Briefly pause marquee so user can read
+                const track = document.getElementById('tabs-track');
+                track.classList.add('paused');
+                clearTimeout(track._resumeTimer);
+                track._resumeTimer = setTimeout(() => track.classList.remove('paused'), 2000);
+            }
+
+            document.getElementById('tabs-prev').addEventListener('click', () => stepTab(-1));
+            document.getElementById('tabs-next').addEventListener('click', () => stepTab(1));
+
+            // Keep currentTabIdx in sync when clicking a tab directly
+            const _origActivate = activateTab;
+            activateTab = function(key) {
+                _origActivate(key);
+                const idx = TAB_KEYS.indexOf(key);
+                if (idx !== -1) currentTabIdx = idx;
+            };
+
+            // ── Lightbox ──
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lb-img');
+            const lbCounter = document.getElementById('lb-counter');
+            let currentPhotos = [];
+            let currentIndex = 0;
+
+            function openLightbox(photos, index) {
+                currentPhotos = photos;
+                currentIndex = index;
+                showPhoto();
+                lb.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lb.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            function showPhoto() {
+                lbImg.src = currentPhotos[currentIndex];
+                lbImg.alt = 'Zdjęcie ' + (currentIndex + 1);
+                lbCounter.textContent = (currentIndex + 1) + ' / ' + currentPhotos.length;
+            }
+
+            function navigate(dir) {
+                currentIndex = (currentIndex + dir + currentPhotos.length) % currentPhotos.length;
+                lbImg.style.opacity = '0';
+                setTimeout(() => {
+                    showPhoto();
+                    lbImg.style.opacity = '1';
+                }, 150);
+            }
+
+            document.getElementById('lb-close').addEventListener('click', closeLightbox);
+            document.getElementById('lb-prev').addEventListener('click', () => navigate(-1));
+            document.getElementById('lb-next').addEventListener('click', () => navigate(1));
+
+            lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+
+            document.addEventListener('keydown', e => {
+                if (!lb.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigate(-1);
+                if (e.key === 'ArrowRight') navigate(1);
+            });
+
+            // Touch swipe support
+            let touchStartX = 0;
+            lb.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+            lb.addEventListener('touchend', e => {
+                const dx = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
+            }, { passive: true });
+
+            // Attach click handlers to all photo items
+            document.querySelectorAll('.photo-grid').forEach(grid => {
+                const items = grid.querySelectorAll('.photo-item');
+                const photos = Array.from(items).map(i => i.dataset.src);
+                items.forEach((item, idx) => {
+                    item.addEventListener('click', () => openLightbox(photos, idx));
+                });
+            });
+
+            // Smooth image fade on load
+            lbImg.style.transition = 'opacity 0.15s ease';
+        })();
+    </script>
 </body>
+
 </html>
