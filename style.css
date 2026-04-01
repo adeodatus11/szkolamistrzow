@@ -207,10 +207,10 @@ a:hover {
 }
 
 .news-ticker {
-    display: inline-block;
+    display: flex;
     white-space: nowrap;
-    padding-left: 100%;
-    animation: marquee-ticker 25s linear infinite;
+    width: max-content;
+    animation: marquee-ticker 45s linear infinite;
 }
 
 .news-ticker span {
@@ -232,7 +232,7 @@ a:hover {
 
 @keyframes marquee-ticker {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-50%); }
 }
 
 .dark-mode .news-ticker-container {
