@@ -28,7 +28,13 @@
             padding: 5rem 5%;
             text-align: center;
         }
-        .trivia-hero h1 { font-size: 3.8rem; margin-bottom: 1rem; color: #fff; }
+        .trivia-hero h1 { 
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem); 
+            margin-bottom: 1.5rem; 
+            color: #fff;
+            letter-spacing: -0.01em;
+            text-wrap: balance;
+        }
         .trivia-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
 
         .section-container { max-width: 1200px; margin: 0 auto; padding: 5rem 5%; }
@@ -384,16 +390,36 @@
             </details>
             <div class="media-grid">
                 <!-- Sukcesy uczniów -->
-                <div class="media-card">
+                <div class="media-card" style="grid-column: span 2;">
                     <div>
-                        <span class="media-tag" style="background: #ffd54f; color: #000;">SUKCESY UCZNIÓW</span>
-                        <h3>Nasze Mistrzynie i Mistrzowie</h3>
-                        <ul style="padding-left: 1.2rem; line-height: 1.6; color: #444;">
-                            <li><strong>Beata Krzemińska</strong> – Mistrzostwo Świata w Neapolu!</li>
-                            <li><strong>Lila Diduch</strong> – sukces w prestiżowym konkursie fryzjerskim we Wrocławiu.</li>
-                            <li><strong>Ilia Nemyrovski</strong> – wielokrotny laureat konkursów fryzjerskich.</li>
-                            <li><strong>Wicemistrzostwo Polski</strong> cukierników na Expo Sweet.</li>
-                        </ul>
+                        <span class="media-tag" style="background: #ffd54f; color: #000;">GALERIA SUKCESÓW</span>
+                        <h3>Wybitne Osiągnięcia Naszych Absolwentów i Nauczycieli</h3>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+                            <!-- Beata Krzemińska -->
+                            <div style="border-left: 4px solid #ffd54f; padding-left: 1rem; margin-bottom: 0.5rem;">
+                                <p style="font-weight: 700; margin-bottom: 0.3rem; color: #333; font-size: 1.1rem;">Beata Krzemińska – Mistrzyni Świata, Nauczycielka i Absolwentka</p>
+                                <p style="font-size: 1rem; color: #555; line-height: 1.6;">To postać wyjątkowa dla naszej szkoły – jej wybitna absolwentka, a obecnie ceniona nauczycielka zawodu. Jej kunszt i pasja zostały docenione na arenie międzynarodowej, gdzie zdobyła prestiżowy tytuł Mistrzyni Świata podczas mistrzostw w Neapolu.</p>
+                            </div>
+
+                            <!-- Lilianna Diduch -->
+                            <div style="border-left: 4px solid #ffd54f; padding-left: 1rem; margin-bottom: 0.5rem;">
+                                <p style="font-weight: 700; margin-bottom: 0.3rem; color: #333; font-size: 1.1rem;">Lilianna Diduch – Triumfatorka Ogólnopolskich Konkursów Fryzjerskich</p>
+                                <p style="font-size: 1rem; color: #555; line-height: 1.6;">Nasza absolwentka, która zdominowała polską scenę fryzjerską. Podczas ogólnopolskiego konkursu „Gotycka awangarda i perfekcja młodych stylistów” w Szczecinie wywalczyła wszystkie nagrody regulaminowe. Jest również laureatką 29. Wojewódzkiego Konkursu Fryzjerskiego „Srebrny Lok”.</p>
+                            </div>
+
+                            <!-- Milena Grudzińska -->
+                            <div style="border-left: 4px solid #ffd54f; padding-left: 1rem; margin-bottom: 0.5rem;">
+                                <p style="font-weight: 700; margin-bottom: 0.3rem; color: #333; font-size: 1.1rem;">Milena Grudzińska – Brązowa Medalistka WorldSkills Poland</p>
+                                <p style="font-size: 1rem; color: #555; line-height: 1.6;">Utalentowana absolwentka, która z dumą reprezentowała Polskę w branży cukierniczej podczas prestiżowych wydarzeń Expo. Jej wysokie kompetencje potwierdziło zdobycie 3. miejsca w krajowych eliminacjach do międzynarodowego konkursu WorldSkills Poland w kategorii cukiernictwo.</p>
+                            </div>
+
+                            <!-- Ilia Nemyrovski -->
+                            <div style="border-left: 4px solid #ffd54f; padding-left: 1rem;">
+                                <p style="font-weight: 700; margin-bottom: 0.3rem; color: #333; font-size: 1.1rem;">Ilia Nemyrovski – Precyzja i Pasja Fryzjerska</p>
+                                <p style="font-size: 1rem; color: #555; line-height: 1.6;">Wielokrotny laureat prestiżowych turniejów fryzjerskich. Jego osiągnięcia są inspiracją dla młodych adeptów sztuki fryzjerskiej, udowadniając, że konsekwentna praca prowadzi na szczyt podium.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
