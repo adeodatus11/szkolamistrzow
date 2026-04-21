@@ -347,15 +347,19 @@ a:hover {
 .hero-content {
     max-width: 1000px;
     margin: 0 auto;
+    container-type: inline-size;
 }
 
-.hero-content h1 {
-    font-size: 3.8rem;
-    margin-bottom: 1.5rem;
+.hero-content h1.dynamic-title {
+    font-size: clamp(1.5rem, 5.2cqw, 3.8rem);
+    margin-bottom: 2rem;
     background: linear-gradient(135deg, var(--heading-color) 0%, var(--primary-color) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.15;
+    text-wrap: balance;
+    letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
