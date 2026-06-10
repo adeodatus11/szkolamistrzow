@@ -251,12 +251,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (employersRoot) {
         const loadEmployers = async () => {
             try {
-                // Try from global variable first (embedded in HTML)
-                if (window.EMPLOYERS_DATA) {
-                    allTradesData = window.EMPLOYERS_DATA;
-                } else {
-                    // Fallback to XML if needed
+                try {
                     const response = await fetch('pracodawcy.xml');
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
                     const xmlText = await response.text();
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
@@ -274,7 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 adres: cechNode.querySelector('adres_firmy')?.textContent || '',
                                 telefon: cechNode.querySelector('telefon')?.textContent || '',
                                 email: cechNode.querySelector('email')?.textContent || '',
-                                www: cechNode.querySelector('www')?.textContent || ''
+                                www: cechNode.querySelector('www')?.textContent || '',
+                                kontakt: cechNode.querySelector('osoba_kontaktowa')?.textContent || ''
                             } : null,
                             employers: Array.from(employersNodes).map(emp => ({
                                 nazwa: emp.querySelector('nazwa_firmy')?.textContent || '',
@@ -284,6 +284,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             }))
                         };
                     });
+                } catch (xmlError) {
+                    if (!window.EMPLOYERS_DATA) {
+                        throw xmlError;
+                    }
+
+                    console.warn('Falling back to embedded employers data:', xmlError);
+                    allTradesData = window.EMPLOYERS_DATA;
                 }
 
                 // Sort alphabetically by name
@@ -339,6 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <div class="guild-box-header"><span class="guild-icon">🏛️</span> Instytucja kontaktowa / Cech</div>
                                     <div class="guild-name">${trade.cech.nazwa}</div>
                                     <div class="guild-details">
+                                        ${trade.cech.kontakt ? `<span class="guild-detail">👤 ${trade.cech.kontakt}</span>` : ''}
                                         ${trade.cech.adres ? `<span class="guild-detail">${trade.cech.adres}</span>` : ''}
                                         ${trade.cech.telefon ? `<a href="tel:${trade.cech.telefon.replace(/\s/g, '')}" class="guild-phone">📞 ${trade.cech.telefon}</a>` : ''}
                                         ${trade.cech.email ? `<a href="mailto:${trade.cech.email}" class="guild-link word-break-mobile">✉️ ${trade.cech.email}</a>` : ''}

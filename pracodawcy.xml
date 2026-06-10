@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <pracodawcy>
-
   <zawod nazwa="fotograf">
     <cech>
       <nazwa_firmy>Cech Rzemiosł Różnych we Wrocławiu</nazwa_firmy>
@@ -8,232 +7,502 @@
       <telefon>71 344 44 19</telefon>
       <email>crr_aldona@poczta.onet.pl</email>
     </cech>
-
     <pracodawcy>
       <firma>
         <nazwa_firmy>Zakład Fotograficzny HQ – Anna Matuszewicz</nazwa_firmy>
         <adres_firmy>ul. Młyńska 1-1a/1u, 55-200 Oława</adres_firmy>
         <telefon>512272357</telefon>
-        <email></email>
+        <email />
       </firma>
     </pracodawcy>
   </zawod>
-
-
   <zawod nazwa="krawiec">
     <cech>
       <nazwa_firmy>Cech Rzemiosł Odzieżowo – Włókienniczych</nazwa_firmy>
       <adres_firmy>ul. Kaszubska 4, 50-214 Wrocław</adres_firmy>
       <telefon>602638911</telefon>
-      <email></email>
+      <email />
+      <www>http://izba.wroc.pl/cecha/cech-rzemiosl-odziezowo-wlokienniczych/</www>
+      <osoba_kontaktowa>Wanda Fok</osoba_kontaktowa>
     </cech>
   </zawod>
-
-
   <zawod nazwa="elektryk; monter zabudowy i robót wykończeniowych w budownictwie; murarz-tynkarz">
-
     <cech>
       <nazwa_firmy>Cech Rzemiosł Budowlanych we Wrocławiu</nazwa_firmy>
       <adres_firmy>ul. Kazimierza Wielkiego 19, 50-077 Wrocław</adres_firmy>
       <telefon>600466825</telefon>
       <email>sekretariat@crzb.com.pl</email>
     </cech>
-
     <pracodawcy>
       <firma>
         <nazwa_firmy>Usługi Budowlane Duda Paweł</nazwa_firmy>
         <adres_firmy>ul. Przybyszewskiego 114/15, 51-148 Wrocław</adres_firmy>
         <telefon>516129543</telefon>
-        <email></email>
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>CZECHBUD – Krzysztof Orszulski</nazwa_firmy>
         <adres_firmy>ul. Nyska 81/56, 50-505 Wrocław</adres_firmy>
         <telefon>601952777</telefon>
-        <email></email>
+        <email />
       </firma>
     </pracodawcy>
-
   </zawod>
-
-
   <zawod nazwa="fryzjer">
     <cech>
       <nazwa_firmy>Cech Rzemiosł Różnych we Wrocławiu</nazwa_firmy>
       <adres_firmy>ul. Kazimierza Wielkiego 9, 50-077 Wrocław</adres_firmy>
       <telefon>690501774</telefon>
       <email>crr_aldona@poczta.onet.pl</email>
+      <www>http://www.cechwroclaw.pl/</www>
     </cech>
   </zawod>
-
-
   <zawod nazwa="kucharz; kelner">
-
     <cech>
       <nazwa_firmy>Dolnośląski Cech Piekarzy i Cukierników</nazwa_firmy>
       <adres_firmy>ul. Kazimierza Wielkiego 9, 50-077 Wrocław</adres_firmy>
       <telefon>71 344 61 97</telefon>
       <email>info@dcpic.pl</email>
+      <www>http://www.dcpic.pl/index.php</www>
     </cech>
-
     <pracodawcy>
-
       <firma>
         <nazwa_firmy>Bistro u Nowaków – Leszek Nowak</nazwa_firmy>
         <adres_firmy>ul. Bolesława Krzywoustego 5 lok.2, 55-330 Wróblowice</adres_firmy>
         <telefon>510950510</telefon>
-        <email></email>
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>Bar KRABIK – Agnieszka Rabiak</nazwa_firmy>
         <adres_firmy>ul. Rybacka 4, 55-140 Żmigród</adres_firmy>
         <telefon>794122444</telefon>
-        <email></email>
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>HORN – Piotr Rusiecki</nazwa_firmy>
         <adres_firmy>ul. Jaracza 77B, 50-305 Wrocław</adres_firmy>
         <telefon>601566098</telefon>
-        <email></email>
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>DZPZ Sp. z o.o.</nazwa_firmy>
         <adres_firmy>ul. Wejherowska 34, 54-289 Wrocław</adres_firmy>
         <telefon>781092787</telefon>
-        <email></email>
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>Rezydencja Rosato</nazwa_firmy>
         <adres_firmy>ul. Wrocławska 64, 55-095 Mirków</adres_firmy>
         <telefon>604068515</telefon>
-        <email></email>
+        <email />
       </firma>
-
+      <firma>
+        <nazwa_firmy>Hotel-Restauracja Bielany - Danuta Gierczyk</nazwa_firmy>
+        <adres_firmy>ul. Klecińska 3, 55-040 Bielany Wrocławskie</adres_firmy>
+        <telefon>71 335 29 10</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Kawiarnia i cukiernia U Spychały</nazwa_firmy>
+        <adres_firmy>ul. Icchaka Lejba Pereca 7, 53-443 Wrocław</adres_firmy>
+        <telefon>71 362 21 95</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Novotel &amp; Ibis Wrocław Centrum</nazwa_firmy>
+        <adres_firmy>ul. Powstańców Śląskich, 53-332 Wrocław</adres_firmy>
+        <telefon>71 722 49 60, 502 198 214, 881 483 573</telefon>
+        <email />
+        <osoba_kontaktowa>Emil Oleś, Dominik Pyrkowski</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Hotel MERCURE Wrocław Centrum</nazwa_firmy>
+        <adres_firmy>pl. Dominikański 1, 50-159 Wrocław</adres_firmy>
+        <telefon>71 323 27 44, 71 323 27 01</telefon>
+        <email />
+        <osoba_kontaktowa>Wojciech Marczak, Teresa Giedrojć-Rudawy</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Restauracja Nowa by Wiatrowski - Grzegorz Wiatrowski</nazwa_firmy>
+        <adres_firmy>ul. Borowska 160A, 50-551 Wrocław</adres_firmy>
+        <telefon>601 977 783</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Kuchnia Pobite Gary - Kamila Kraska</nazwa_firmy>
+        <adres_firmy>ul. B. Prusa 69/17, 53-316 Wrocław</adres_firmy>
+        <telefon>507 118 912</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Desilva Citi sp. z o.o. - Novotel Wrocław City / Ibis Budget Wrocław Południe</nazwa_firmy>
+        <adres_firmy>ul. Wyścigowa 35, 53-011 Wrocław</adres_firmy>
+        <telefon>71 326 83 03, 538 432 692, 882 953 090</telefon>
+        <email />
+        <osoba_kontaktowa>Piotr Stachowiak, Aleksandra Sarowska</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Wrocław Q Hotel Sp. z o.o. Sp. komandytowa - Q Hotel Plus Wrocław</nazwa_firmy>
+        <adres_firmy>ul. Zaolziańska 2, 53-334 Wrocław</adres_firmy>
+        <telefon>71 749 17 00, 508 313 030</telefon>
+        <email />
+        <osoba_kontaktowa>Zbigniew Czekalski</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Hotel Movenpick Grand</nazwa_firmy>
+        <adres_firmy>ul. Stawowa 13, 58-018 Wrocław</adres_firmy>
+        <telefon>570 364 482</telefon>
+        <email />
+        <osoba_kontaktowa>Michał Bekisz</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Hotel i Restauracja Monopol</nazwa_firmy>
+        <adres_firmy>ul. H. Modrzejewskiej 2, 50-071 Wrocław</adres_firmy>
+        <telefon>71 772 37 40</telefon>
+        <email />
+        <osoba_kontaktowa>Mariusz Kozak, Kamil Aleksy</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>GASTRMORK Tomasz Morkisz - MIODZIO CATERING</nazwa_firmy>
+        <adres_firmy>ul. Opolska 119h/9, 52-013 Wrocław; ul. Kościuszki 16a/1a, 50-038 Wrocław</adres_firmy>
+        <telefon>792 006 103</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>WROREST S.C. Monika Piskozub-Olewińska</nazwa_firmy>
+        <adres_firmy>Rynek 35, 50-102 Wrocław</adres_firmy>
+        <telefon>508 054 037, 607 234 543</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Restauracja Niewinni Czarodzieje - Agnieszka Woźniak</nazwa_firmy>
+        <adres_firmy>Sukiennice 6, 50-107 Wrocław</adres_firmy>
+        <telefon>691 575 700</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Karmazyn BIS - Joanna Pierz</nazwa_firmy>
+        <adres_firmy>ul. Horbaczewskiego 4-6, 54-130 Wrocław</adres_firmy>
+        <telefon>508 109 550</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>SOBOTEL Sp. z o.o.</nazwa_firmy>
+        <adres_firmy>Al. Św. Anny 16, 55-050 Sobótka</adres_firmy>
+        <telefon>71 715 16 00, 505 032 108</telefon>
+        <email />
+        <osoba_kontaktowa>Piotr Żejmo</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>BAR MYŚLIWSKI - Beata Gałka</nazwa_firmy>
+        <adres_firmy>ul. Kolejowa 27, 55-061 Mietków</adres_firmy>
+        <telefon>71 316 83 68</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Restauracja Zielona Oliwka</nazwa_firmy>
+        <adres_firmy>ul. Rzeczna 58, 55-093 Kiełczów</adres_firmy>
+        <telefon>60304750929</telefon>
+        <email />
+        <osoba_kontaktowa>Mateusz Bednarski</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Four Points by Sheraton Wrocław</nazwa_firmy>
+        <adres_firmy>ul. Gajowicka 130, 53-322 Wrocław</adres_firmy>
+        <telefon>510 409 208</telefon>
+        <email />
+        <osoba_kontaktowa>Bartosz Tułpatowicz</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Citronex Trans Energy Sp. z o.o. - Restauracja PICARO</nazwa_firmy>
+        <adres_firmy>ul. Handlowa 5, 55-080 Kąty Wrocławskie</adres_firmy>
+        <telefon>504 724 382</telefon>
+        <email />
+      </firma>
     </pracodawcy>
-
   </zawod>
-
-
   <zawod nazwa="blacharz samochodowy; lakiernik samochodowy">
-
     <cech>
-      <nazwa_firmy>Dolnośląski Cech Rzemiosł Metalowych i Motoryzacyjnych</nazwa_firmy>
+      <nazwa_firmy>Dolnośląski Cech Rzemiosł Metalowych i Motoryzacyjnych oraz Małej Przedsiębiorczości</nazwa_firmy>
       <adres_firmy>ul. Kaszubska 4, Wrocław</adres_firmy>
-      <telefon>71 3287091</telefon>
+      <telefon>71 328-70-91</telefon>
       <email>biuro@cechmetmot.k.pl</email>
     </cech>
-
     <pracodawcy>
-
       <firma>
         <nazwa_firmy>Centrum Blacharsko-Lakiernicze M. Wróbel</nazwa_firmy>
         <adres_firmy>ul. Fabryczna 32, 55-080 Pietrzykowice</adres_firmy>
-        <telefon></telefon>
-        <email></email>
+        <telefon />
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>Konieczny Company</nazwa_firmy>
         <adres_firmy>ul. Rzemieślnicza 7, 55-114 Szewce</adres_firmy>
         <telefon>791233853</telefon>
-        <email></email>
+        <email />
       </firma>
-
+      <firma>
+        <nazwa_firmy>Autoryzowany Salon i Serwis SEAT DYNAMICA</nazwa_firmy>
+        <adres_firmy>Jawornik 525, 32-400 Myślenice</adres_firmy>
+        <telefon>12 273 44 00</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Toyota Długołęka Dobrygowski</nazwa_firmy>
+        <adres_firmy>ul. Wrocławska 54, 55-095 Długołęka</adres_firmy>
+        <telefon>660 729 400</telefon>
+        <email />
+      </firma>
     </pracodawcy>
-
   </zawod>
-
-
   <zawod nazwa="piekarz">
-
     <cech>
       <nazwa_firmy>Dolnośląski Cech Piekarzy i Cukierników</nazwa_firmy>
       <adres_firmy>ul. Kazimierza Wielkiego 9, 50-077 Wrocław</adres_firmy>
       <telefon>71 344 61 97</telefon>
       <email>info@dcpic.pl</email>
+      <www>http://www.dcpic.pl/index.php</www>
     </cech>
-
     <pracodawcy>
       <firma>
         <nazwa_firmy>AUCHAN Bielany Wrocławskie</nazwa_firmy>
         <adres_firmy>ul. Francuska 6, 55-040 Bielany Wrocławskie</adres_firmy>
         <telefon>502446262</telefon>
-        <email></email>
+        <email />
       </firma>
     </pracodawcy>
-
   </zawod>
-
-
   <zawod nazwa="cukiernik">
-
     <cech>
       <nazwa_firmy>Dolnośląski Cech Piekarzy i Cukierników</nazwa_firmy>
       <adres_firmy>ul. Kazimierza Wielkiego 9, 50-077 Wrocław</adres_firmy>
       <telefon>71 344 61 97</telefon>
       <email>info@dcpic.pl</email>
+      <www>http://www.dcpic.pl/index.php</www>
     </cech>
-
     <pracodawcy>
-
       <firma>
         <nazwa_firmy>Cukiernia Dariusz Babiuch</nazwa_firmy>
         <adres_firmy>ul. Rajska 1a, 54-028 Wrocław</adres_firmy>
         <telefon>601384300</telefon>
-        <email></email>
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>BakeMania – Anna Możejko</nazwa_firmy>
         <adres_firmy>ul. Karmelkowa 2a, 52-436 Wrocław</adres_firmy>
         <telefon>668244617</telefon>
-        <email></email>
+        <email />
       </firma>
-
+      <firma>
+        <nazwa_firmy>AUCHAN Bielany Wrocławskie</nazwa_firmy>
+        <adres_firmy>ul. Francuska 6, 55-040 Bielany Wrocławskie</adres_firmy>
+        <telefon>71 798 86 71, 502 446 262</telefon>
+        <email />
+      </firma>
     </pracodawcy>
-
   </zawod>
-
-
   <zawod nazwa="stolarz; tapicer">
-
     <cech>
       <nazwa_firmy>Cech Rzemiosł Różnych we Wrocławiu</nazwa_firmy>
       <adres_firmy>ul. Kazimierza Wielkiego 9, 50-077 Wrocław</adres_firmy>
       <telefon>690501774</telefon>
       <email>crr_aldona@poczta.onet.pl</email>
     </cech>
-
     <pracodawcy>
-
       <firma>
         <nazwa_firmy>RAMS Sp. z o.o. Sp. komandytowa</nazwa_firmy>
         <adres_firmy>ul. Wiązowa 5, 55-093 Kiełczów</adres_firmy>
         <telefon>601874105</telefon>
-        <email></email>
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>Stolarstwo GTJ – Jan Jakubek</nazwa_firmy>
         <adres_firmy>ul. Akacjowa 11, 55-040 Domasław</adres_firmy>
         <telefon>713119978</telefon>
-        <email></email>
+        <email />
       </firma>
-
       <firma>
         <nazwa_firmy>Zakład Stolarski Wojtowicz Zygmunt</nazwa_firmy>
         <adres_firmy>ul. Świerkowa 15, Gęsiniec, 57-100 Strzelin</adres_firmy>
         <telefon>713923872</telefon>
-        <email></email>
+        <email />
       </firma>
-
     </pracodawcy>
-
   </zawod>
-
+  <zawod nazwa="sprzedawca">
+    <cech>
+      <nazwa_firmy>Dolnośląski Cech Piekarzy i Cukierników</nazwa_firmy>
+      <adres_firmy>ul. Kazimierza Wielkiego 9, 50-077 Wrocław</adres_firmy>
+      <telefon>71 344 61 97</telefon>
+      <email>info@dcpic.pl</email>
+      <www>http://www.dcpic.pl/index.php</www>
+    </cech>
+    <pracodawcy>
+      <firma>
+        <nazwa_firmy>Biegański Wojciech</nazwa_firmy>
+        <adres_firmy>Jen. Narodowej 85, 50-262 Wrocław</adres_firmy>
+        <telefon>71 322 18 77</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Danielik Józef i ska</nazwa_firmy>
+        <adres_firmy>ul. Średzka 14, 54-017 Wrocław</adres_firmy>
+        <telefon>71 349 10 40</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Grabarczyk Agnieszka</nazwa_firmy>
+        <adres_firmy>Rynek 18/19, 55-080 Kąty Wrocławskie</adres_firmy>
+        <telefon>71 316 68 29</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Grabarczyk Ryszard</nazwa_firmy>
+        <adres_firmy>ul. Odkrywców 22, 53-212 Wrocław</adres_firmy>
+        <telefon>71 363 39 00</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Jaworscy S.R. s.c.</nazwa_firmy>
+        <adres_firmy>ul. Krzemieniecka 47, 54-613 Wrocław</adres_firmy>
+        <telefon>71 313 95 24</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Kibało Stanisław</nazwa_firmy>
+        <adres_firmy>ul. Średzka 28, 54-017 Wrocław</adres_firmy>
+        <telefon>71 349 34 14</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Łuźniak Ryszard</nazwa_firmy>
+        <adres_firmy>ul. Mikołaja Reja 22, 50-354 Wrocław</adres_firmy>
+        <telefon>71 322 51 57</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Machalski-Tomski</nazwa_firmy>
+        <adres_firmy>ul. Olszewskiego 77, 51-644 Wrocław</adres_firmy>
+        <telefon>71 345 29 48</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Siemionko Sergiusz i ska</nazwa_firmy>
+        <adres_firmy>ul. Partyzantów 16, 51-672 Wrocław</adres_firmy>
+        <telefon>71 348 53 40</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Cukiernia u Spychały</nazwa_firmy>
+        <adres_firmy>ul. Pereca 7, 53-433 Wrocław</adres_firmy>
+        <telefon>71 362 21 95</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Tyszko Marian i ska</nazwa_firmy>
+        <adres_firmy>Al. Pracy 7a, 53-223 Wrocław</adres_firmy>
+        <telefon>71 363 34 27</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Wróbel Piotr</nazwa_firmy>
+        <adres_firmy>ul. Sulejowska 19, 51-126 Wrocław</adres_firmy>
+        <telefon>71 345 80 28</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Zając Izabela</nazwa_firmy>
+        <adres_firmy>ul. M. Curie-Skłodowskiej 51, 50-369 Wrocław</adres_firmy>
+        <telefon>71 352 91 99</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Bąkowski Marian</nazwa_firmy>
+        <adres_firmy>ul. Wrocławska 55, 55-045 Rogów Sobócki</adres_firmy>
+        <telefon>71 316 26 38</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>DA-ROM Roman Skałecki</nazwa_firmy>
+        <adres_firmy>ul. Piastowska 2a, 55-330 Mrozów</adres_firmy>
+        <telefon>71 396 87 34, 606 811 978</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Sklep Ogólnospożywczy Marysieńka - Grzegorz Wójcik</nazwa_firmy>
+        <adres_firmy>ul. Krzywoustego 320 / ul. Oleska 5, 51-200 Wrocław</adres_firmy>
+        <telefon>71 345 67 16, 71 345 42 53</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Społem Tęcza</nazwa_firmy>
+        <adres_firmy>ul. Tęczowa 65 / ul. Bajana 1, 53-603 Wrocław</adres_firmy>
+        <telefon>71 343 33 45, 71 362 06 79, 71 362 06 84</telefon>
+        <email />
+        <osoba_kontaktowa>Iwona Cieślak</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Hala Sprzedaży Transgourmet Polska Sp. z o.o. - Selgros</nazwa_firmy>
+        <adres_firmy>ul. Krakowska 71-105, 50-426 Wrocław</adres_firmy>
+        <telefon>71 335 41 02</telefon>
+        <email />
+        <osoba_kontaktowa>Barbara Dominek</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>Żabka nr Z0738 - Anna Kozak-Kowalik</nazwa_firmy>
+        <adres_firmy>ul. K. Józefa Poniatowskiego 21/1B, 50-326 Wrocław</adres_firmy>
+        <telefon>535 402 751, 536 258 568</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>AUCHAN Centrum Handlowe KORONA</nazwa_firmy>
+        <adres_firmy>ul. B. Krzywoustego 126, 51-421 Wrocław</adres_firmy>
+        <telefon>71 798 86 71, 502 446 262</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>AUCHAN Bielany Wrocławskie</nazwa_firmy>
+        <adres_firmy>ul. Francuska 6, 55-040 Bielany Wrocławskie</adres_firmy>
+        <telefon>71 798 86 71, 502 446 262</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>P.P.H.U. TRAK - Sklep RABAT Magdalena Kwiecień</nazwa_firmy>
+        <adres_firmy>ul. Szkolna 22a, 55-114 Wisznia Mała</adres_firmy>
+        <telefon>71 312 74 31, 693 665 366</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>MIT 10 Sp. z o.o. S.K.</nazwa_firmy>
+        <adres_firmy>ul. 1-go Maja 31, 55-200 Oława</adres_firmy>
+        <telefon>697 996 428</telefon>
+        <email />
+        <osoba_kontaktowa>Paweł Witkowski</osoba_kontaktowa>
+      </firma>
+      <firma>
+        <nazwa_firmy>PHU Agnieszka Gelger - Sklep Żabka</nazwa_firmy>
+        <adres_firmy>ul. Miła 7/3u, 55-200 Oława</adres_firmy>
+        <telefon>513 365 730</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>CONECT Małgorzata Ruszkowska</nazwa_firmy>
+        <adres_firmy>ul. Rumiankowa 141, 56-231 Jelcz-Laskowice</adres_firmy>
+        <telefon>601 828 058</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Żabka nr Z724 - Małgorzata Cierniewska</nazwa_firmy>
+        <adres_firmy>ul. Oławska 70, 55-220 Jelcz-Laskowice</adres_firmy>
+        <telefon>667 226 661</telefon>
+        <email />
+      </firma>
+      <firma>
+        <nazwa_firmy>Cukiernia BakeMania - Anna Możejko</nazwa_firmy>
+        <adres_firmy>ul. Karmelkowa 2a, 52-436 Wrocław</adres_firmy>
+        <telefon>668 244 617</telefon>
+        <email />
+      </firma>
+    </pracodawcy>
+  </zawod>
 </pracodawcy>
