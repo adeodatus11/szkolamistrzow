@@ -258,9 +258,59 @@
             padding: 1.1rem 1.2rem;
             transition: box-shadow 0.2s, border-color 0.2s;
         }
+        .employer-item-featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
+            border: 2px solid #ed1b2f;
+            box-shadow: 0 10px 28px rgba(237, 27, 47, 0.12);
+            padding: 1.4rem 1.5rem;
+            position: relative;
+        }
+        .employer-item-featured::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 6px;
+            background: #ed1b2f;
+        }
         .employer-item:hover {
             box-shadow: 0 4px 16px rgba(0,100,0,0.1);
             border-color: #c8e6c9;
+        }
+        .employer-item-featured:hover {
+            border-color: #ed1b2f;
+            box-shadow: 0 12px 32px rgba(237, 27, 47, 0.16);
+        }
+        .featured-employer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .featured-employer-logo {
+            display: block;
+            width: min(220px, 55vw);
+            height: auto;
+        }
+        .featured-employer-badge {
+            background: #ed1b2f;
+            color: #fff;
+            border-radius: 999px;
+            padding: 0.45rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+            text-align: center;
+        }
+        .featured-employer-copy {
+            color: #333;
+            font-size: 0.98rem;
+            line-height: 1.55;
+            margin: -0.15rem 0 0.75rem;
+            max-width: 760px;
         }
         .employer-name {
             font-size: 1rem;
@@ -310,6 +360,8 @@
         @media (max-width: 600px) {
             #employers-root { grid-template-columns: 1fr; }
             .trade-header-inner { flex-direction: column; align-items: flex-start; }
+            .featured-employer-brand { align-items: flex-start; flex-direction: column; }
+            .featured-employer-badge { text-align: left; }
         }
 
         /* Search Bar Styles */

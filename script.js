@@ -280,7 +280,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                 nazwa: emp.querySelector('nazwa_firmy')?.textContent || '',
                                 adres: emp.querySelector('adres_firmy')?.textContent || '',
                                 telefon: emp.querySelector('telefon')?.textContent || '',
-                                kontakt: emp.querySelector('osoba_kontaktowa')?.textContent || ''
+                                kontakt: emp.querySelector('osoba_kontaktowa')?.textContent || '',
+                                wyrozniony: emp.querySelector('wyrozniony')?.textContent?.trim().toLowerCase() === 'true',
+                                logo: emp.querySelector('logo')?.textContent || '',
+                                etykieta: emp.querySelector('etykieta')?.textContent || '',
+                                opis: emp.querySelector('opis')?.textContent || ''
                             }))
                         };
                     });
@@ -359,8 +363,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${trade.employers.length > 0 ? `
                                 <div class="employers-list">
                                     ${trade.employers.map(emp => `
-                                        <div class="employer-item">
+                                        <div class="employer-item ${emp.wyrozniony ? 'employer-item-featured' : ''}">
+                                            ${emp.wyrozniony ? `
+                                                <div class="featured-employer-brand">
+                                                    ${emp.logo ? `<img src="${emp.logo}" alt="Logo Selgros" class="featured-employer-logo">` : ''}
+                                                    <span class="featured-employer-badge">${emp.etykieta || 'Wyróżniony pracodawca'}</span>
+                                                </div>
+                                            ` : ''}
                                             <div class="employer-name">${emp.nazwa}</div>
+                                            ${emp.opis ? `<div class="featured-employer-copy">${emp.opis}</div>` : ''}
                                             ${emp.kontakt ? `<div class="employer-contact-person">👤 ${emp.kontakt}</div>` : ''}
                                             ${emp.adres ? `<div class="employer-detail"><span class="emp-icon">📍</span>${emp.adres}</div>` : ''}
                                             ${emp.telefon ? `<div class="employer-detail"><span class="emp-icon">📞</span><a href="tel:${emp.telefon.replace(/\s/g, '')}">${emp.telefon}</a></div>` : ''}

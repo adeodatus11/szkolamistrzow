@@ -447,6 +447,10 @@
         <telefon>71 335 41 02</telefon>
         <email />
         <osoba_kontaktowa>Barbara Dominek</osoba_kontaktowa>
+        <wyrozniony>true</wyrozniony>
+        <logo>assets/selgros-logo.svg</logo>
+        <etykieta>Główny pracodawca w zawodzie sprzedawca</etykieta>
+        <opis>Selgros to sprawdzony, stabilny i porządny pracodawca dla uczniów wybierających praktyczną naukę zawodu sprzedawcy.</opis>
       </firma>
       <firma>
         <nazwa_firmy>Żabka nr Z0738 - Anna Kozak-Kowalik</nazwa_firmy>
