@@ -339,6 +339,17 @@
     </cech>
     <pracodawcy>
       <firma>
+        <nazwa_firmy>Hala Sprzedaży Transgourmet Polska Sp. z o.o. - Selgros</nazwa_firmy>
+        <adres_firmy>ul. Krakowska 71-105, 50-426 Wrocław</adres_firmy>
+        <telefon>Sekretariat: +48 71 335 41 61; Kierownik Hali: +48 71 335 42 13</telefon>
+        <email />
+        <osoba_kontaktowa>Barbara Dominek</osoba_kontaktowa>
+        <wyrozniony>true</wyrozniony>
+        <logo>assets/selgros-logo.svg</logo>
+        <etykieta>Główny pracodawca w zawodzie sprzedawca</etykieta>
+        <opis>Selgros to sprawdzony i stabilny pracodawca dla uczniów wybierających praktyczną naukę zawodu sprzedawcy.</opis>
+      </firma>
+      <firma>
         <nazwa_firmy>Biegański Wojciech</nazwa_firmy>
         <adres_firmy>Jen. Narodowej 85, 50-262 Wrocław</adres_firmy>
         <telefon>71 322 18 77</telefon>
@@ -440,17 +451,6 @@
         <telefon>71 343 33 45, 71 362 06 79, 71 362 06 84</telefon>
         <email />
         <osoba_kontaktowa>Iwona Cieślak</osoba_kontaktowa>
-      </firma>
-      <firma>
-        <nazwa_firmy>Hala Sprzedaży Transgourmet Polska Sp. z o.o. - Selgros</nazwa_firmy>
-        <adres_firmy>ul. Krakowska 71-105, 50-426 Wrocław</adres_firmy>
-        <telefon>71 335 41 02</telefon>
-        <email />
-        <osoba_kontaktowa>Barbara Dominek</osoba_kontaktowa>
-        <wyrozniony>true</wyrozniony>
-        <logo>assets/selgros-logo.svg</logo>
-        <etykieta>Główny pracodawca w zawodzie sprzedawca</etykieta>
-        <opis>Selgros to sprawdzony, stabilny i porządny pracodawca dla uczniów wybierających praktyczną naukę zawodu sprzedawcy.</opis>
       </firma>
       <firma>
         <nazwa_firmy>Żabka nr Z0738 - Anna Kozak-Kowalik</nazwa_firmy>
